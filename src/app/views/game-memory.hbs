@@ -1,0 +1,43 @@
+
+<main id="main_and_footer">
+
+    <div id="header_and_main">
+
+        {{> header}}    
+
+        <div id="main_memory">
+
+            {{!-- CORRECT THE DIV CHANGES --}}
+            <div class="partsofmain_memory">
+                {{#each words}}
+                    <input type="checkbox" class="checks" id="flip_card_{{@index}}" value="{{id}}">
+                    <label class="flip_card" id="label_card_{{@index}}" for="flip_card_{{@index}}">
+                        <div class="flip_card_inner" id="flip_inner_{{@index}}">
+
+                            <div class="flip_card_front">
+                                <div class="card_back_back"></div>
+                            </div>
+                            <div class="flip_card_back">
+                                <h3 id="article_{{@index}}" class="{{gender}}">{{article}}</h3>
+                                <h3 id="word_{{@index}}" class="{{gender}}">{{word}}</h3>
+                            </div>
+                        </div>
+                    </label>
+                        
+                {{/each}}
+            </div>
+
+
+            <div class="partsofmain_memory">
+                {{!-- RESTART BUTTON --}}
+                <input type="submit" onClick="window.location.reload();" id="button_restart" value="Restart">
+            </div>
+        </div>
+    </div>
+
+    {{> footer}}
+</main>
+
+<script src="/scripts/game-memory.js"></script>
+{{> scripts}}
+{{!-- <script src="../../public/scripts/memory.js"></script> --}}

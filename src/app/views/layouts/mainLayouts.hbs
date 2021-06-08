@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {{!-- REQUIRE: INDIVIDUALIZATION OF EACH STYLE FOR EACH HBS --}}
+    <link rel="stylesheet" href="/styles/index.css" media="all">
+    <link rel="stylesheet" href="/styles/{{ style }}" media="all">
+
+    {{!-- 
+    <link rel="stylesheet" href="/styles/game-memory.css" media="all">
+    <link rel="stylesheet" href="/styles/game-hangman.css" media="all">
+    <link rel="stylesheet" href="/styles/game-formWords.css" media="all">
+    <link rel="stylesheet" href="/styles/game-multipleChoice.css" media="all">
+
+    <link rel="stylesheet" href="/styles/data-form.css" media="all">
+    <link rel="stylesheet" href="/styles/data-record.css" media="all">
+    <link rel="stylesheet" href="/styles/data-tables.css" media="all"> 
+    --}}
+    
+
+    {{!-- REQUIRE: DELETE UNNECESSERY STYLES --}}
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+
+
+    <title>{{ title }}</title>
+</head>
+
+<body>
+
+    {{{body}}}
+
+</body>
+</html>

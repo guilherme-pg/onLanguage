@@ -1,0 +1,53 @@
+
+<main id="main_and_footer">
+
+    <div id="header_and_main">
+
+        {{> header}}
+
+        <div id="main_tables">
+
+            <div class="table_class">
+                <div class="options_marked">
+
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="3">{{word.theFirstLanguage}}</th>
+                            <th colspan="3">{{word.theSecondLanguage}}</th>
+                        </tr>
+                    </thead>
+
+                    <tr>
+                        <td>Article</td>
+                        <td>Word</td>
+                        <td>Gender</td>
+
+                        <td>Article</td>
+                        <td>Word</td>
+                        <td>Gender</td>
+                    </tr>
+
+                    {{#each word}}
+                        <tr>
+                            <td>{{firstLanguage.article}}</td>
+                            <td>{{firstLanguage.word}}</td>
+                            <td>{{firstLanguage.gender}}</td>
+
+                            <td>{{secondLanguage.article}}</td>
+                            <td>{{secondLanguage.word}}</td>
+                            <td>{{secondLanguage.gender}}</td>
+                        </tr>
+                    {{/each}}
+                    
+                </table>
+            </div>
+        </div>
+    </div>
+
+    {{> footer}}
+</main>
+
+{{> scripts}}

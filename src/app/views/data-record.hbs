@@ -1,0 +1,120 @@
+
+<main id="main_and_footer">
+
+    <div id="header_and_main">
+
+        {{> header}}
+
+        <div id="main_data_access">
+
+            <form class="dataset_access" action="/dataselected" method="get">
+
+                <div class="dataset_inputs_labels">
+
+                    <div class="box_input">
+                        <div class="dataset_label_input">
+                            <label for="input_theme">Theme</label>
+                            <select class="class_select" name="name_theme" id="input_theme">
+                                {{!-- <option value="animals">Animals</option> --}}
+                                {{!-- <option value="adjectives">Adjectives</option> --}}
+                                <option value="body">Body</option>
+                                <option value="city">City</option>
+                                <option value="clothes">Clothes</option>
+                                {{!-- <option value="countries">Countries</option> --}}
+                                {{!-- <option value="disease">Disease</option> --}}
+                                {{!-- <option value="drinks">Drinks</option> --}}
+                                {{!-- <option value="family">Family</option> --}}
+                                {{!-- <option value="fansaty">Fansaty</option> --}}
+                                {{!-- <option value="feelings">Feelings</option> --}}
+                                <option value="food">Food</option>
+                                {{!-- <option value="hobbies">Hobbies</option> --}}
+                                {{!-- <option value="hospital">Hospital</option> --}}
+                                <option value="house">House</option>
+                                <option value="professions">Professions</option>
+                                {{!-- <option value="movies">Movies</option> --}}
+                                {{!-- <option value="music">Music</option> --}}
+                                <option value="nature">Nature</option>
+                                {{!-- <option value="numbers">Numbers</option> --}}
+                                {{!-- <option value="office">Office</option> --}}
+                                {{!-- <option value="religion">Religion</option> --}}
+                                {{!-- <option value="school">School</option> --}}
+                                {{!-- <option value="sports">Sports</option> --}}
+                                <option value="vehicles">Vehicles</option>
+                                {{!-- <option value="verbs">Verbs</option> --}}
+                            </select>
+                            <!-- 
+                            <input type="text"> -->
+                        </div>
+
+                        <div class="dataset_label_input">
+                            <label for="input_level">Level</label>
+                            <select class="class_select" name="name_level" id="input_level">
+
+                                {{!-- POSSIBILITY: SET ALL --}}
+                                {{!-- <option value="all">All</option> --}}
+                                <option value="a1">A1</option>
+                                <option value="a2">A2</option>
+                                <option value="b1">B1</option>
+                                <option value="b2">B2</option>
+                                <option value="c1">C1</option>
+                                <option value="c2">C2</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="box_input">
+                        <div class="dataset_label_input">
+                            <label for="input_first_language">First Language</label>
+                            <select class="class_select" name="name_first_language" id="input_first_language">
+                                
+                                {{!-- POSSIBILITY: SET LANGUAGE ACCESS --}}
+                                <option value="english">English</option>
+                                <option value="french">French</option>
+                                <option value="german">German</option>
+                                <option value="italian">Italian</option>
+                                <option value="portuguese">Portuguese</option>
+                                <option value="spanish">Spanish</option>
+                            </select>
+                        </div>
+
+                        <div class="dataset_label_input">
+                            <label for="input_second_language">Second Language</label>
+                            <select class="class_select" name="name_second_language" id="input_second_language">
+                                
+                                {{!-- POSSIBILITY: SET LANGUAGE ACCESS --}}
+                                <option value="english">English</option>
+                                <option value="french">French</option>
+                                <option value="german">German</option>
+                                <option value="italian">Italian</option>
+                                <option value="portuguese">Portuguese</option>
+                                <option value="spanish">Spanish</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+
+                    {{!-- <div class="dataset_label_input">
+                        <label for="input_grammar">Part of speech</label>
+                        <select class="class_select" name="name_grammar" id="input_grammar">
+                            <option value="adjectives">Adjectives</option>
+                            <option value="noun">Noun</option>
+                            <option value="verb">Verb</option>
+                        </select>
+                    </div> --}}
+                </div>
+                
+
+                <div>
+                    {{!-- <button type="submit" id="button_check_data">Check</button> --}}
+                    <input type="submit" id="button_check_data"  value="Check">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    {{> footer}}
+</main>
+
+{{> scripts}}

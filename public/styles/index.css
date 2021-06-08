@@ -1,0 +1,278 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: whitesmoke;
+    /* font-family: 'UnifrakturCook', cursive; */
+    /* font-family: 'Oswald', sans-serif; */
+    /* font-family: 'Roboto', sans-serif; */
+    /* font-family: 'Anton', sans-serif; */
+    font-family: 'Fjalla One', sans-serif;
+}
+
+
+
+/* HEADER(MENU) AND MAIN */
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+/* #main_and_footer {
+    background-color: crimson;
+} */
+#header_and_main {
+    background-color: rgb(131, 54, 219);
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+.site_main_title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+    padding: 10px;
+    height: 100vh;
+    font-size: 18px;
+    width: 100%;
+}
+
+
+
+/* HEADER */
+#header {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+.site_title {
+    width: 130px;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 50px;
+    background-color: rgb(41, 41, 41);
+    box-shadow: 2px 2px 6px 0 rgb(81, 0, 128);
+    transition: all 0.2s;
+}
+.site_title:hover {
+    width: 140px;
+}
+.limit_title {
+    height: 100%;
+    width: 130px;
+}
+#site_title_id {
+    float: left;
+    text-decoration: none;
+    font-size: 1.5em;
+    padding: 10px;
+    cursor: pointer;
+}
+.site_display {
+    display: flex;
+}
+.general_menu {
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#button_game_options {
+    box-shadow: 2px 0 0 0 rgb(81, 0, 128);
+}
+#button_game_options, 
+#button_words_record {
+    width: 130px;
+    background-color: rgb(41, 41, 41);
+    box-shadow: 2px 2px 6px 0 rgb(81, 0, 128);
+}
+.header_menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 4em;
+    transition: all 0.2s;
+}
+.button_header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    outline: none;
+    margin: 0;
+    border: 0;
+}
+#button_game_options:hover, 
+#button_words_record:hover {
+    width: 140px;
+    background-color: rgb(58, 58, 58);
+}
+#button_game_options:active, 
+#button_words_record:active {
+    background-color: rgb(78, 78, 78);
+}
+
+
+
+/* RESPONSIVE: TO TABLET */
+@media (max-width: 770px) {
+    .square {
+        padding: 0;
+    }
+    #header_and_main {
+        flex-direction: column;
+    }
+    #header {
+        position: relative;
+        flex-direction: row;
+    }
+    .site_title {
+        width: 100px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-top: 0px;
+        transition: all 0.2s;
+    }
+    .site_title:hover {
+        width: auto;
+    }
+    .limit_title {
+        width: 100px;
+    }
+    #site_title_id {
+        font-size: 1.1em;
+        padding: 8px;
+    }
+    .general_menu {
+        margin-top: 0px;
+        height: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .header_menu .limit_title {
+        width: 70px;
+    }
+    #button_game_options, 
+    #button_words_record {
+        width: 70px;
+    }
+    .header_menu {
+        justify-content: flex-end;
+        align-items: flex-end;
+        height: 3.75em;
+    }
+    .button_header {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-size: .9em;
+        padding-bottom: 10px;
+    }
+    #button_game_options:hover, 
+    #button_words_record:hover {
+        width: 70px;
+    }
+}
+
+
+
+/* RESPONSIVE: TO LARGE CELL PHONE */
+@media (max-width: 425px) {
+    #main_options {
+        padding: 0px;
+    }
+    #games_options {
+        font-size: inherit;
+        width: 100%;
+    }
+}
+
+
+
+/* RESPONSIVE: TO TINY CELL PHONE */
+@media (max-width: 320px) {
+    #main_options {
+        padding: 0px;
+    }
+    #games_options {
+        font-size: inherit;
+        width: 100%;
+    }
+}
+
+
+/* SIDE BUTTONS */
+.container_game_sidebuttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+.container_side_buttons {
+    margin: 10px;
+    background-color: black;
+}
+.side_button {
+    padding: 5px;
+    background-color: orange;
+    cursor: pointer;
+}
+
+
+
+
+/* BUTTON RESTART */
+#button_restart {
+    background-color: rgb(26, 26, 26);
+    border-radius: 3px;
+    font-size: inherit;
+    padding: 15px;
+    margin-top: 40px;
+    transition: 0.3s, color 0.3s;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 2px 2px 6px 0 rgb(81, 0, 128);
+}
+#button_restart:hover {
+    background-color: rgb(58, 58, 58);
+}
+#button_restart:active {
+    background-color: rgb(78, 78, 78);
+}
+
+
+
+
+/* FOOTER */
+#footer {
+    background-color: rgb(41, 41, 41);
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer_options {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.footer_options a {
+    margin: 5px;
+    text-decoration: none;
+    transition: 0.3s, color 0.3s;
+}
+.footer_options a:hover {
+    color: orange;
+}

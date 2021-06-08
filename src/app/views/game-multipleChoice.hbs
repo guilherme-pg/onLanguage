@@ -1,0 +1,100 @@
+
+<main id="main_and_footer">
+
+    <div id="header_and_main">
+
+        {{> header}}    
+
+        <div id="main_multiple_choice">
+
+            <div class="container_game_sidebuttons">
+
+                {{!-- <div class="container_side_buttons">
+                    <button class="side_button" id="button_previous">PREVIOUS</button>
+                </div> --}}
+
+                <div id="partsofmain_multiple_choice">
+                    {{#each words}}
+                        <div class="containerHidden" id="containerHidden_{{@index}}">
+
+                            <div class="container_counter">
+                                <p class="quest_counter" id="quest_counter_number_{{@index}}"></p>
+                            </div>
+
+                            <div class="reference_word">
+                                <p class="reference_word" id="reference_question_{{@index}}">{{referenceWord}}</p>
+                            </div>
+
+                            <p id="correctAnswer_{{@index}}" hidden>{{correctAnswer}}</p>
+
+                            <div class="answers_container" id="reference_question_{{@index}}">
+                                <div class="answer_place">
+                                    <button class="answer_word answers_group_{{@index}}" value="{{answerA}}" id="answer_A_{{@index}}">{{answerA}}</button>
+                                </div>
+
+                                <div class="answer_place">
+                                    <button class="answer_word answers_group_{{@index}}" value="{{answerB}}" id="answer_B_{{@index}}">{{answerB}}</button>
+                                </div>
+
+                                <div class="answer_place">
+                                    <button class="answer_word answers_group_{{@index}}" value="{{answerC}}" id="answer_C_{{@index}}">{{answerC}}</button>
+                                </div>
+
+                                <div class="answer_place">
+                                    <button class="answer_word answers_group_{{@index}}" value="{{answerD}}" id="answer_D_{{@index}}">{{answerD}}</button>
+                                </div>
+                            </div>
+                        </div>
+                    {{/each}}
+                </div>
+
+
+                <div id="container_side_buttons">
+                    <button class="side_button" id="button_next">NEXT</button>
+                </div>
+
+
+                <div id="container_feedback">
+                    <div id="container_feedback_numbers">
+
+                    </div>
+
+                    <div class="container_answers_feedback">
+                        
+                        <div id="correct_answers">
+                            <div class="feedback_h3">
+                                <h3>Corrects</h3>
+                            </div>
+
+
+
+                        </div>
+
+                        <div id="wrong_answers">
+                            <div class="feedback_h3">
+                                <h3>Wrongs</h3>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            
+
+
+            <div>
+                {{!-- RESTART BUTTON --}}
+                <input type="submit" onClick="window.location.reload();" id="button_restart" value="Restart">
+            </div>
+        </div>
+    </div>
+
+    {{> footer}}
+</main>
+
+<script src="/scripts/game-multipleChoice.js"></script>
+{{> scripts}}

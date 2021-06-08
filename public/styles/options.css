@@ -1,0 +1,139 @@
+
+#main_options {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    padding: 15px;
+}
+#games_options {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 18px;
+    width: 75%;
+    margin: 10px;
+}
+
+
+/* OPTIONS MENU */
+.options_selector {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.options_selector h3 {
+    margin: 17px 0px 5px 0px;
+}
+.options_selector h3, .options_selector label {
+    color: black;
+}
+.inputs_and_labels {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.inputs_and_labels input {
+    display: none;
+}
+.inputs_and_labels label {
+    float:left;
+    background-color: whitesmoke;
+    border-radius: 3px;
+    font-size: inherit;
+    margin: 5px 7px 5px 7px;
+    padding: 5px;
+    transition: 0.3s, color;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 2px 2px 6px 0 rgb(81, 0, 128);
+}
+.inputs_and_labels label:hover {
+    background-color: rgb(41, 41, 41);
+    /* background-color: orange; */
+    color: whitesmoke;
+    transform: scale(1.1);
+}
+.inputs_and_labels label:active {
+    background-color: rgb(66, 66, 66);
+    color: whitesmoke;
+}
+.inputs_and_labels input:checked + label {
+    background-color:  rgb(26, 26, 26);
+    color: whitesmoke;
+}
+.inputs_and_labels input:checked + label:hover {
+    background-color: rgb(66, 66, 66);
+}
+.inputs_and_labels input:checked + label:active {
+    background-color: rgb(41, 41, 41);
+}
+
+#button_start {
+    background-color: rgb(26, 26, 26);
+    border-radius: 3px;
+    font-size: inherit;
+    margin: 40px 15px 15px 15px;
+    padding: 15px;
+    border: 0;
+    transition: 0.5s, color 0.5s;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 2px 2px 6px 0 rgb(81, 0, 128);
+}
+
+#button_start:hover {
+    background-color: rgb(58, 58, 58);
+}
+#button_start:active {
+    background-color: rgb(78, 78, 78);
+}
+#games_options button:hover {
+    background-color: rgb(58, 58, 58);
+}
+#games_options button:active {
+    background-color: rgb(78, 78, 78);
+}
+
+
+
+
+/* RESPONSIVE: TO TABLET */
+@media (max-width: 770px) {
+    #main_options {
+        padding: 0px;
+    }
+    #games_options {
+        font-size: inherit;
+        width: 100%;
+    }
+}
+
+
+
+/* RESPONSIVE: TO LARGE CELL PHONE */
+@media (max-width: 425px) {
+    #main_options {
+        padding: 0px;
+    }
+    #games_options {
+        font-size: inherit;
+        width: 100%;
+    }
+}
+
+
+
+/* RESPONSIVE: TO TINY CELL PHONE */
+@media (max-width: 320px) {
+    #main_options {
+        padding: 0px;
+    }
+    #games_options {
+        font-size: inherit;
+        width: 100%;
+    }
+}

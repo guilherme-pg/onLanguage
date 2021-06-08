@@ -1,0 +1,45 @@
+
+<main id="main_and_footer">
+
+    <div id="header_and_main">
+
+        {{> header}}    
+
+        <div id="main_hangman">
+
+            <div class="partsofmain_hangman" id="hangman_and_word">
+
+                <div class="hangman_display">
+                    <h3>HANGMAN</h3>
+                </div>
+
+                <div class="hangman_display" id="display_letters">
+                    
+                    {{#each words}}
+                        <div class="letter_case">
+                            <p class="letter_space" id="letter_{{@index}}">{{letter}}</p>
+                        </div>
+                    {{/each}}
+
+                </div>
+            </div>
+
+
+            <div class="partsofmain_hangman" id="buttons_space">
+
+            </div>
+
+            
+            <div class="partsofmain_hangman">
+                {{!-- RESTART BUTTON --}}
+                <input type="submit" onClick="window.location.reload();" id="button_restart" value="Restart">
+            </div>
+        </div>
+    </div>
+
+    {{> footer}}
+</main>
+
+<script src="/scripts/game-hangman.js"></script>
+{{> scripts}}
+{{!-- <script src="../../public/scripts/hangman.js"></script> --}}

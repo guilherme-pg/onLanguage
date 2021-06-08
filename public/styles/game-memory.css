@@ -1,0 +1,220 @@
+
+#main_memory {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    padding: 15px;
+}
+.partsofmain_memory {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10px;
+    padding: 10px;
+    width: 70%;
+}
+
+
+.flip_card {
+    height: 150px;
+    width: 150px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 1.3em;
+    perspective: 1000px;
+}
+/* MEMORY CARD SPECIFICATIONS */
+.flip_card_inner {
+    display: flex;
+    text-align: center;
+    border-radius: 4px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform .7s;
+    transform-style: preserve-3d;
+    box-shadow: 2px 2px 6px 0 rgb(81, 0, 128);
+}
+.flip_card:active .flip_card_inner {
+    transform: scale(0.97);
+    transition: transform .2s;
+    /* transform: rotateY(180deg); */
+}
+#flip_card_0, #flip_card_1, 
+#flip_card_2, #flip_card_3, 
+#flip_card_4, #flip_card_5, 
+#flip_card_6, #flip_card_7, 
+#flip_card_8, #flip_card_9, 
+#flip_card_10, #flip_card_11, 
+#flip_card_12, #flip_card_13, 
+#flip_card_14, #flip_card_15, 
+#flip_card_16, #flip_card_17, 
+#flip_card_18, #flip_card_19, 
+#flip_card_20, #flip_card_21, 
+#flip_card_22, #flip_card_23, 
+#flip_card_24 {
+    display: none;
+}
+#flip_card_0:checked ~ #label_card_0 #flip_inner_0, 
+#flip_card_1:checked ~ #label_card_1 #flip_inner_1, 
+#flip_card_2:checked ~ #label_card_2 #flip_inner_2, 
+#flip_card_3:checked ~ #label_card_3 #flip_inner_3, 
+#flip_card_4:checked ~ #label_card_4 #flip_inner_4, 
+#flip_card_5:checked ~ #label_card_5 #flip_inner_5, 
+#flip_card_6:checked ~ #label_card_6 #flip_inner_6, 
+#flip_card_7:checked ~ #label_card_7 #flip_inner_7, 
+#flip_card_8:checked ~ #label_card_8 #flip_inner_8, 
+#flip_card_9:checked ~ #label_card_9 #flip_inner_9, 
+#flip_card_10:checked ~ #label_card_10 #flip_inner_10, 
+#flip_card_11:checked ~ #label_card_11 #flip_inner_11, 
+#flip_card_12:checked ~ #label_card_12 #flip_inner_12, 
+#flip_card_13:checked ~ #label_card_13 #flip_inner_13, 
+#flip_card_14:checked ~ #label_card_14 #flip_inner_14, 
+#flip_card_15:checked ~ #label_card_15 #flip_inner_15, 
+#flip_card_16:checked ~ #label_card_16 #flip_inner_16, 
+#flip_card_17:checked ~ #label_card_17 #flip_inner_17, 
+#flip_card_18:checked ~ #label_card_18 #flip_inner_18, 
+#flip_card_19:checked ~ #label_card_19 #flip_inner_19, 
+#flip_card_20:checked ~ #label_card_20 #flip_inner_20, 
+#flip_card_21:checked ~ #label_card_21 #flip_inner_21, 
+#flip_card_22:checked ~ #label_card_22 #flip_inner_22, 
+#flip_card_23:checked ~ #label_card_23 #flip_inner_23, 
+#flip_card_24:checked ~ #label_card_24 #flip_inner_24 {   
+    transform: rotateY(180deg);
+}
+
+
+.flip_card_front, 
+.flip_card_back {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    text-align: center;
+}
+.flip_card_front {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(41, 41, 41);
+    border-radius: 4px;
+    color: whitesmoke;
+}
+.flip_card_front:hover {
+    background-color: rgb(58, 58, 58);
+}
+.flip_card_front:active {
+    background-color: rgb(78, 78, 78);
+}
+.flip_card_back {
+    background-color: rgb(41, 41, 41);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 4px;
+    transform: rotateY( 180deg );
+}
+.flip_card_back h3 {
+    font-size: 1em;
+}
+.flip_card_back:hover {
+    background-color: rgb(58, 58, 58);
+}
+.flip_card_back:active {
+    background-color: rgb(78, 78, 78);
+}
+.card_back_back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: darkkhaki; */
+    background-color: orange;
+    border-radius: 4px;
+    height: 75%;
+    width: 80%;
+}
+
+
+
+#button_restart {
+    background-color: rgb(26, 26, 26);
+    border-radius: 4px;
+    font-size: inherit;
+    margin: 15px;
+    padding: 15px;
+    border: 0;
+    transition: 0.5s, color 0.5s;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 2px 2px 6px 0 rgb(81, 0, 128);
+}
+#button_restart:hover {
+    background-color: rgb(58, 58, 58);
+}
+#button_restart:active {
+    background-color: rgb(78, 78, 78);
+}
+
+
+
+/* RESPONSIVE: TO TABLET */
+@media (max-width: 770px) {
+    .partsofmain_memory {
+        width: 100%;
+    }
+    .flip_card {
+        height: 115px;
+        width: 115px;
+        margin: 10px;
+        font-size: 1.1em;
+        perspective: 1000px;
+    }
+    .card_back_back {
+        height: 75%;
+        width: 80%;
+    }
+}
+
+
+
+/* RESPONSIVE: TO LARGE CELL PHONE */
+@media (max-width: 425px) {
+    .partsofmain_memory {
+        width: 100%;
+    }
+    .flip_card {
+        height: 90px;
+        width: 90px;
+        margin: 10px;
+        font-size: 1em;
+        perspective: 1000px;
+    }
+    .card_back_back {
+        height: 75%;
+        width: 80%;
+    }
+}
+
+
+
+/* RESPONSIVE: TO TINY CELL PHONE */
+@media (max-width: 320px) {
+    .partsofmain_memory {
+        width: 100%;
+    }
+    .flip_card {
+        height: 90px;
+        width: 90px;
+        margin: 10px;
+        font-size: 1em;
+        perspective: 1000px;
+    }
+    .card_back_back {
+        height: 75%;
+        width: 80%;
+    }
+}
