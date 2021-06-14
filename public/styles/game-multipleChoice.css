@@ -106,12 +106,17 @@
     border-radius: 3px;
     box-shadow: 2px 2px 6px 0 rgb(81, 0, 128);
 }
-#container_feedback_numbers {
+#container_feedback_numbers, #container_feedback_not_marked {
     text-align: center;
     padding: 10px;
     background-color: darkslateblue;
     border-radius: 3px;
     margin: 5px;
+}
+#container_feedback_not_marked {
+    background-color: whitesmoke;
+    display: none;
+    color: black;
 }
 .container_answers_feedback {
     display: flex;
@@ -130,6 +135,12 @@
 #wrong_answers {
     padding: 10px;
     background-color: rgb(255, 116, 116);
+    border-radius: 3px;
+    margin: 5px;
+}
+#should_be_answers {
+    padding: 10px;
+    background-color: rgb(106, 132, 209);
     border-radius: 3px;
     margin: 5px;
 }

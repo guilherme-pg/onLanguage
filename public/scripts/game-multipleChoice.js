@@ -44,32 +44,44 @@ function endingFeedback() {
         document.getElementById('container_feedback').style.display = 'flex';
         document.getElementById('container_side_buttons').style.display = 'none';
         document.getElementById('partsofmain_multiple_choice').style.display = 'none';
-    };
 
-    // COUNTER OF CORRECTS OUT OF TOTAL
-    document.getElementById('container_feedback_numbers').textContent = `You got ${correctWords.length} out of ${containerHiddenArray.length}`;
 
-    // ADDING DYNAMICALLY ELEMENTS TO SHOW THE CORRECTS ANS WRONGS WORDS
-    for (let i = 0; i < correctWords.length; i++) {
-        let pElementCorrect = document.createElement('p');
-        let correctWord = document.createTextNode(`${correctWords[i]}`);
-        pElementCorrect.appendChild(correctWord);
-        let correctWordsFeedback = document.getElementById('correct_answers');
-        correctWordsFeedback.appendChild(pElementCorrect);
-    };
+        // COUNTER OF CORRECTS OUT OF TOTAL
+        document.getElementById('container_feedback_numbers').textContent = `You got ${correctWords.length} out of ${containerHiddenArray.length}`;
 
-    for (let i = 0; i < wrongWords.length; i++) {
-        let pElementWrong = document.createElement('p');
-        let wrongWord = document.createTextNode(`${wrongWords[i]}`);
-        pElementWrong.appendChild(wrongWord);
-        let wrongWordsFeedback = document.getElementById('wrong_answers');
-        wrongWordsFeedback.appendChild(pElementWrong);
+
+        // SHOW NUMBER OF NOT MARKED QUESTS IF THERE IS AT LEAST 1 NOT MARKED
+        let answered = correctWords.length + wrongWords.length;
+        let notMarked = document.getElementById('container_feedback_not_marked');
+        if (containerHiddenArray.length == answered + 1) {
+            notMarked.style.display = 'flex';
+            notMarked.textContent = "1 question was not answered";
+
+        } else if (containerHiddenArray.length > answered + 1) {
+            notMarked.style.display = 'flex';
+            notMarked.textContent = `${containerHiddenArray.length - answered} questions were not answered`;
+        };
+
+
+        // ADDING DYNAMICALLY ELEMENTS TO SHOW THE RIGHT, WRONGS AND CORRECTIONS
+        for (let i = 0; i < correctWords.length; i++) {
+            let pElementCorrect = document.createElement('p');
+            let correctWord = document.createTextNode(`${correctWords[i]}`);
+            pElementCorrect.appendChild(correctWord);
+            let correctWordsFeedback = document.getElementById('correct_answers');
+            correctWordsFeedback.appendChild(pElementCorrect);
+        };
+        for (let i = 0; i < wrongWords.length; i++) {
+            let pElementWrong = document.createElement('p');
+            let wrongWord = document.createTextNode(`${wrongWords[i]}`);
+            pElementWrong.appendChild(wrongWord);
+            let wrongWordsFeedback = document.getElementById('wrong_answers');
+            wrongWordsFeedback.appendChild(pElementWrong);
+        };
+        // REQUIRE: SHOW WHAT EACH WRONG ANSWER SHOULD BE
+        // REQUIRE: IF A QUEST WAS NOT MARKED SHOW THE NUMBER OF QUESTS NOT MARKED
     };
 };
-
-
-
-
 
 
 
@@ -89,18 +101,18 @@ for (let i = 0; i < containerHiddenArray.length; i++) {
             };
 
             let correctAnswer = document.getElementById(`correctAnswer_${counter}`);
+            let referenceWord = document.getElementById(`reference_question_${counter}`).textContent;
 
             // CHECK ANSWER AND CHANGE COLORS
-
             // IF CORRECT
             if (answersGroup[j].value == correctAnswer.textContent) {
                 answersGroup[j].classList.add("correct_choice"); //IF CORRECT CHANGE TO GREEN
-                correctWords.push(answersGroup[j].value);
-                
+                correctWords.push(referenceWord);
+    
             // IF WRONG
             } else {
                 answersGroup[j].classList.add("wrong_choice"); //IF WRONG CHANGE TO RED
-                wrongWords.push(answersGroup[j].value);
+                wrongWords.push(referenceWord);
 
                 // IF WRONG SHOW THE CORRECT AND THE OTHERS WRONGS
                 for (let h = 0; h < answersGroup.length; h++) {
@@ -113,9 +125,7 @@ for (let i = 0; i < containerHiddenArray.length; i++) {
                     };
                 };
             };
-            counter++
         });
-        // answersGroup[j].onclick = checkAnswer;
     };
 };
 
@@ -134,14 +144,15 @@ function nextQuest() {
     } catch {
         console.log("O ERRO DO NEXT NUMBER")
     };
+    counter++
 
     endingFeedback();
 };
 buttonNext.onclick = nextQuest;
 
 
-// SHOW RESULTS (TABLE WITH WORDS WRONG AND RIGHT WITH NUMBER OF CORRECTS AND INCORRECTS)
-
+// POSSIBILITY: SHOW RESULTS (TABLE WITH WORDS WRONG AND RIGHT WITH NUMBER OF CORRECTS AND INCORRECTS)
+// POSSIBILITY: SHOW PERCENTAGES INSTEAD OF THE NUMBER OF CORRECT ANSWERS
 
 
 
