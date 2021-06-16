@@ -4,7 +4,6 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 15px;
     height: 100vh;
     width: 100%;
 }
@@ -29,6 +28,7 @@
     flex-direction: column;
 }
 .box_input {
+    margin-bottom: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -40,10 +40,21 @@
 }
 
 .dataset_label_input {
+    width: 200px;
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin: 20px;
+    padding: 5px;
+    margin: 10px;
+}
+.class_select {
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    width: 170px;
+    padding: 3px;
+}
+.class_select option {
+    color: black;
 }
 
 #button_check_data {

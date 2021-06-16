@@ -74,7 +74,8 @@ module.exports = (app) => {
     app.get('/data-form', function(req, resp) {
         resp.render('data-form', {
             title: "Data Form",
-            layout: 'mainLayouts'
+            layout: 'mainLayouts',
+            style: "data-form.css"
         });
     });
 
