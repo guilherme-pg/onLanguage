@@ -1,13 +1,18 @@
+// REQUIRE: SEND ALL DATA AT ONCE TO PREVENT RELOAD THE PAGE
+// REQUIRE: IMPLEMENT THE HANGMAN FIGURE
+// REQUIRE: IMPLEMENT NEXT BUTTON
 
-// VARIABLES
-var arrayOfLetterOfTheHiddenWord = [];
-var replacementLetter = '';
-var letterOfTheHiddenWord = '';
+
+
+// GLOBAL VARIABLES
+let arrayOfLetterOfTheHiddenWord = [];
+let replacementLetter = '';
+let letterOfTheHiddenWord = '';
 
 
 
 // HIDE THE WORD
-var hiddenWord = document.getElementsByClassName('letter_space');
+const hiddenWord = document.getElementsByClassName('letter_space');
 for (let i = 0; i < hiddenWord.length; i++) {
     hiddenWord[i].style.display = "none";
 };
@@ -82,8 +87,8 @@ function checkAccents() {
 
 // CLICK ALPHABET BUTTON TO CHECK
 function checkLetter(event) {
-    let letterSpace = document.getElementsByClassName('letter_space');
-    let letterCase = document.getElementsByClassName('letter_case');
+    const letterSpace = document.getElementsByClassName('letter_space');
+    const letterCase = document.getElementsByClassName('letter_case');
     let alphabetLabelButton = document.getElementsByClassName('labels_alphabet');
     let arrayOfLettersChecked = [];
     let letterChecked = '';

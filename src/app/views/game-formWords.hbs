@@ -7,33 +7,41 @@
 
         <div id="main_form_words">
 
-            <div class="partsofmain_form_words" id="challenger_space">
-            
-                <div class="container" id="container_answer">
-                    
-                </div>
-
-
-                <div hidden>
-                    {{#each words.wordletters}}
-                        <p class="checkable" id="letter_checkable_{{@index}}" hidden>{{letter}}</p>
-                    {{/each}}
-                </div>
-
-                <hr id="hr">
-
-                <div class="container">
-                    {{#each words.mixedletters}}
-
-                        <p class="draggable" id="letter_{{@index}}" draggable="true">{{letter}}</p>
-                
-                    {{/each}}
-                </div>
+            {{!-- CORRECT WORD --}}
+            <div hidden>
+                {{#each words.wordletters}}
+                    <p class="checkable" id="letter_checkable_{{@index}}" hidden>{{letter}}</p>
+                {{/each}}
             </div>
 
+            {{!-- CONTAINER TO DROP --}}
+            <div class="container partsofmain_form_words" id="container_answer">
+                
+            </div>
 
             
-            <div class="partsofmain_form_words">
+
+            {{!-- <hr id="hr"> --}}
+
+
+            {{!-- CONTAINER OF LETTERS --}}
+            <div class="container partsofmain_form_words">
+                {{#each words.mixedletters}}
+
+                    <p class="draggable" id="letter_{{@index}}" draggable="true">{{letter}}</p>
+            
+                {{/each}}
+            </div>
+
+            {{!-- <div class="partsofmain_form_words" id="challenger_space">
+            
+
+                
+            </div> --}}
+
+
+            
+            <div>
                 {{!-- RESTART BUTTON --}}
                 <input type="submit" onClick="window.location.reload();" id="button_restart" value="Restart">
             </div>
@@ -48,5 +56,5 @@
 {{!-- <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script> --}}
 
 
-<script src="../../../public/scripts/game-formWords.js"></script>
+<script src="/scripts/game-formWords.js"></script>
 {{> scripts}}

@@ -1,7 +1,10 @@
+// REQUIRE: SEND ALL DATA AT ONCE TO PREVENT RELOAD THE PAGE
+// REQUIRE: IMPLEMENT NEXT BUTTON
+// REQUIRE: IMPLEMENT FEEDBACK
+// REQUIRE: IMPLEMENT NUMBER OF QUESTS
 
 const draggables = document.querySelectorAll('.draggable');
 const containers = document.querySelectorAll('.container');
-
 
 draggables.forEach(draggable => {
     draggable.addEventListener('dragstart', () => {
@@ -29,7 +32,8 @@ draggables.forEach(draggable => {
             // CHECK THE CORRECT CONSTRUCTION AND CHANGE COLOR
             if (concatenatedWord == concatenatedWord2) {
                 for (let i = 0; i < draggables.length; i++) {
-                    draggables[i].style.backgroundColor = "green";
+                    draggables[i].style.backgroundColor = "rgb(61, 216, 69)";
+                    draggables[i].draggable = false;
                 };
             } else if (concatenatedWord.length == concatenatedWord2.length) {
                 for (let i = 0; i < draggables.length; i++) {
@@ -79,8 +83,8 @@ function getDragAfterElement(container, x) {
 
 
 // CHECK RESULT
-var checkables = document.querySelectorAll('.checkable');
-var concatenatedWord = '';
+let checkables = document.querySelectorAll('.checkable');
+let concatenatedWord = '';
 
 for (let i = 0; i < checkables.length; i++) {
     str = checkables[i].textContent;

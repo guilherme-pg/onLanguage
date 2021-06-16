@@ -14,10 +14,8 @@
     flex-wrap: wrap;
     margin: 10px;
     padding: 10px;
-
     background-color: orange;
     border-radius: 6px;
-    height: auto;
     width: 65%;
     box-shadow: 2px 2px 6px 0 rgb(81, 0, 128);
 }
@@ -26,15 +24,13 @@
     flex-direction: column;
 }
 .container {
-    background-color: crimson;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    height: 75px;
+    min-height: 75px;
     flex-direction: row;
-    width: 90%;
-    margin: 10px;
+
     /* transition: 0.3s cubic-bezier(0.2, 1, 0.1, 1); */
 }
 #hr {
