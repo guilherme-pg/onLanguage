@@ -7,10 +7,10 @@ const draggables = document.querySelectorAll('.draggable');
 const containers = document.querySelectorAll('.container');
 
 draggables.forEach(draggable => {
-    draggable.addEventListener('dragstart', () => {
-        draggedItem = draggable;
-        draggable.classList.add('dragging');
-    });
+	draggable.addEventListener('dragstart', () => {
+		draggedItem = draggable;
+		draggable.classList.add('dragging');
+	});
 
     draggable.addEventListener('dragover', () => {
         draggedItem.style.visibility  = 'hidden';

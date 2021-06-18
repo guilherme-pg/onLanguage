@@ -10,18 +10,18 @@ languageInput.onclick = selectedLanguageChangeForm;
 
 // SHOW AND HIDE THE MEANINGS IN OTHER LANGUAGE FOR THE LANGUAGE SELECTED
 function selectedLanguageChangeForm() {
-    let languageSelected = languageInput.options[languageInput.selectedIndex].value;
-    let languageMeaning = document.getElementsByClassName('language_meaning');
-    
-    for (let i = 0; i < languageMeaning.length; i++) {
+	let languageSelected = languageInput.options[languageInput.selectedIndex].value;
+	let languageMeaning = document.getElementsByClassName('language_meaning');
 
-        if (languageMeaning[i].getAttribute('data-value') == languageSelected) {
-            languageMeaning[i].style.display = "none";
+	for (let i = 0; i < languageMeaning.length; i++) {
 
-        } else {
-            languageMeaning[i].style.display = "flex";
-        };
-    };
+		if (languageMeaning[i].getAttribute('data-value') == languageSelected) {
+			languageMeaning[i].style.display = "none";
+
+		} else {
+			languageMeaning[i].style.display = "flex";
+		};
+	};
 };
 
 
@@ -108,33 +108,39 @@ function setObject() {
 
 class DataWord {
     createObject(theme, level, grammar, artEng, wordEng, engGend, artFren, wordFren, frenGend, artGerm, wordGerm, germGend, artItal, wordItal, italGend, artPort, wordPort, portGend, artSpan, wordSpan, spanGend) {
-        this.theme = theme, 
-        this.level = level, 
-        this.grammar = grammar, 
-        this.english = {
-            art_eng: artEng, 
-            word_eng: wordEng, 
-            gend_eng: engGend}, 
-        this.french = {
-            art_fren: artFren, 
-            word_fren: wordFren, 
-            gend_fren: frenGend}, 
-        this.german = {
-            art_germ: artGerm, 
-            word_germ: wordGerm, 
-            gend_germ: germGend}, 
-        this.italian = {
-            art_ital: artItal, 
-            word_ital: wordItal, 
-            gend_ital: italGend}, 
-        this.portuguese = {
-            art_port: artPort, 
-            word_port: wordPort, 
-            gend_port: portGend}, 
-        this.spanish = {
-            art_span: artSpan, 
-            word_span: wordSpan, 
-            gend_span: spanGend}
+        this.theme = theme,
+            this.level = level,
+            this.grammar = grammar,
+            this.english = {
+                art_eng: artEng,
+                word_eng: wordEng,
+                gend_eng: engGend
+            },
+            this.french = {
+                art_fren: artFren,
+                word_fren: wordFren,
+                gend_fren: frenGend
+            },
+            this.german = {
+                art_germ: artGerm,
+                word_germ: wordGerm,
+                gend_germ: germGend
+            },
+            this.italian = {
+                art_ital: artItal,
+                word_ital: wordItal,
+                gend_ital: italGend
+            },
+            this.portuguese = {
+                art_port: artPort,
+                word_port: wordPort,
+                gend_port: portGend
+            },
+            this.spanish = {
+                art_span: artSpan,
+                word_span: wordSpan,
+                gend_span: spanGend
+            }
     };
 };
 

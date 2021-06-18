@@ -28,15 +28,6 @@ module.exports = (app) => {
         const wordsDao = new WordsDao(db);
         let datareturned = await wordsDao.optionsdata(bodyReqData);
 
-        // processedData = {
-        //     memory: await games.memory(datareturned, bodyReqData),
-        //     hangman: await games.hangman(datareturned, bodyReqData),
-        //     linkArticles: await games.linkArticle(datareturned, bodyReqData),
-        //     formWords: await games.formWords(datareturned, bodyReqData),
-        //     flashCard: await games.flashCard(datareturned, bodyReqData)
-        // };
-        // processedData[bodyReqData.option_game]
-
         let viewReference = "";
         let processedData = [];
 
@@ -69,6 +60,7 @@ module.exports = (app) => {
         });
     });
 
+    
 
     // ROUTE: FORM
     app.get('/data-form', function(req, resp) {
@@ -90,7 +82,7 @@ module.exports = (app) => {
     });
 
 
-    // ROUTE: DATA RECORD
+    // ROUTE: DATA RECORD (MENU TO ACCESS DATA)
     app.get('/data-record', controller.dataRecord);
     app.get('/data-record', function(req, resp) {
         resp.render('data-record', {
