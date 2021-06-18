@@ -1,3 +1,40 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// OLD VERSION
+
+
+
+
+
+
 // GENERAL VARIABLES
 var theme = '';
 var level = '';
@@ -20,14 +57,7 @@ var frenGend;
 var artEng;
 var wordEng;
 var engGend;
-// var fs = require('fs');
 
-
-// CREATE DYNAMICALY VARIABLES
-// var markers = [];
-// for (var i = 0; i < coords.length; ++i) {
-//     markers[i] = "some stuff";
-// };
 
 
 
