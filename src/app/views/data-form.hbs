@@ -1,22 +1,55 @@
 <main id="main_and_footer">
+
     <div id="header_and_main">
 
         {{> header}}
 
         <div id="main_form">
+
             <form class="register_data" action="/words" method="post">
 
+                {{!-- <input type="hidden" id="id" name="id"> --}}
+
                 <div class="register_word">
+                    {{!-- <h2>Classification</h2> --}}
                     <div class="inputs_labels">
-                        <div class="label_input form_base">
+                        <div class="label_input">
                             <label for="">Word</label>
                             <input id="id_word" type="text" name="name_word">
                         </div>
 
 
-                        <div class="label_input form_base">
-                            <label for="input_language">Language</label>
-                            <select class="class_select" name="name_language" id="input_language">
+                        <div class="label_input">
+                            <label for="input_theme">Theme</label>
+                            <select class="class_select" name="name_theme" id="input_theme">
+                                {{!-- <option value="animals">Animals</option> --}}
+                                {{!-- <option value="adjectives">Adjectives</option> --}}
+                                {{!-- <option value="body">Body</option> --}}
+                                <option value="city">City</option>
+                                {{!-- <option value="clothes">Clothes</option> --}}
+                                {{!-- <option value="countries">Countries</option> --}}
+                                {{!-- <option value="disease">Disease</option> --}}
+                                {{!-- <option value="drinks">Drinks</option> --}}
+                                {{!-- <option value="family">Family</option> --}}
+                                {{!-- <option value="fansaty">Fansaty</option> --}}
+                                {{!-- <option value="feelings">Feelings</option> --}}
+                                {{!-- <option value="food">Food</option> --}}
+                                {{!-- <option value="hobbies">Hobbies</option> --}}
+                                {{!-- <option value="hospital">Hospital</option> --}}
+                                {{!-- <option value="house">House</option> --}}
+                                {{!-- <option value="jobs">Profesions</option> --}}
+                                {{!-- <option value="movies">Movies</option> --}}
+                                {{!-- <option value="music">Music</option> --}}
+                                <option value="nature">Nature</option>
+                                {{!-- <option value="numbers">Numbers</option> --}}
+                                {{!-- <option value="office">Office</option> --}}
+                                {{!-- <option value="religion">Religion</option> --}}
+                                {{!-- <option value="school">School</option> --}}
+                                {{!-- <option value="sports">Sports</option> --}}
+                                {{!-- <option value="vehicles">Vehicles</option> --}}
+                                {{!-- <option value="verbs">Verbs</option> --}}
+                            <label for="input_level">Language</label>
+                            <select class="class_select" name="name_level" id="input_level">
                                 <option value=""></option>
                                 <option value="french">French</option>
                                 <option value="english">English</option>
@@ -25,23 +58,41 @@
                                 <option value="portuguese">Portuguese</option>
                                 <option value="spanish">Spanish</option>
                             </select>
+                            <!-- 
+                            <input type="text"> -->
                         </div>
 
 
-                        <div class="label_input form_base">
+                        <div class="label_input">
+                            <label for="input_level">Difficulty </label>
                             <label for="input_level">Level</label>
                             <select class="class_select" name="name_level" id="input_level">
+                                <option value="a1">A1</option>
+                                <option value="a2">A2</option>
+                                <option value="b1">B1</option>
+                                <option value="b2">B2</option>
+                                <option value="c1">C1</option>
+                                <option value="c2">C2</option>
+
+                                {{!-- TO CHANGE --}}
+                                {{!-- <option value="basic">Basic</option>
                                 <option value=""></option>
                                 <option value="basic">Basic</option>
                                 <option value="intermediate">Intermediate</option>
+                                <option value="advanced">Advanced</option> --}}
                                 <option value="advanced">Advanced</option>
                             </select>
                         </div>
 
 
-                        <div class="label_input form_base">
+                        <div class="label_input">
                             <label for="input_grammar">Part of speech</label>
                             <select class="class_select" name="name_grammar" id="input_grammar">
+
+                                {{!-- TO ADD --}}
+                                {{!-- <option value="adjectives">Adjectives</option> --}}
+                                {{!-- <option value="adverbs">Adverbs</option> --}}
+
                                 <option value=""></option>
                                 <option value="adjective">Adjective</option>
                                 <option value="adverb">Adverb</option>
@@ -49,9 +100,26 @@
                                 <option value="verb">Verb</option>
                             </select>
                         </div>
+                    </div>
+                </div>
 
+                <div class="register_word">
+                    <h2>English</h2>
+                    <div class="inputs_labels">
 
-                        <div class="label_input form_base">
+                        <div class="label_input">
+                            <label for="">Article</label>
+                            <input id="art_eng" type="text" name="english[article]">
+                        </div>
+
+                        <div class="label_input">
+                            <label for="">Word</label>
+                            <input id="word_eng" type="text" name="english[word]">
+                        </div>
+
+                        <div class="label_input">
+                            <label for="english_gender">Gender</label>
+                            <select class="class_select" name="english[gender]" id="english_gender">
                             <label for="id_gender">Gender</label>
                             <select class="class_select" name="name_gender" id="id_gender">
                                 <option value=""></option>
@@ -60,22 +128,48 @@
                                 <option value="neutral">Neutral</option>
                             </select>
                         </div>
+                    </div>
+                </div>
 
+                <div class="register_word">
+                    <h2>French</h2>
+                    <div class="inputs_labels">
 
-                        <div class="label_input form_base">
+                        <div class="label_input">
+                            <label for="">Article</label>
+                            <input id="art_fren" type="text" name="french[article]">
+                        </div>
+
+                        <div class="label_input">
+                            <label for="">Word</label>
+                            <input id="word_fren" type="text" name="french[word]">
+                        </div>
+
+                        <div class="label_input">
+                            <label for="french_gender">Gender</label>
+                            <select class="class_select" name="french[gender]" id="french_gender">
                             <label for="id_number">Number</label>
                             <select class="class_select" name="name_number" id="id_number">
                                 <option value=""></option>
+                                <option value="feminine">Feminine</option>
+                                <option value="masculine">Masculine</option>
                                 <option value="singular">Singular</option>
                                 <option value="plural">Plural</option>
                                 <option value="neutral">Neutral</option>
                                 <option value="not_specified">not specified</option>
                             </select>
                         </div>
+                    </div>
+                </div>
 
+                <div class="register_word">
+                    <h2>German</h2>
+                    <div class="inputs_labels">
 
-                        <div class="label_input form_base">
-                            <label for="id_contraction">Article Contraction</label>
+                        <div class="label_input">
+                            <label for="">Article</label>
+                            <input id="art_germ" type="text" name="german[article]">
+                            <label for="id_contraction">Contraction of the Article</label>
                             <select class="class_select" name="name_contraction" id="id_contraction">
                                 <option value=""></option>
                                 <option value="feminine">Yes</option>
@@ -83,11 +177,20 @@
                             </select>
                         </div>
 
+                        <div class="label_input">
+                            <label for="">Word</label>
+                            <input id="word_germ" type="text" name="german[word]">
+                        </div>
 
-                        <div class="label_input form_base">
+                        <div class="label_input">
+                            <label for="german_gender">Gender</label>
+                            <select class="class_select" name="german[gender]" id="german_gender">
                             <label for="input_theme">Theme</label>
                             <select class="class_select" name="name_theme" id="input_theme">
                                 <option value=""></option>
+                                <option value="feminine">Feminine</option>
+                                <option value="masculine">Masculine</option>
+                                <option value="neutral">Neutral</option>
                                 {{!-- <option value="animals">Animals</option> --}}
                                 {{!-- <option value="body">Body</option> --}}
                                 <option value="city">City</option>
@@ -114,87 +217,124 @@
                                 {{!-- <option value="vehicles">Vehicles</option> --}}
                             </select>
                         </div>
+
                     </div>
+                </div>
 
-
-
+                <div class="register_word">
+                    <h2>Italian</h2>
                     <div class="inputs_labels">
                         <h2>Meanings</h2>
 
-                        <div class="label_input language_meaning" data-value="french">
-                            <div class="dsecription_input">
-                                <p>French</p>
-                            </div>
-                            <div class="dsecription_input">
-                                <input id="id_french_meaning" type="text" name="french_meaning">
-                                <input id="id2_french_meaning" type="text" name="french_meaning2">
-                            </div>
+                        <div class="label_input">
+                            <label for="">Article</label>
+                            <input id="art_ital" type="text" name="italian[article]">
+                            <label for="">In French</label>
+                            <input id="id_french_meaning" type="text" name="french_meaning">
+                            <input id="id2_french_meaning" type="text" name="french_meaning2">
                         </div>
 
-                        <div class="label_input language_meaning" data-value="english">
-                            <div class="dsecription_input">
-                                <p>English</p>
-                            </div>
-                            <div class="dsecription_input">
-                                <input id="id_english_meaning" type="text" name="english_meaning">
-                                <input id="id2_english_meaning" type="text" name="english_meaning2">
-                            </div>
+                        <div class="label_input">
+                            <label for="">Word</label>
+                            <input id="word_ital" type="text" name="italian[word]">
+                            <label for="">In English</label>
+                            <input id="id_english_meaning" type="text" name="english_meaning">
+                            <input id="id2_english_meaning" type="text" name="english_meaning2">
                         </div>
 
-                        <div class="label_input language_meaning" data-value="german">
-                            <div class="dsecription_input">
-                                <p>German</p>
-                            </div>
-                            <div class="dsecription_input">
-                                <input id="id_german_meaning" type="text" name="german_meaning">
-                                <input id="id2_german_meaning" type="text" name="german_meaning2">
-                            </div>
+                        <div class="label_input">
+                            <label for="italian_gender">Gender</label>
+                            <select class="class_select" name="italian[gender]" id="italian_gender">
+                                <option value=""></option>
+                                <option value="feminine">Feminine</option>
+                                <option value="masculine">Masculine</option>
+                                <option value="neutral">Neutral</option>
+                            </select>
+                            <label for="">In German</label>
+                            <input id="id_german_meaning" type="text" name="german_meaning">
+                            <input id="id2_german_meaning" type="text" name="german_meaning2">
                         </div>
 
-                        <div class="label_input language_meaning" data-value="italian">
-                            <div class="dsecription_input">
-                                <p>Italian</p>
-                            </div>
-                            <div class="dsecription_input">
-                                <input id="id_italian_meaning" type="text" name="italian_meaning">
-                                <input id="id2_italian_meaning" type="text" name="italian_meaning2">
-                            </div>
+                    </div>
+                </div>
+
+                <div class="register_word">
+                    <h2>Portuguese</h2>
+                    <div class="inputs_labels">
+
+                        <div class="label_input">
+                            <label for="">Article</label>
+                            <input id="art_port" type="text" name="portuguese[article]">
+                            <label for="">In Italian</label>
+                            <input id="id_italian_meaning" type="text" name="italian_meaning">
+                            <input id="id2_italian_meaning" type="text" name="italian_meaning2">
                         </div>
 
-                        <div class="label_input language_meaning" data-value="portuguese">
-                            <div class="dsecription_input">
-                                <p>Portuguese</p>
-                            </div>
-                            <div class="dsecription_input">
-                                <input id="id_portuguese_meaning" type="text" name="portuguese_meaning">
-                                <input id="id2_portuguese_meaning" type="text" name="portuguese_meaning2">
-                            </div>
+                        <div class="label_input">
+                            <label for="">Word</label>
+                            <input id="word_port" type="text" name="portuguese[word]">
+                            <label for="">In Portuguese</label>
+                            <input id="id_portuguese_meaning" type="text" name="portuguese_meaning">
+                            <input id="id2_portuguese_meaning" type="text" name="portuguese_meaning2">
                         </div>
 
-                        <div class="label_input language_meaning" data-value="spanish">
-                            <div class="dsecription_input">
-                                <p>Spanish</p>
-                            </div>
-                            <div class="dsecription_input">
-                                <input id="id_spanish_meaning" type="text" name="spanish_meaning">
-                                <input id="id2_spanish_meaning" type="text" name="spanish_meaning2">
-                            </div>
+                        <div class="label_input">
+                            <label for="portuguese_gender">Gender</label>
+                            <select class="class_select" name="portuguese[gender]" id="portuguese_gender">
+                                <option value=""></option>
+                                <option value="feminine">Feminine</option>
+                                <option value="masculine">Masculine</option>
+                                <option value="neutral">Neutral</option>
+                            </select>
+                            <label for="">In Spanish</label>
+                            <input id="id_spanish_meaning" type="text" name="spanish_meaning">
+                            <input id="id2_spanish_meaning" type="text" name="spanish_meaning2">
                         </div>
                     </div>
                 </div>
 
-                
+                <div class="register_word">
+                    <h2>Spanish</h2>
+                    <div class="inputs_labels">
+
+                        <div class="label_input">
+                            <label for="">Article</label>
+                            <input id="art_span" type="text" name="spanish[article]">
+                        </div>
+                        <div class="label_input">
+                            <label for="">Word</label>
+                            <input id="word_span" type="text" name="spanish[word]">
+                        </div>
+                        <div class="label_input">
+                            <label for="spanish_gender">Gender</label>
+                            <select class="class_select" name="spanish[gender]" id="spanish_gender">
+                                <option value=""></option>
+                                <option value="feminine">Feminine</option>
+                                <option value="masculine">Masculine</option>
+                                <option value="neutral">Neutral</option>
+                            </select>
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+
+
+
 
                 <div>
                     {{!-- <button id="button_register" name="button_register">Register</button> --}}
                     <input type="submit" id="button_register"  value="Register">
                 </div>
             </form>
+
+            {{!-- {{{body}}} --}}
+
         </div>
     </div>
-
-    {{> footer}}
-
+	{{> footer}}
 </main>
 
 <script src="/scripts/data-form.js"></script>

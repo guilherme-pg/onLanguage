@@ -1,28 +1,28 @@
 
+// NEW DATA FORM FOR RDBS
 
 
 
 
+// const languageInput = document.getElementById('input_language');
+// languageInput.onclick = selectedLanguageChangeForm;
 
-const languageInput = document.getElementById('input_language');
-languageInput.onclick = selectedLanguageChangeForm;
 
+// // SHOW AND HIDE THE MEANINGS IN OTHER LANGUAGE FOR THE LANGUAGE SELECTED
+// function selectedLanguageChangeForm() {
+// 	let languageSelected = languageInput.options[languageInput.selectedIndex].value;
+// 	let languageMeaning = document.getElementsByClassName('language_meaning');
 
-// SHOW AND HIDE THE MEANINGS IN OTHER LANGUAGE FOR THE LANGUAGE SELECTED
-function selectedLanguageChangeForm() {
-	let languageSelected = languageInput.options[languageInput.selectedIndex].value;
-	let languageMeaning = document.getElementsByClassName('language_meaning');
+// 	for (let i = 0; i < languageMeaning.length; i++) {
 
-	for (let i = 0; i < languageMeaning.length; i++) {
+// 		if (languageMeaning[i].getAttribute('data-value') == languageSelected) {
+// 			languageMeaning[i].style.display = "none";
 
-		if (languageMeaning[i].getAttribute('data-value') == languageSelected) {
-			languageMeaning[i].style.display = "none";
-
-		} else {
-			languageMeaning[i].style.display = "flex";
-		};
-	};
-};
+// 		} else {
+// 			languageMeaning[i].style.display = "flex";
+// 		};
+// 	};
+// };
 
 
 
@@ -49,10 +49,6 @@ function selectedLanguageChangeForm() {
 
 
 // OLD VERSION
-
-
-
-
 
 
 // GENERAL VARIABLES
