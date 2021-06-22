@@ -37,7 +37,7 @@ app.set('view engine', '.hbs');
 app.engine('.hbs', handlebars({
     extname: 'hbs',
     defaultLayout: 'main',
-   layoutsDir: 'src/app/views/layouts'
+    layoutsDir: 'src/app/views/layouts'
 }));
 app.set('views', 'src/app/views')
 

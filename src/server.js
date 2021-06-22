@@ -8,9 +8,10 @@ var app = require('./config/customExpress');
 
 
 // GENERATE THE GATE
-app.listen(8080, function(error){ 
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, function(error){ 
     if(error) throw error 
-    console.log("SERVER running on url http://localhost:8080"); 
+    console.log(`SERVER running on url http://localhost:${PORT}`); 
 });
 
 // package.json
