@@ -13,7 +13,7 @@ var bodyReqData = [];
 module.exports = (app) => {
 
     // ROUTE: MAIN
-    app.get('/', controller.main)
+    app.get('/', controller.main);
 
 
     // ROUTE: OPTIONS

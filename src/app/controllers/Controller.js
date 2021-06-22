@@ -5,7 +5,7 @@ module.exports = {
          await res.render('index',{
             title: "On Languages",
             layout: 'mainLayouts',
-            style: "./src/app/controllers/index.css"
+            style: "index.css"
          }) 
       }catch(err){
          console.error(err)
