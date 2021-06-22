@@ -5,27 +5,37 @@ const connection = require('./newConnectionDB');
 // GLOBAL VARIABLES
 var dataset;
 
+
+
+
 class NewWordsDao {
 
 	// ADD NEW WORDS
 	create(bodyReqData) {
 
-	}
+	};
 
 	// RETURN SELECTED DATA
 	read(bodyReqData) {
 
-	}
+	};
 
 	// CHANGE PREVIOUS ADDED DATA
 	update(bodyReqData) {
 
-	}
+	};
 
 	// DELETE DATA
 	delete(bodyReqData) {
 
-	}
+	};
+
+
+
+	// OPTIONS CHOOSED
+	option(bodyReqData) {
+
+	};
 
 
 

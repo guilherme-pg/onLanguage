@@ -44,13 +44,3 @@ app.set('views', 'src/app/views')
 
 // EXPORT THE MODULE APP
 module.exports = app;
-
-// module.exports = () => {
-//     app = express
-//     middleware
-//     routes
-//     consign()
-//         .include('controllers')
-//         .into(app)
-//     return app;
-// };

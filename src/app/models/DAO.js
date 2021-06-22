@@ -73,16 +73,20 @@ class WordsDao {
 				// PROBLEM: returning only the first theme selected
 				console.log('bodyReqData.option_theme AAAAAAAA  ==== ', bodyReqData.option_theme);
 
-				dbo.collection(`${bodyReqData.option_theme[0]}`).find({
-					name_level: {$in: bodyReqData.option_level},
-					name_theme: {$in: bodyReqData.option_theme}
-				}).toArray(function(err, result) {
-				if (err) throw err;
-				// dataset = result;
-				
-					db.close();
-					return resolve(result);
-				});
+
+
+				dbo.collection(`${bodyReqData.option_theme[0]}`)
+					.find({
+						name_level: {$in: bodyReqData.option_level},
+						name_theme: {$in: bodyReqData.option_theme}
+					})
+					.toArray(function(err, result) {
+					if (err) throw err;
+					// dataset = result;
+					
+						db.close();
+						return resolve(result);
+					});
 			});
 		})
   	};
