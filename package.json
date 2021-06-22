@@ -5,7 +5,9 @@
 	"main": "server.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "nodemon src/server.js"
+		"start": "npm-run-all -p nodemon browsersync",
+		"nodemon": "nodemon src/server.js",
+		"browsersync": "browser-sync start --proxy http://localhost:8080 --file 'public, src/app/views'"
 	},
 	"author": "Guilherme Peixoto Guimarães",
 	"license": "ISC",
