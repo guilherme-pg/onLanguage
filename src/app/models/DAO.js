@@ -1,9 +1,7 @@
-const connection = require('./connectionDB');
+// const connection = require('./connectionDB');
 var MongoClient  = require('mongodb').MongoClient;
 var urlAtlas = 'mongodb+srv://guilhermevg:14691527@cluster00.puef2.mongodb.net/wordsdata';
 
-// GLOBAL VARIABLES
-var dataset;
 
 
 
@@ -31,7 +29,9 @@ class WordsDao {
   	// READ
   	read(bodyReqData) {
 		return new Promise((resolve, reject) => {
+
 			MongoClient.connect(urlAtlas, {useNewUrlParser: true, useUnifiedTopology: true}, function(err, db) {
+				
 				if (err) throw err;
 				let dbo = db.db("wordsdata");
 
@@ -40,6 +40,7 @@ class WordsDao {
 					name_level: bodyReqData.name_level
 				}).toArray(function(err, result) {
 					if (err) throw err;
+					let dataset;
 					dataset = result;
 
 					// REQUIRE: SIMPLIFICATION

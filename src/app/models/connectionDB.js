@@ -4,13 +4,14 @@ var urlAtlas = 'mongodb+srv://guilhermevg:14691527@cluster00.puef2.mongodb.net/w
 
 
 // Connect to the db
-MongoClient .connect(urlAtlas, {
+MongoClient.connect(urlAtlas, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true
+	
 }, function (err, db) {
-	if (err) throw err;
-	console.log("Database connected!");
-	db.close();
+		if (err) throw err;
+		console.log("Database connected!");
+		db.close();
 });
 
 

@@ -5,6 +5,9 @@ const express = require('express');
 // const consign = require('consign');
 
 
+// DOTENV CONFIG
+const dotenv = require('dotenv').config();
+
 // TEMPLATE ENGINE
 const handlebars = require('express-handlebars');
 
