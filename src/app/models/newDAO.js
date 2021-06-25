@@ -1,9 +1,4 @@
-var PGClient  = require('pg');
-// var urlAtlas = 'mongodb+srv://guilhermevg:14691527@cluster00.puef2.mongodb.net/wordsdata';
-
-// GLOBAL VARIABLES
-var dataset;
-
+const { PGClient } = require('pg');
 
 
 
