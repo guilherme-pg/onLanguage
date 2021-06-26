@@ -1,17 +1,17 @@
 const { PGClient } = require('pg');
 
 
+export const pgclient = new PGClient({
+	connectionString: process.env.DATABASE_URL,
+	ssl: {
+			rejectUnauthorized: false
+		}
 
-try {
-	const pgclient = new PGClient({
-		connectionString: process.env.DATABASE_URL,
-		ssl: {
-				rejectUnauthorized: false
-		  	}
-	});
-	console.log('------->   DATABASE CONNECTED ');
-
-} catch(err) {
-	console.log('!!!!  CONNECTION DATABASE ERROR  !!!!');
-	if (err) throw err;
-};
+}, function (err, db) {
+	if (err) {
+		console.log("------->   DATABASE  -- NOT -- CONNECTED ");
+		throw err;
+	} else {
+		console.log("------->   DATABASE CONNECTED ");
+	}
+});

@@ -3,16 +3,20 @@
 
 // CUSTOM MODULE
 var app = require('./config/customExpress');
-// const customExpress = require('./controllers/config/customExpress');
-// const app = customExpress();
+
 
 
 // GENERATE THE GATE (dynamically for heroku)
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT;
 app.listen(PORT, function(error){ 
     if(error) throw error 
     console.log(`SERVER running on url http://localhost:${PORT}`); 
 });
+
+
+
+
+
 
 // REQUIRE: SEPARATE PRODUCTION AND DEVDEVELOPMENTS CONFIGURATIONS
 // REQUIRE: CONNECT TO POSTREGSQL ON HEROKU
