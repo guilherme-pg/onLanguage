@@ -15,3 +15,5 @@ export const pgclient = new PGClient({
 		console.log("------->   DATABASE CONNECTED ");
 	}
 });
+
+// REQUIRE: CREATE TEST PGDB LINKING WORD BY WORD

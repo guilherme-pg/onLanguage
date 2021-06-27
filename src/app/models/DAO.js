@@ -7,13 +7,14 @@ var urlAtlas = `${process.env.ATLAS_URL}`;
 
 class WordsDao {
   
-  	// INSERT
+  	// INSERT/CREATE
   	adding(bodyReqData) {
 		return new Promise((resolve, reject) => {
 			MongoClient.connect(urlAtlas, {useNewUrlParser: true,  useUnifiedTopology: true}, function(err, db) {
 				if (err) throw err;
 				let dbo = db.db("wordsdata");
 				let obj = bodyReqData;
+
 				dbo.collection(`${bodyReqData.name_theme}`).insertOne(obj, function(err, res) {
 					if (err) throw err;
 					// console.log("1 document inserted");
