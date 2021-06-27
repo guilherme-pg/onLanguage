@@ -1,6 +1,6 @@
 // const connection = require('./connectionDB');
 var MongoClient  = require('mongodb').MongoClient;
-var urlAtlas = 'mongodb+srv://guilhermevg:14691527@cluster00.puef2.mongodb.net/wordsdata';
+var urlAtlas = `${process.env.ATLAS_URL}`;
 
 
 
@@ -106,5 +106,10 @@ class WordsDao {
   // }
 }
 
+
+
+// REQUIRE: FIX THE THEME QUERY TO ALL THEMES REQUIRED OR CHANGE THE COLLECTIONS TO ONLY ONE
+// REQUIRE: IMPLEMENT THE DATA ACCESS TO EDIT, CREATE AND DELETE AT SAME TIME
+// REQUIRE: IN DATA-FORM SHOW ALL DATA RELATED TO THE SPECIFICATIONS EACH TIME ONE IS POINTED
 
 module.exports = WordsDao;

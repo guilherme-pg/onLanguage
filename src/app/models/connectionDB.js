@@ -1,6 +1,5 @@
 var MongoClient  = require('mongodb').MongoClient;
-
-var urlAtlas = 'mongodb+srv://guilhermevg:14691527@cluster00.puef2.mongodb.net/wordsdata';
+var urlAtlas = `${process.env.ATLAS_URL}`;
 
 
 // Connect to the db
@@ -15,6 +14,7 @@ MongoClient.connect(urlAtlas, {
 });
 
 
+// REQUIRE: OPTIMIZE DB FOR ONE COLLECTION ONLY OR OPTIMIZE COLLECTION CREATION
 
 // CREATE COLLECTION
 // MongoClient.connect(urlAtlas, {
