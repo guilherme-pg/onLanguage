@@ -6,6 +6,46 @@ var urlAtlas = `${process.env.ATLAS_URL}`;
 
 
 class WordsDao {
+
+
+	// READ
+	read(bodyReqData) {
+		return new Promise((resolve, reject) => {
+
+			MongoClient.connect(urlAtlas, {useNewUrlParser: true, useUnifiedTopology: true}, function(err, db) {
+				
+				if (err) throw err;
+				let dbo = db.db("wordsdata");
+
+				dbo.collection(`${bodyReqData.name_theme}`)
+					.find({
+						name_theme: bodyReqData.name_theme,
+						name_level: bodyReqData.name_level
+					}).toArray(function(err, result) {
+						if (err) throw err;
+						let dataset;
+						dataset = result;
+
+						// REQUIRE: SIMPLIFICATION
+						// REQUIRE: UPPER CASE IN TITLE
+						for (let i = 0; i < dataset.length; i++) {
+							dataset[i].firstLanguage = dataset[i][`${bodyReqData.name_first_language}`];
+							dataset[i].secondLanguage = dataset[i][`${bodyReqData.name_second_language}`];
+						};
+						dataset.theFirstLanguage = `${bodyReqData.name_first_language}`;
+						dataset.theSecondLanguage = `${bodyReqData.name_second_language}`;
+
+						// console.log("DATA ACCESS !!!");
+
+						db.close();
+						return resolve(dataset);
+					});
+			});
+		});
+  	};
+
+
+
   
   	// INSERT/CREATE
   	adding(bodyReqData) {
@@ -25,45 +65,9 @@ class WordsDao {
 		})
   	};
 
-  
-
-  	// READ
-  	read(bodyReqData) {
-		return new Promise((resolve, reject) => {
-
-			MongoClient.connect(urlAtlas, {useNewUrlParser: true, useUnifiedTopology: true}, function(err, db) {
-				
-				if (err) throw err;
-				let dbo = db.db("wordsdata");
-
-				dbo.collection(`${bodyReqData.name_theme}`).find({
-					name_theme: bodyReqData.name_theme,
-					name_level: bodyReqData.name_level
-				}).toArray(function(err, result) {
-					if (err) throw err;
-					let dataset;
-					dataset = result;
-
-					// REQUIRE: SIMPLIFICATION
-					// REQUIRE: UPPER CASE IN TITLE
-					for (let i = 0; i < dataset.length; i++) {
-						dataset[i].firstLanguage = dataset[i][`${bodyReqData.name_first_language}`];
-						dataset[i].secondLanguage = dataset[i][`${bodyReqData.name_second_language}`];
-					};
-					dataset.theFirstLanguage = `${bodyReqData.name_first_language}`;
-					dataset.theSecondLanguage = `${bodyReqData.name_second_language}`;
-
-					// console.log("DATA ACCESS !!!");
-
-					db.close();
-					return resolve(dataset);
-				});
-			});
-		});
-  	};
 
 
-  // PROCESS OPTIONS DATA WITH: THEME AND LEVEL (next grammarclass)
+  	// PROCESS OPTIONS DATA WITH: THEME AND LEVEL (next grammarclass)
   	optionsdata(bodyReqData) {
 
 		// PROBLEM: REQUIRE at least ONE VALUE or an ARRAY IN THE QUERY

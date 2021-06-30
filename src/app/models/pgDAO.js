@@ -1,66 +1,66 @@
-const { PGClient } = require('pg');
-import { pgclient } from 'newConnectionDB.js';
-
+const { Pool } = require('pg');
+const pool = require('./pgConnectionDB.js')
 
 console.log('+++++++ DAO CONNECTED ++++++++');
 
 
-class NewWordsDao {
-
-	// ADD NEW WORDS
-	create(bodyReqData) {
-		console.log('******* DAO CREATION');
-
-		return new Promise((resolve, reject) => {
-			pgclient.connect();
-			
-		})
-	};
+class WordsDao {
 
 	// RETURN SELECTED DATA
 	read(bodyReqData) {
 		console.log('******* DAO READ');
 
 		return new Promise((resolve, reject) => {
-			pgclient.connect();
+			pool.connect(function (err, client, done) {
+				if (err) throw err;
+
+				pool.query('SELECT * FROM english', (err, res) => {
+					if (err) throw err;
+					
+					console.log('RES ----->>>    ----->>>>    ', res);
+
+					let dataset = res;
+
+					return resolve(dataset);
+				})
+			});
+		})
+	};
+
+
+
+	// ADD NEW WORDS
+	create(bodyReqData) {
+		console.log('******* DAO CREATION');
+
+		return new Promise((resolve, reject) => {
+			Pool.connect();
 			
 		})
 	};
+
+
 
 	// CHANGE PREVIOUS ADDED DATA
 	update(bodyReqData) {
 		console.log('******* DAO UPDATE');
 
 		return new Promise((resolve, reject) => {
-			pgclient.connect();
+			Pool.connect();
 			
 		})
 	};
+
+
 
 	// DELETE DATA
 	delete(bodyReqData) {
 		console.log('******* DAO DELETE');
 
 		return new Promise((resolve, reject) => {
-			pgclient.connect();
+			Pool.connect();
 			
 		})
 	};
-
-
-
-	// CHOOSED OPTIONS
-	option(bodyReqData) {
-		console.log('******* DAO OPTION');
-
-		return new Promise((resolve, reject) => {
-			pgclient.connect();
-			
-		})
-	};
-
-
-
-
 };
-module.exports = NewWordsDao;
+module.exports = WordsDao;

@@ -1,5 +1,5 @@
-const db = require('./app/models/connectionDB');
-const WordsDao = require('./app/models/DAO');
+const dbConnection = require('./app/models/pgConnectionDB');
+const WordsDao = require('./app/models/pgDAO');
 const Games = require('./app/models/Games');
 const controller = require('./app/controllers/Controller')
 
@@ -25,8 +25,13 @@ module.exports = (app) => {
 
         bodyReqData = req.query;
         const games = new Games();
-        const wordsDao = new WordsDao(db);
-        let datareturned = await wordsDao.optionsdata(bodyReqData);
+        const wordsDao = new WordsDao(dbConnection);
+
+        // let datareturned = await wordsDao.optionsdata(bodyReqData);
+        let datareturned = await wordsDao.read(bodyReqData);
+        console.log('DDDDD  ===>  DATA RETURNED FROM pgDAO  <===');
+
+
 
         let viewReference = "";
         let processedData = [];
@@ -75,7 +80,7 @@ module.exports = (app) => {
     // ROUTE: CATCH THE FORM DATA
     app.post('/words', function(req, res) {
         bodyReqData = req.body;
-        const wordsDao = new WordsDao(db);
+        const wordsDao = new WordsDao(dbConnection);
         wordsDao.adding(bodyReqData)
             .then(res.redirect('/form'))
             .catch(erro => console.log(erro));
@@ -97,7 +102,7 @@ module.exports = (app) => {
     app.get('/data-tables', function(req, resp) {
         
         bodyReqData = req.query;
-        const wordsDao = new WordsDao(db);
+        const wordsDao = new WordsDao(dbConnection);
         wordsDao.read(bodyReqData)
             .then(function(datareturned) {
                 // wordsDao.showdata(datareturned);

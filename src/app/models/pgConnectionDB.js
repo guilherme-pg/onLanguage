@@ -1,19 +1,12 @@
-const { PGClient } = require('pg');
+const { Pool } = require('pg');
+const connectionString = process.env.DATABASE_URL;
 
 
-export const pgclient = new PGClient({
-	connectionString: process.env.DATABASE_URL,
+const pool = new Pool({
+	connectionString: connectionString,
 	ssl: {
 			rejectUnauthorized: false
 		}
-
-}, function (err, db) {
-	if (err) {
-		console.log("------->   DATABASE  -- NOT -- CONNECTED ");
-		throw err;
-	} else {
-		console.log("------->   DATABASE CONNECTED ");
-	}
 });
 
-// REQUIRE: CREATE TEST PGDB LINKING WORD BY WORD
+module.exports = pool;

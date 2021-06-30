@@ -16,6 +16,8 @@ class Games {
             primaryLanguage = bodyReqData.option_language;
             secondaryLanguage = bodyReqData.option2_language;
 
+            console.log('EEEEEEEEEE ======  datareturned  =======>>   ', datareturned);
+
             if (bodyReqData.option_language_method == 'mono') {
                 let dataMixed = datareturned.sort(() => Math.random() - 0.5);
                 let dataSliced = dataMixed.slice(0, cardsNumber);
