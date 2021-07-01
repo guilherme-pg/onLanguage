@@ -9,12 +9,17 @@ class WordsDao {
 	// RETURN SELECTED DATA
 	read(bodyReqData) {
 		console.log('******* DAO READ');
+		console.log('BBBBBBBBBBBBB bodyReqData ===============>>>>>>>>>   ', bodyReqData);
+		let primaryLanguageSelected = bodyReqData.option_language;
+		let levelsSelected = bodyReqData.onption_level;
+		let themesSelected = bodyReqData.option_theme;
+		let secondLanguageSelected = bodyReqData.option2_language;
 
 		return new Promise((resolve, reject) => {
 			pool.connect(function (err, client, done) {
 				if (err) throw err;
 
-				pool.query('SELECT * FROM english', (err, res) => {
+				pool.query(`SELECT * FROM ${primaryLanguageSelected}`, (err, res) => {
 					if (err) throw err;
 					
 					console.log('RES ----->>>    ----->>>>    ', res);
