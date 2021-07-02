@@ -11,36 +11,46 @@ class WordsDao {
 		// VARIABLES ANTI-AMBIGUOUS
 		let optionLanguages;
 		let languagesSelectedForTables;
-		let levelsSelectedforTables;
+		let levelsSelectedForTables;
+		let themesSelectedForTables;
 
 
 		console.log('******* DAO READ');
 		console.log('BBBBBBBBBBBBB bodyReqData ===============>>>>>>>>>   ', bodyReqData);
 
 		let primaryLanguageSelected = bodyReqData.option_language;
-		let levelsSelected = bodyReqData.option_level;
-		
-		let themesSelected = bodyReqData.option_theme;
 		let secondLanguageSelected = bodyReqData.option2_language;
+
+		let levelsSelected = bodyReqData.option_level;
+		let themesSelected = bodyReqData.option_theme;
+		console.log('LLLLLLLLLLLL levelsSelected ==========>>>>>>>>>   ', levelsSelected);
+		console.log('TTTTTTTTTTTT themesSelected ===============>>>>>>>>>   ', themesSelected);
 		
-		// DETECTING WITH THERE IS A SECOND LANGUAGE SELECTED FOR A DYNAMIC QUERY
+
+		// DETECTING IF THERE IS A SECOND LANGUAGE SELECTED FOR A DYNAMIC QUERY
 		if (secondLanguageSelected != undefined) {
-			languagesSelectedForTables = `${primaryLanguageSelected}.words`;
+
 			optionLanguages = primaryLanguageSelected;
-			levelsSelectedforTables = `${primaryLanguageSelected}.levels`;
+			languagesSelectedForTables = `${primaryLanguageSelected}.words`;
+			levelsSelectedForTables = `${primaryLanguageSelected}.levels`;
+			themesSelectedForTables = `${primaryLanguageSelected}.themes`;
 
 		} else {
-			languagesSelectedForTables = `${primaryLanguageSelected}.words, ${secondLanguageSelected}.words`;
 			optionLanguages = `${primaryLanguageSelected}, ${secondLanguageSelected}`;
-			levelsSelectedforTables = `${primaryLanguageSelected}.levels, ${secondLanguageSelected}.levels`;
+			languagesSelectedForTables = `${primaryLanguageSelected}.words, ${secondLanguageSelected}.words`;
+			levelsSelectedForTables = `${primaryLanguageSelected}.levels, ${secondLanguageSelected}.levels`;
+			themesSelectedForTables = `${primaryLanguageSelected}.themes, ${secondLanguageSelected}.themes`;
 		};
 
+		// REQUIRE: THEMES AND LEVELS ARRAYS OF VALUES TO QUERY
 
 		return new Promise((resolve, reject) => {
 			pool.connect(function (err, client, done) {
 				if (err) throw err;
 
-				pool.query(`SELECT ${languagesSelectedForTables} FROM ${optionLanguages} WHERE ${levelsSelectedforTables} IN (${levelsSelected.join()}) `, (err, res) => {
+				pool.query(`SELECT * FROM ${optionLanguages} WHERE EXISTS (
+					SELECT levels FROM ${optionLanguages} WHERE 
+				) `, (err, res) => {
 					if (err) throw err;
 					
 					console.log('RRRRRRRRRES ----->>>  RES  ----->>>>    ', res);
@@ -52,7 +62,7 @@ class WordsDao {
 			});
 		})
 	};
-
+	// `SELECT ${languagesSelectedForTables}, ${themesSelectedForTables}, ${levelsSelectedForTables} FROM ${optionLanguages} WHERE ${levelsSelectedForTables} IN (${levelsSelected.join()}) `
 
 
 	// ADD NEW WORDS
