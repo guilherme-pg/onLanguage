@@ -1,37 +1,12 @@
 // const connection = require('./connectionDB');
 var MongoClient  = require('mongodb').MongoClient;
 var urlAtlas = `${process.env.ATLAS_URL}`;
+
+
 console.log('UUUUUUUUUUU  urlAtlas  =====>>>>   ', urlAtlas);
 
 
 class WordsDao {
-
-	// PROCESS OPTIONS DATA WITH: THEME AND LEVEL (next grammarclass)
-	optionsdata(bodyReqData) {
-
-		// PROBLEM: REQUIRE at least ONE VALUE or an ARRAY IN THE QUERY
-		return new Promise((resolve, reject) => {
-			MongoClient.connect(urlAtlas, {useNewUrlParser: true, useUnifiedTopology: true}, function(err, db) {
-				if (err) throw err;
-				let dbo = db.db("wordsdata");
-
-				// PROBLEM: returning only the first theme selected
-				console.log('bodyReqData.option_theme AAAAAAAA  ==== ', bodyReqData.option_theme);
-
-				dbo.collection(`${bodyReqData.option_theme[0]}`)
-					.find({
-						name_level: {$in: bodyReqData.option_level},
-						name_theme: {$in: bodyReqData.option_theme}
-					})
-					.toArray(function(err, result) {
-					if (err) throw err;
-					
-						db.close();
-						return resolve(result);
-					});
-			});
-		})
-  	};
 
 	// READ
 	read(bodyReqData) {
@@ -39,9 +14,6 @@ class WordsDao {
 			MongoClient.connect(urlAtlas, {useNewUrlParser: true, useUnifiedTopology: true}, function(err, db) {
 				if (err) throw err;
 				let dbo = db.db("wordsdata");
-
-				console.log('RRRRRRR bodyReqData ======>>>>>   ', bodyReqData);
-				console.log('DBO QUERY --------- dbo ======>>>>>   ', dbo);
 
 				// REQUIRE: CHANGE NOUN to ANY OTHER GRAMMAR CLASS
 				dbo.collection("nouns")
@@ -52,16 +24,12 @@ class WordsDao {
 					}).toArray(function(err, result) {
 						if (err) throw err;	
 
-						console.log('DATA READ RESPO result ========>>>>>>   ', result);
-
 						db.close();
 						return resolve(result);
 					});
 			});
 		});
   	};
-
-
 
   
   	// INSERT/CREATE
