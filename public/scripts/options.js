@@ -9,6 +9,7 @@ function stopDefAction(event) {
 
 function validatioForm(event) {
     let validateLanguageSelected = false;
+    let validateGrammarSelected = false;
     let validateLevelSelected = false;
     let validateThemeSelected = false;
     let validateSecondaryLanguageSelected = false;
@@ -37,6 +38,19 @@ function validatioForm(event) {
     if (!validateLanguageSelected) {
         stopDefAction(event);
         alert("Need to choose a Language!");
+    };
+
+
+    // VALIDATION: IF GRAMMATICAL CLASS SELECTED
+    let optionGrammar = document.getElementsByName('option_grammar');
+    for (let i = 0; i < optionGrammar.length; i++) {
+        if (optionGrammar[i].checked) {
+            validateGrammarSelected = true;
+        };
+    };
+    if (!validateGrammarSelected) {
+        stopDefAction(event);
+        alert("Need to choose a Grammatical Class!");
     };
 
 
@@ -144,6 +158,8 @@ var optionMemoryCards = document.getElementsByName('option_cards');
 
 
 
+
+
 function showAndHideOptions(event) {
     let optionHangman = document.getElementById('option_hangman');
     let optionFormWords = document.getElementById('option_form_words');
@@ -182,7 +198,7 @@ function showAndHideOptions(event) {
 };
 
 
-
+// REQUIRE: SIMPLIFICATION
 // PREVENT THE NUMBER OF CARDS CHOOSED OF THE MEMORY GAME EXCEED THE NUMBER OF POSSIBILITIES
 function numberOfMemoryCards() {
 
@@ -288,6 +304,28 @@ function numberOfMemoryCards() {
             };
         };
     };
+};
+
+
+// GRAMMATICAL CLASS DISPLAY IMPLICATIONS
+var optionGrammar = document.getElementsByName('option_grammar');
+for (let i = 0; i < optionGrammar.length; i++) {
+    optionGrammar[i].onclick = showAndHideGrammarOptions;
+};
+
+
+function showAndHideGrammarOptions() {
+    let optionAdjective = document.getElementById('option_adjective');
+    let optionAdvreb = document.getElementById('option_adverb');
+    let optionNoun = document.getElementById('option_noun');
+    let optionVerb = document.getElementById('option_verb');
+
+    if (optionNoun.checked) {
+        document.getElementById('noun_themes').style.display = "flex";
+
+    } else if (optionAdjective.checked == true || optionAdvreb.checked == true || optionVerb.checked == true) {
+        document.getElementById('noun_themes').style.display = "none";
+    }
 };
 
 

@@ -1,8 +1,7 @@
 // const connection = require('./connectionDB');
 var MongoClient  = require('mongodb').MongoClient;
 var urlAtlas = `${process.env.ATLAS_URL}`;
-
-
+console.log('UUUUUUUUUUU  urlAtlas  =====>>>>   ', urlAtlas);
 
 
 class WordsDao {
@@ -19,8 +18,6 @@ class WordsDao {
 				// PROBLEM: returning only the first theme selected
 				console.log('bodyReqData.option_theme AAAAAAAA  ==== ', bodyReqData.option_theme);
 
-
-
 				dbo.collection(`${bodyReqData.option_theme[0]}`)
 					.find({
 						name_level: {$in: bodyReqData.option_level},
@@ -36,8 +33,6 @@ class WordsDao {
 		})
   	};
 
-
-
 	// READ
 	read(bodyReqData) {
 		return new Promise((resolve, reject) => {
@@ -46,15 +41,18 @@ class WordsDao {
 				let dbo = db.db("wordsdata");
 
 				console.log('RRRRRRR bodyReqData ======>>>>>   ', bodyReqData);
+				console.log('DBO QUERY --------- dbo ======>>>>>   ', dbo);
 
-				// REQUIRE: CHANGE NOUN
-				dbo.collection(`nouns`)
+				// REQUIRE: CHANGE NOUN to ANY OTHER GRAMMAR CLASS
+				dbo.collection("nouns")
 					.find({
-						name_theme: bodyReqData.name_theme,
-						name_level: bodyReqData.name_level
+						name_level: {$in: bodyReqData.option_level},
+						name_theme: {$in: bodyReqData.option_theme}
 						
 					}).toArray(function(err, result) {
 						if (err) throw err;	
+
+						console.log('DATA READ RESPO result ========>>>>>>   ', result);
 
 						db.close();
 						return resolve(result);
