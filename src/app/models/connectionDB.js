@@ -9,7 +9,7 @@ MongoClient.connect(urlAtlas, {
 	
 }, function (err, db) {
 		if (err) throw err;
-		console.log("Database connected!");
+		console.log("Atlas Mongo Database CONNECTED!");
 		db.close();
 });
 

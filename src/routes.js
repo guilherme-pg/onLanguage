@@ -1,5 +1,5 @@
-const dbConnection = require('./app/models/pgConnectionDB');
-const WordsDao = require('./app/models/pgDAO');
+const dbConnection = require('./app/models/ConnectionDB');
+const WordsDao = require('./app/models/DAO');
 const Games = require('./app/models/Games');
 const controller = require('./app/controllers/Controller')
 
@@ -29,9 +29,6 @@ module.exports = (app) => {
 
         // let datareturned = await wordsDao.optionsdata(bodyReqData);
         let datareturned = await wordsDao.read(bodyReqData);
-        console.log('DDDDD  ===>  DATA RETURNED FROM pgDAO  <===');
-
-
 
         let viewReference = "";
         let processedData = [];

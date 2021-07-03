@@ -48,8 +48,8 @@ class WordsDao {
 			pool.connect(function (err, client, done) {
 				if (err) throw err;
 
-				pool.query(`SELECT * FROM ${optionLanguages} WHERE EXISTS (
-					SELECT levels FROM ${optionLanguages} WHERE 
+				pool.query(`SELECT ${languagesSelectedForTables} FROM ${optionLanguages} WHERE ${primaryLanguageSelected}.levels IN (
+					${levelsSelected.join()} 
 				) `, (err, res) => {
 					if (err) throw err;
 					
