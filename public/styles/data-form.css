@@ -9,7 +9,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-start;
     padding: 10px;
     border-radius: 6px;
     font-size: 18px;
@@ -23,6 +23,7 @@
 .register_word {
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 .register_word h2 {
     margin: 10px;
@@ -32,7 +33,7 @@
 .inputs_labels {
     margin: 5px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: space-around;
 }
@@ -52,7 +53,7 @@
 }
 .label_input {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: space-around;
     margin: 5px;

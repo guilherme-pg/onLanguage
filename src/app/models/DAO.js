@@ -3,9 +3,6 @@ var MongoClient  = require('mongodb').MongoClient;
 var urlAtlas = `${process.env.ATLAS_URL}`;
 
 
-console.log('UUUUUUUUUUU  urlAtlas  =====>>>>   ', urlAtlas);
-
-
 class WordsDao {
 
 	// READ
