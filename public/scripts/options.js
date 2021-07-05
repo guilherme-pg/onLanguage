@@ -132,7 +132,7 @@ function secondLanguageDisplay(event) {
 
 
 
-
+// REQUIRE: disable the same language selected as primary to appear on second language option
 
 // PREVENT MEMORY CARDS NUMBERS FOR EACH DIFICULT AND/OR THEME SELECTED
 
@@ -159,7 +159,7 @@ var optionMemoryCards = document.getElementsByName('option_cards');
 
 
 
-
+// SHOW AND HIDE OPTIONS FOR EACH GAME SELECTED
 function showAndHideOptions(event) {
     let optionHangman = document.getElementById('option_hangman');
     let optionFormWords = document.getElementById('option_form_words');
