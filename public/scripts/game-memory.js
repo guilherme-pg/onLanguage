@@ -1,6 +1,11 @@
 // REQUIRE: SEND ALL DATA AT ONCE TO PREVENT RELOAD THE PAGE
 // REQUIRE: IMPLEMENT RESTART BUTTON WITHOUT RELOAD
 
+// REQUIRE: CHANGE COLOR WHEN ITS CORRECT
+// REQUIRE: CORRECT THE COLOR SCHEMA
+// REQUIRE: CHANGE ALL DESIGN
+// REQUIRE: CORRECT THE LOGIC
+
 
 // CHANGE COLORS ACCORDING THE GENDERS
 let masculineArray = document.getElementsByClassName('masculine');
@@ -8,7 +13,7 @@ let feminineArray = document.getElementsByClassName('feminine');
 let neutralArray = document.getElementsByClassName('neutral');
 
 for (let i = 0; i < masculineArray.length; i++) {
-    masculineArray[i].style.color = "blue";
+    masculineArray[i].style.color = "royalblue";
 };
 for (let i = 0; i < feminineArray.length; i++) {
     feminineArray[i].style.color = "red";
@@ -38,6 +43,7 @@ function checkFlip (event) {
 	
 	// CHECK IF CARD IS SELECTED, BUT NOT MATCHED
 	for (let i = 0; i < checks.length; i++) {
+
 		if (checks[i].checked == true && checks[i].disabled == false && checkedChecks.includes(checks[i]) == false) {
 
 			checkedChecks.push(checks[i]);
@@ -52,6 +58,8 @@ function checkFlip (event) {
 					checkedChecks.splice(0, 2);
 		
 				} else if (checkedChecks.length == 2) {
+
+					// SET TIME TO FLIP BACK AFTER CLICK IN ANOTHER CARD
 					stopTime = setTimeout(function(){
 						checkedChecks[0].checked = false;
 						checkedChecks[1].checked = false;

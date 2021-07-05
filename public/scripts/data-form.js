@@ -1,9 +1,5 @@
 
 // NEW DATA FORM FOR RDBS
-
-
-
-
 // const languageInput = document.getElementById('input_language');
 // languageInput.onclick = selectedLanguageChangeForm;
 
@@ -23,28 +19,6 @@
 // 		};
 // 	};
 // };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -73,8 +47,6 @@ var frenGend;
 var artEng;
 var wordEng;
 var engGend;
-
-
 
 
 function setObject() {

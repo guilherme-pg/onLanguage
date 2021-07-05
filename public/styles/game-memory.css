@@ -21,16 +21,17 @@
 .flip_card {
     height: 150px;
     width: 150px;
-    margin: 10px;
+    margin: 5px;
     cursor: pointer;
     font-size: 1.3em;
     perspective: 1000px;
 }
+
+
 /* MEMORY CARD SPECIFICATIONS */
 .flip_card_inner {
     display: flex;
     text-align: center;
-    border-radius: 4px;
     width: 100%;
     height: 100%;
     position: relative;
@@ -43,6 +44,8 @@
     transition: transform .2s;
     /* transform: rotateY(180deg); */
 }
+
+/* HIDING CHECKBOX */
 #flip_card_0, #flip_card_1, 
 #flip_card_2, #flip_card_3, 
 #flip_card_4, #flip_card_5, 
@@ -58,6 +61,8 @@
 #flip_card_24 {
     display: none;
 }
+
+/* ROTATION RULE: WHEN CHECKED */
 #flip_card_0:checked ~ #label_card_0 #flip_inner_0, 
 #flip_card_1:checked ~ #label_card_1 #flip_inner_1, 
 #flip_card_2:checked ~ #label_card_2 #flip_inner_2, 
@@ -89,18 +94,17 @@
 
 .flip_card_front, 
 .flip_card_back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     height: 100%;
     width: 100%;
     backface-visibility: hidden;
     text-align: center;
+    background-color: rgb(41, 41, 41);
 }
 .flip_card_front {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(41, 41, 41);
-    border-radius: 4px;
     color: whitesmoke;
 }
 .flip_card_front:hover {
@@ -110,12 +114,7 @@
     background-color: rgb(78, 78, 78);
 }
 .flip_card_back {
-    background-color: rgb(41, 41, 41);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-    border-radius: 4px;
     transform: rotateY( 180deg );
 }
 .flip_card_back h3 {
@@ -131,9 +130,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background-color: darkkhaki; */
-    background-color: orange;
-    border-radius: 4px;
     height: 75%;
     width: 80%;
 }
@@ -169,7 +165,6 @@
     .flip_card {
         height: 115px;
         width: 115px;
-        margin: 10px;
         font-size: 1.1em;
         perspective: 1000px;
     }
@@ -189,7 +184,6 @@
     .flip_card {
         height: 90px;
         width: 90px;
-        margin: 10px;
         font-size: 1em;
         perspective: 1000px;
     }
@@ -209,7 +203,6 @@
     .flip_card {
         height: 90px;
         width: 90px;
-        margin: 10px;
         font-size: 1em;
         perspective: 1000px;
     }
