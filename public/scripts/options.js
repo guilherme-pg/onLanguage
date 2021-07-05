@@ -7,7 +7,9 @@ function stopDefAction(event) {
     event.preventDefault();
 };
 
+// REQUIRE: SIMPLIFICATION
 function validatioForm(event) {
+    let validateGameSelected = false;
     let validateLanguageSelected = false;
     let validateGrammarSelected = false;
     let validateLevelSelected = false;
@@ -131,8 +133,6 @@ function secondLanguageDisplay(event) {
 
 
 
-
-// REQUIRE: disable the same language selected as primary to appear on second language option
 
 // PREVENT MEMORY CARDS NUMBERS FOR EACH DIFICULT AND/OR THEME SELECTED
 
@@ -313,7 +313,6 @@ for (let i = 0; i < optionGrammar.length; i++) {
     optionGrammar[i].onclick = showAndHideGrammarOptions;
 };
 
-
 function showAndHideGrammarOptions() {
     let optionAdjective = document.getElementById('option_adjective');
     let optionAdvreb = document.getElementById('option_adverb');
@@ -325,8 +324,33 @@ function showAndHideGrammarOptions() {
 
     } else if (optionAdjective.checked == true || optionAdvreb.checked == true || optionVerb.checked == true) {
         document.getElementById('noun_themes').style.display = "none";
-    }
+    };
 };
+
+
+
+// hide same second language when primary language selected
+let primaryLanguageSelected = document.getElementsByName('option_language');
+let secondLanguageToHide = document.getElementsByClassName('label_option2_language');
+
+for (let z = 0; z < primaryLanguageSelected.length; z++) {
+    
+    primaryLanguageSelected[z].onclick = function () {
+
+        // show all others secondLanguage selected and hide the same as primary selected
+        if (primaryLanguageSelected[z].checked) {
+            for (let w = 0; w < secondLanguageToHide.length; w++) {
+                secondLanguageToHide[w].style.display = "flex";
+            };
+            secondLanguageToHide[z].style.display = "none";
+        };
+    };
+};
+
+
+
+
+
 
 
 // var numberOfOptionLevelChecked = 0;
