@@ -23,26 +23,27 @@
                             </div>
 
                             <div class="reference_word">
-                                <p class="reference_word" id="reference_question_{{@index}}">{{referenceWord}}</p>
+                                <p id="article_{{@index}}" class="{{gender}}">{{article}}</p>
+                                <p class="reference_word {{gender}}" id="reference_question_{{@index}}">{{referenceWord}}</p>
                             </div>
 
                             <p id="correctAnswer_{{@index}}" hidden>{{correctAnswer}}</p>
 
                             <div class="answers_container" id="reference_question_{{@index}}">
                                 <div class="answer_place">
-                                    <button class="answer_word answers_group_{{@index}}" value="{{answerA}}" id="answer_A_{{@index}}">{{answerA}}</button>
+                                    <button class="answer_word answers_group_{{@index}} {{gender}}" value="{{answerA}}" id="answer_A_{{@index}}">{{answerA}}</button>
                                 </div>
 
                                 <div class="answer_place">
-                                    <button class="answer_word answers_group_{{@index}}" value="{{answerB}}" id="answer_B_{{@index}}">{{answerB}}</button>
+                                    <button class="answer_word answers_group_{{@index}} {{gender}}" value="{{answerB}}" id="answer_B_{{@index}}">{{answerB}}</button>
                                 </div>
 
                                 <div class="answer_place">
-                                    <button class="answer_word answers_group_{{@index}}" value="{{answerC}}" id="answer_C_{{@index}}">{{answerC}}</button>
+                                    <button class="answer_word answers_group_{{@index}} {{gender}}" value="{{answerC}}" id="answer_C_{{@index}}">{{answerC}}</button>
                                 </div>
 
                                 <div class="answer_place">
-                                    <button class="answer_word answers_group_{{@index}}" value="{{answerD}}" id="answer_D_{{@index}}">{{answerD}}</button>
+                                    <button class="answer_word answers_group_{{@index}} {{gender}}" value="{{answerD}}" id="answer_D_{{@index}}">{{answerD}}</button>
                                 </div>
                             </div>
                         </div>
@@ -79,8 +80,6 @@
                             </div>
                         </div> --}}
                     </div>
-
-                    <div id="container_feedback_not_marked">qweqweqweqwe</div>
                 </div>
 
             </div>

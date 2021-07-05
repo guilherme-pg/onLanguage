@@ -1,6 +1,30 @@
+// GLOBAL VARIABLES FROM DOM
+const optionGame = document.getElementsByName('option_game');
+const optionLanguage = document.getElementsByName('option_language');
+const optionGrammar = document.getElementsByName('option_grammar');
+const optionLevel = document.getElementsByName('option_level');
+const optionTheme = document.getElementsByName('option_theme');
+const methodLanguage = document.getElementsByName('option_language_method');
+const optionSecondLanguage = document.getElementsByName('option2_language');
+
+const optionHangman = document.getElementById('option_hangman');
+const optionFormWords = document.getElementById('option_form_words');
+const optionMemory = document.getElementById('option_memory');
+const optionMultipleChoice = document.getElementById('option_multipleChoice');
+
+const titleSecondLanguage = document.getElementById('title_second_language');
+const optionDual = document.getElementById('option_dual');
+const optionMemoryCards = document.getElementsByName('option_cards');
+const secondLanguageToHide = document.getElementsByClassName('label_option2_language');
+
+const memoryGameOption = document.getElementById('memory_cards_options');
+const secondLanguageContainer = document.getElementById('second_language');
+const methodLanguageContainer = document.getElementById('method_language');
+
+
 
 // PREVENT NONE SELECTED
-var buttonStart = document.getElementById('button_start');
+let buttonStart = document.getElementById('button_start');
 buttonStart.onclick = validatioForm;
 
 function stopDefAction(event) {
@@ -18,7 +42,6 @@ function validatioForm(event) {
 
 
     // VALIDATION: IF GAME SELECTED
-    let optionGame = document.getElementsByName('option_game');
     for (let i = 0; i < optionGame.length; i++) {
         if (optionGame[i].checked) {
             validateGameSelected = true;
@@ -31,7 +54,6 @@ function validatioForm(event) {
 
 
     // VALIDATION: IF PRIMARY LANGUAGE SELECTED
-    let optionLanguage = document.getElementsByName('option_language');
     for (let i = 0; i < optionLanguage.length; i++) {
         if (optionLanguage[i].checked) {
             validateLanguageSelected = true;
@@ -44,7 +66,6 @@ function validatioForm(event) {
 
 
     // VALIDATION: IF GRAMMATICAL CLASS SELECTED
-    let optionGrammar = document.getElementsByName('option_grammar');
     for (let i = 0; i < optionGrammar.length; i++) {
         if (optionGrammar[i].checked) {
             validateGrammarSelected = true;
@@ -57,7 +78,6 @@ function validatioForm(event) {
 
 
     // VALIDATION: IF LEVEL SELECTED 
-    let optionLevel = document.getElementsByName('option_level');
     for (let i = 0; i < optionLevel.length; i++) {
         if (optionLevel[i].checked) {
             validateLevelSelected = true;
@@ -70,7 +90,6 @@ function validatioForm(event) {
 
     
     // VALIDATION: IF SELECTED THEME
-    let optionTheme = document.getElementsByName('option_theme');
     for (let i = 0; i < optionTheme.length; i++) {
         if (optionTheme[i].checked) {
             validateThemeSelected = true;
@@ -90,14 +109,13 @@ function validatioForm(event) {
     //     };
     // };
 
-
+    // REQUIRE SEPARETE VALIDATION OF THE LANGUAGE METHOD FROM 2 LANGUAGE
     // VALIDATION: IF SECONDARY LANGUAGE SELECTED 
-    let optionDual = document.getElementById('option_dual');
-    if (optionDual.checked) {
-        let option2Language = document.getElementsByName('option2_language');
-        for (let i = 0; i < option2Language.length; i++) {
+    if (optionDual.checked || optionMultipleChoice.checked) {
+
+        for (let i = 0; i < optionSecondLanguage.length; i++) {
             
-            if (option2Language[i].checked) {
+            if (optionSecondLanguage[i].checked) {
                 validateSecondaryLanguageSelected = true;
             };
         };
@@ -105,6 +123,7 @@ function validatioForm(event) {
             stopDefAction(event);
             alert("Need to choose a Second Language option!");
         };
+
     };
 };
 
@@ -112,22 +131,20 @@ function validatioForm(event) {
 
 
 
-// OPTIONS DISPLAY
-let methodLanguage = document.getElementsByName('option_language_method');
+// dual or single language options display
 for (let i = 0; i < methodLanguage.length; i++) {
     // UNFLIPED, FLIPED AND MATCHED
     methodLanguage[i].onclick = secondLanguageDisplay;
     // methodLanguage[i].addEventListener("click", secondLanguageDisplay);
 };
 
-
 function secondLanguageDisplay(event) {
 
     // REQUIRE: CHANGE THE DISPLAY PROPERTY TO ANOTHER THING OTHER THAN 'NONE'
     if (methodLanguage[0].checked) {
-        document.getElementById('second_language').style.display = "none";
+        secondLanguageContainer.style.display = "none";
     } else if (methodLanguage[1].checked == true || methodLanguage[2].checked == true) {
-        document.getElementById('second_language').style.display = "flex";
+        secondLanguageContainer.style.display = "flex";
     };
 };
 
@@ -143,53 +160,38 @@ function secondLanguageDisplay(event) {
 
 
 // DISPLAY CONFIGURATIONS
-var optionGame = document.getElementsByName('option_game');
 for (let i = 0; i < optionGame.length; i++) {
     optionGame[i].onclick = showAndHideOptions;
 };
 
-document.getElementById('memory_cards_options').style.display = "none";
-document.getElementById('second_language').style.display = "none";
-document.getElementById('method_language').style.display = "none";
-
-
-
-var optionMemoryCards = document.getElementsByName('option_cards');
-
-
-
+memoryGameOption.style.display = "none";
+secondLanguageContainer.style.display = "none";
+methodLanguageContainer.style.display = "none";
 
 // SHOW AND HIDE OPTIONS FOR EACH GAME SELECTED
 function showAndHideOptions(event) {
-    let optionHangman = document.getElementById('option_hangman');
-    let optionFormWords = document.getElementById('option_form_words');
-    let optionMemory = document.getElementById('option_memory');
-    let optionMultipleChoice = document.getElementById('option_multipleChoice');
-    let optionSecondLanguage = document.getElementsByName('option2_language');
-    let titleSecondLanguage = document.getElementById('title_second_language');
-
-
+    
     // REQUIRE: CHANGE THE DISPLAY PROPERTY TO ANOTHER THING OTHER THAN 'NONE'7
     // HIDE AND SHOW SECOND LANGUAGE AND METHOD
     if (optionMemory.checked) {
-        document.getElementById('memory_cards_options').style.display = "flex";
-        document.getElementById('second_language').style.display = "flex";
-        document.getElementById('method_language').style.display = "flex";
+        memoryGameOption.style.display = "flex";
+        secondLanguageContainer.style.display = "flex";
+        methodLanguageContainer.style.display = "flex";
         titleSecondLanguage.innerText = "Second Language";
 
     } else if (optionHangman.checked == true || optionFormWords.checked == true) {
-        document.getElementById('second_language').style.display = "none";
-        document.getElementById('method_language').style.display = "none";
-        document.getElementById('memory_cards_options').style.display = "none";
+        secondLanguageContainer.style.display = "none";
+        methodLanguageContainer.style.display = "none";
+        memoryGameOption.style.display = "none";
         
         for (let i = 0; i < optionMemoryCards.length; i++) {optionMemoryCards[i].checked = false};
         for (let i = 0; i < methodLanguage.length; i++) {methodLanguage[i].checked = false};
         for (let i = 0; i < optionSecondLanguage.length; i++) {optionSecondLanguage[i].checked = false;};
 
     } else if (optionMultipleChoice.checked) {
-        document.getElementById('method_language').style.display = "none";
-        document.getElementById('memory_cards_options').style.display = "none";
-        document.getElementById('second_language').style.display = "flex";
+        methodLanguageContainer.style.display = "none";
+        memoryGameOption.style.display = "none";
+        secondLanguageContainer.style.display = "flex";
 
         for (let i = 0; i < optionMemoryCards.length; i++) {optionMemoryCards[i].checked = false};
         for (let i = 0; i < methodLanguage.length; i++) {methodLanguage[i].checked = false};
@@ -223,8 +225,6 @@ function numberOfMemoryCards() {
     optionCards24.disabled = true;
 
     // DEPENDENCE FROM THE NUMBER OF LEVELS AND THEMES SELECTED
-    let optionLevel = document.getElementsByName('option_level');
-    let optionTheme = document.getElementsByName('option_theme');
     for (let i = 0; i < optionLevel.length; i++) {
         optionLevel[i].onclick = numberOfMemoryCards;
     };
@@ -308,7 +308,6 @@ function numberOfMemoryCards() {
 
 
 // GRAMMATICAL CLASS DISPLAY IMPLICATIONS
-var optionGrammar = document.getElementsByName('option_grammar');
 for (let i = 0; i < optionGrammar.length; i++) {
     optionGrammar[i].onclick = showAndHideGrammarOptions;
 };
@@ -330,15 +329,12 @@ function showAndHideGrammarOptions() {
 
 
 // hide same second language when primary language selected
-let primaryLanguageSelected = document.getElementsByName('option_language');
-let secondLanguageToHide = document.getElementsByClassName('label_option2_language');
-
-for (let z = 0; z < primaryLanguageSelected.length; z++) {
+for (let z = 0; z < optionLanguage.length; z++) {
     
-    primaryLanguageSelected[z].onclick = function () {
+    optionLanguage[z].onclick = function () {
 
         // show all others secondLanguage selected and hide the same as primary selected
-        if (primaryLanguageSelected[z].checked) {
+        if (optionLanguage[z].checked) {
             for (let w = 0; w < secondLanguageToHide.length; w++) {
                 secondLanguageToHide[w].style.display = "flex";
             };
