@@ -6,6 +6,7 @@
 // REQUIRE: CHANGE ALL DESIGN
 // REQUIRE: CORRECT THE LOGIC
 
+let checkedChecks = [];
 
 // CHANGE COLORS ACCORDING THE GENDERS
 let masculineArray = document.getElementsByClassName('masculine');
@@ -16,10 +17,10 @@ for (let i = 0; i < masculineArray.length; i++) {
     masculineArray[i].style.color = "royalblue";
 };
 for (let i = 0; i < feminineArray.length; i++) {
-    feminineArray[i].style.color = "red";
+    feminineArray[i].style.color = "rgb(230, 63, 63)";
 };
 for (let i = 0; i < neutralArray.length; i++) {
-    neutralArray[i].style.color = "green";
+    neutralArray[i].style.color = "rgb(45, 185, 45)";
 };
 
 
@@ -28,17 +29,13 @@ for (let i = 0; i < neutralArray.length; i++) {
 
 // MATCH, UNMATCH, LIMIT THE POSSIBILITY OF FLIP TO ONLY TWO,
 let checks = document.querySelectorAll('.checks');
-
-
 for (let i = 0; i < checks.length; i++) {
   	checks[i].onclick = checkFlip;
 };
 
 
 function checkFlip (event) {
-
 	let stopTime;
-	let checkedChecks = [];
 	
 	// CHECK IF CARD IS SELECTED, BUT NOT MATCHED
 	for (let k = 0; k < checks.length; k++) {
@@ -58,29 +55,33 @@ function checkFlip (event) {
 
 					checkedChecks[0].disabled = true;
 					checkedChecks[1].disabled = true;
-					checkedChecks.splice(0, 2);
+					checkedChecks = [];
 		
 				// PREVENT CLICK BEFORE THE TIMEOUT
 				} else if (checkedChecks.length > 2) {
 
-					clearTimeout(stopTime);
-					checkedChecks[0].checked = false;
-					checkedChecks[1].checked = false;
-					checkedChecks.splice(0, 2);
+					clearTimeout(stopTime); // clear time if check a third option before the setTimeout finish
+					resetChecks()
 
 				}  else if (checkedChecks[0].value != checkedChecks[1].value && checkedChecks.length == 2) {
 
 					// SET TIME TO FLIP BACK AFTER CLICK IN ANOTHER CARD (if ANOTHER CARD WAS NOT CHECKED)
 					stopTime = setTimeout(function(){
-						checkedChecks[0].checked = false;
-						checkedChecks[1].checked = false;
-						checkedChecks.splice(0, 2);
+						resetChecks()
 					}, 2000);
 				};
 			};
 		};
   	};
 };
+
+// reset checks from option not matched
+function resetChecks() {
+	for (let j = 0; j < checkedChecks.length; j++) {
+		checkedChecks[j].checked = false;
+	};
+	checkedChecks = [];
+}
 
 
 
