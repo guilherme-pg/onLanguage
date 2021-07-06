@@ -10,12 +10,13 @@ class Games {
     memory(datareturned, bodyReqData) {
         return new Promise((resolve, reject) => {
             let arrayOfObjects = [];
-            let cardsNumber = bodyReqData.option_cards / 2;
+            let cardsNumber = bodyReqData.option_cards / 2;   //cards number selected
             // console.log('cardsNumber  ===  ', cardsNumber);
             
             primaryLanguage = bodyReqData.option_language;
             secondaryLanguage = bodyReqData.option2_language;
 
+            // query for on language
             if (bodyReqData.option_language_method == 'mono') {
                 let dataMixed = datareturned.sort(() => Math.random() - 0.5);
                 let dataSliced = dataMixed.slice(0, cardsNumber);
@@ -33,7 +34,7 @@ class Games {
                     });
                 };
 
-
+            // query for dual language
             } else if (bodyReqData.option_language_method == 'dual') {
                 let dataMixed = datareturned.sort(() => Math.random() - 0.5);
                 let dataSliced = dataMixed.slice(0, cardsNumber);

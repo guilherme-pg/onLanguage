@@ -79,7 +79,7 @@ module.exports = (app) => {
         bodyReqData = req.body;
         const wordsDao = new WordsDao(dbConnection);
         wordsDao.adding(bodyReqData)
-            .then(res.redirect('/form'))
+            .then(res.redirect('/data-form'))
             .catch(erro => console.log(erro));
     });
 

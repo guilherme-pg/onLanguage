@@ -12,8 +12,6 @@ class WordsDao {
 				if (err) throw err;
 				let dbo = db.db("wordsdata");
 				console.log('AAAAA bodyReqData ===>>>  ', bodyReqData);
-				console.log('BBBBBBB bodyReqData.option_level ===>>>  ', bodyReqData.name_level);
-				console.log('CCCCCCC bodyReqData.option_theme ===>>>  ', bodyReqData.name_theme);
 
 				// REQUIRE: CHANGE NOUN to ANY OTHER GRAMMAR CLASS
 				dbo.collection("nouns")
@@ -39,10 +37,11 @@ class WordsDao {
 				if (err) throw err;
 				let dbo = db.db("wordsdata");
 				let obj = bodyReqData;
+				console.log('DATA VISUALIZATION obj ====>>>>   ', obj);
 
-				dbo.collection(`${bodyReqData.name_theme}`).insertOne(obj, function(err, res) {
+				dbo.collection("nouns").insertOne(obj, function(err, res) {
 					if (err) throw err;
-					// console.log("1 document inserted");
+					console.log("1 document INSERTED");
 
 					db.close();
 				});

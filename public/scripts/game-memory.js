@@ -1,17 +1,14 @@
 // REQUIRE: SEND ALL DATA AT ONCE TO PREVENT RELOAD THE PAGE
 // REQUIRE: IMPLEMENT RESTART BUTTON WITHOUT RELOAD
-
 // REQUIRE: CHANGE COLOR WHEN ITS CORRECT
-// REQUIRE: CORRECT THE COLOR SCHEMA
-// REQUIRE: CHANGE ALL DESIGN
-// REQUIRE: CORRECT THE LOGIC
+
 
 let checkedChecks = [];
 
 // CHANGE COLORS ACCORDING THE GENDERS
-let masculineArray = document.getElementsByClassName('masculine');
-let feminineArray = document.getElementsByClassName('feminine');
-let neutralArray = document.getElementsByClassName('neutral');
+const masculineArray = document.getElementsByClassName('masculine');
+const feminineArray = document.getElementsByClassName('feminine');
+const neutralArray = document.getElementsByClassName('neutral');
 
 for (let i = 0; i < masculineArray.length; i++) {
     masculineArray[i].style.color = "royalblue";
@@ -25,10 +22,8 @@ for (let i = 0; i < neutralArray.length; i++) {
 
 
 
-
-
 // MATCH, UNMATCH, LIMIT THE POSSIBILITY OF FLIP TO ONLY TWO,
-let checks = document.querySelectorAll('.checks');
+const checks = document.querySelectorAll('.checks');
 for (let i = 0; i < checks.length; i++) {
   	checks[i].onclick = checkFlip;
 };
@@ -46,18 +41,16 @@ function checkFlip (event) {
 
 			// PREVENT ERROR from undefined second element
 			if (checkedChecks[1] != undefined) {
-
 				// REQUIRE: CHANGE TO ASYNC AWAIT? TO SET BETTER THE TIME AND CHECKS TO FLIP CARDS?
-				// REQUIRE: PREVENT CHECKS BEFORE THE THIRD CLICK
 
-				// MATCH check
+				// match check
 				if (checkedChecks[0].value == checkedChecks[1].value && checkedChecks.length == 2) {
 
 					checkedChecks[0].disabled = true;
 					checkedChecks[1].disabled = true;
 					checkedChecks = [];
 		
-				// PREVENT CLICK BEFORE THE TIMEOUT
+				// prevent click before the timeout
 				} else if (checkedChecks.length > 2) {
 
 					clearTimeout(stopTime); // clear time if check a third option before the setTimeout finish
@@ -92,5 +85,5 @@ function initialCardsSets() {
 		checks[y].disabled = false;
   	};
 };
-let restartButton = document.getElementById('button_restart');
+const restartButton = document.getElementById('button_restart');
 restartButton.onclick = initialCardsSets;
