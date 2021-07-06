@@ -103,9 +103,11 @@
     backface-visibility: hidden;
     text-align: center;
     background-color: rgb(41, 41, 41);
+
 }
 .flip_card_front {
-    color: whitesmoke;
+    /* color: whitesmoke; */
+    background-color: rgb(41, 41, 41);
 }
 .flip_card_front:hover {
     background-color: rgb(58, 58, 58);

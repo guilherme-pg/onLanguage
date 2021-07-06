@@ -11,6 +11,9 @@ class WordsDao {
 			MongoClient.connect(urlAtlas, {useNewUrlParser: true, useUnifiedTopology: true}, function(err, db) {
 				if (err) throw err;
 				let dbo = db.db("wordsdata");
+				console.log('AAAAA bodyReqData ===>>>  ', bodyReqData);
+				console.log('BBBBBBB bodyReqData.option_level ===>>>  ', bodyReqData.name_level);
+				console.log('CCCCCCC bodyReqData.option_theme ===>>>  ', bodyReqData.name_theme);
 
 				// REQUIRE: CHANGE NOUN to ANY OTHER GRAMMAR CLASS
 				dbo.collection("nouns")

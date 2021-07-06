@@ -99,15 +99,7 @@ function validatioForm(event) {
         stopDefAction(event);
         alert("Need to choose at least one Theme option!");
     };
-
-
-    // REQUIRE: PREVENT AFTER IMPLEMENT HOVER LANGUAGE METHOD AND LINK GAME
-    // var optionLanguageMethod = document.getElementsByName('option_language_method');
-    // for (i = 0; i < optionLanguageMethod.length; i++) {
-    //     if (optionTheme.includes(optionTheme[i].checked) == false) {
-    //         alert("Need to choose at least one Theme option!");
-    //     };
-    // };
+    
 
     // REQUIRE SEPARETE VALIDATION OF THE LANGUAGE METHOD FROM 2 LANGUAGE
     // VALIDATION: IF SECONDARY LANGUAGE SELECTED 
@@ -123,7 +115,6 @@ function validatioForm(event) {
             stopDefAction(event);
             alert("Need to choose a Second Language option!");
         };
-
     };
 };
 
@@ -135,7 +126,6 @@ function validatioForm(event) {
 for (let i = 0; i < methodLanguage.length; i++) {
     // UNFLIPED, FLIPED AND MATCHED
     methodLanguage[i].onclick = secondLanguageDisplay;
-    // methodLanguage[i].addEventListener("click", secondLanguageDisplay);
 };
 
 function secondLanguageDisplay(event) {
@@ -317,12 +307,13 @@ function showAndHideGrammarOptions() {
     let optionAdvreb = document.getElementById('option_adverb');
     let optionNoun = document.getElementById('option_noun');
     let optionVerb = document.getElementById('option_verb');
+    const nounThemes = document.getElementById('noun_themes');
 
     if (optionNoun.checked) {
-        document.getElementById('noun_themes').style.display = "flex";
+        nounThemes.style.display = "flex";
 
     } else if (optionAdjective.checked == true || optionAdvreb.checked == true || optionVerb.checked == true) {
-        document.getElementById('noun_themes').style.display = "none";
+        nounThemes.style.display = "none";
     };
 };
 
@@ -342,43 +333,3 @@ for (let z = 0; z < optionLanguage.length; z++) {
         };
     };
 };
-
-
-
-
-
-
-
-// var numberOfOptionLevelChecked = 0;
-// var optionLevel = document.getElementsByName('option_level');
-// var optionMemoryCards = document.getElementsByName('option_cards');
-// for (i = 0; i < optionLevel.length; i++) {
-//     console.log('BBBBB optionLevel[i] BBBBB   ====   ', i, optionLevel[i].checked);
-
-//     if (optionLevel[i].checked == true) {
-//         numberOfOptionLevelChecked++
-//         console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAA');
-
-//         if (numberOfOptionLevelChecked == 1) {
-//             document.getElementById('option_cards_8').checked;
-
-//             for (k = 0; k < optionMemoryCards.length; k++) {
-//                 optionMemoryCards[i].disabled == true;
-//             };
-
-//         } else if (numberOfOptionLevelChecked == 2) {
-//             document.getElementById('option_cards_12').disabled == false;
-//             document.getElementById('option_cards_16').disabled == false;
-
-//             // for (k = 0; k < optionMemoryCards.length; k++) {
-//             //     optionMemoryCards[i].disabled == false;
-//             // };
-//             // document.getElementById('option_cards_20').disabled == true;
-//             // document.getElementById('option_cards_24').disabled == true;
-        
-//         } else if (numberOfOptionLevelChecked >= 3) {
-//             document.getElementById('option_cards_20').disabled == true;
-//             document.getElementById('option_cards_24').disabled == true;
-//         };
-//     };
-// };
