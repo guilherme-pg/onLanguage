@@ -49,9 +49,13 @@ module.exports = (app) => {
             processedData = await games.formWords(datareturned, bodyReqData);
             viewReference = "game-formWords";
 
-        } else {
+        } else if (bodyReqData.option_game == 'Flash Cards') {
             processedData = await games.flashCard(datareturned, bodyReqData);
             viewReference = "game-flashCard";
+
+        } else {
+            processedData = await games.flashCard(datareturned, bodyReqData);
+            viewReference = "game-links";
         };
 
         resp.render(`${viewReference}`, {
@@ -99,6 +103,8 @@ module.exports = (app) => {
     app.get('/data-tables', function(req, resp) {
         
         bodyReqData = req.query;
+        console.log('BBBBB routes bodyReqData  =====>>>   ', bodyReqData)
+
         const wordsDao = new WordsDao(dbConnection);
         wordsDao.read(bodyReqData)
             .then(function(datareturned) {
@@ -115,16 +121,6 @@ module.exports = (app) => {
 
 
 
-    // ROUT: DATA TABLES
-    // app.get('/datatables', function(req, resp) {
 
-    //     console.log('EEEEE undefined EEEEE === === === === ', datareturned);
-    //     const wordsDao = new WordsDao(db);
-    //     wordsDao.showdata();
-    //     resp.render('dataTables', {
-    //         title: "Tables",
-    //         layout: 'mainLayouts'
-    //     });
-    // });
 
 };

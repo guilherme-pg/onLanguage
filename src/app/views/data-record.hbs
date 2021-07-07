@@ -11,100 +11,114 @@
 
                 <div class="dataset_inputs_labels">
 
-                    <div class="box_input">
-                        <div class="dataset_label_input">
-                            <label for="input_theme">Theme</label>
-                            <select class="class_select" name="option_theme" id="input_theme">
-                                {{!-- <option value="animals">Animals</option> --}}
-                                {{!-- <option value="adjectives">Adjectives</option> --}}
-                                <option value="body">Body</option>
-                                <option value="city">City</option>
-                                <option value="clothes">Clothes</option>
-                                {{!-- <option value="countries">Countries</option> --}}
-                                {{!-- <option value="disease">Disease</option> --}}
-                                {{!-- <option value="drinks">Drinks</option> --}}
-                                {{!-- <option value="family">Family</option> --}}
-                                {{!-- <option value="fansaty">Fansaty</option> --}}
-                                {{!-- <option value="feelings">Feelings</option> --}}
-                                <option value="food">Food</option>
-                                {{!-- <option value="hobbies">Hobbies</option> --}}
-                                {{!-- <option value="hospital">Hospital</option> --}}
-                                <option value="house">House</option>
-                                <option value="professions">Professions</option>
-                                {{!-- <option value="movies">Movies</option> --}}
-                                {{!-- <option value="music">Music</option> --}}
-                                <option value="nature">Nature</option>
-                                {{!-- <option value="numbers">Numbers</option> --}}
-                                {{!-- <option value="office">Office</option> --}}
-                                {{!-- <option value="religion">Religion</option> --}}
-                                {{!-- <option value="school">School</option> --}}
-                                {{!-- <option value="sports">Sports</option> --}}
-                                <option value="vehicles">Vehicles</option>
-                                {{!-- <option value="verbs">Verbs</option> --}}
-                            </select>
-                            <!-- 
-                            <input type="text"> -->
-                        </div>
+                    <div class="options_selector">
+                        <h3>Language</h3>
+                        <div class="inputs_and_labels">
+                            <input type="radio" class="input_option" id="option_english" name="option_language" value="english">
+                            <label for="option_english">English</label>
 
-                        <div class="dataset_label_input">
-                            <label for="input_level">Level</label>
-                            <select class="class_select" name="option_level" id="input_level">
+                            <input type="radio" class="input_option" id="option_french" name="option_language" value="french">
+                            <label for="option_french">French</label>
 
-                                {{!-- POSSIBILITY: SET ALL --}}
-                                {{!-- <option value="all">All</option> --}}
-                                <option value="basic">Basic</option>
-                                <option value="intermediate">Intermediate</option>
-                                <option value="advanced">Advanced</option>
-                            </select>
+                            <input type="radio" class="input_option" id="option_german" name="option_language" value="german">
+                            <label for="option_german">German</label>
+
+                            <input type="radio" class="input_option" id="option_italian" name="option_language" value="italian">
+                            <label for="option_italian">Italian</label>
+
+                            <input type="radio" class="input_option" id="option_portuguese" name="option_language" value="portuguese">
+                            <label for="option_portuguese">Portuguese</label>
+
+                            <input type="radio" class="input_option" id="option_spanish" name="option_language" value="spanish">
+                            <label for="option_spanish">Spanish</label>
                         </div>
                     </div>
 
 
-                    <div class="box_input">
-                        <div class="dataset_label_input">
-                            <label for="input_first_language">First Language</label>
-                            <select class="class_select" name="name_first_language" id="input_first_language">
-                                
-                                {{!-- POSSIBILITY: SET LANGUAGE ACCESS --}}
-                                <option value="english">English</option>
-                                <option value="french">French</option>
-                                <option value="german">German</option>
-                                <option value="italian">Italian</option>
-                                <option value="portuguese">Portuguese</option>
-                                <option value="spanish">Spanish</option>
-                            </select>
-                        </div>
+                    <div class="options_selector" id="second_language">
+                        <h3 id="title_second_language">Second Language</h3>
+                        <div class="inputs_and_labels">
+                            <input type="radio" class="input_option" id="option2_english" name="option2_language" value="english">
+                            <label for="option2_english" class="label_option2_language">English</label>
 
-                        <div class="dataset_label_input">
-                            <label for="input_second_language">Second Language</label>
-                            <select class="class_select" name="name_second_language" id="input_second_language">
-                                
-                                {{!-- POSSIBILITY: SET LANGUAGE ACCESS --}}
-                                <option value="english">English</option>
-                                <option value="french">French</option>
-                                <option value="german">German</option>
-                                <option value="italian">Italian</option>
-                                <option value="portuguese">Portuguese</option>
-                                <option value="spanish">Spanish</option>
-                            </select>
+                            <input type="radio" class="input_option" id="option2_french" name="option2_language" value="french">
+                            <label for="option2_french" class="label_option2_language">French</label>
+
+                            <input type="radio" class="input_option" id="option2_german" name="option2_language" value="german">
+                            <label for="option2_german" class="label_option2_language">German</label>
+
+                            <input type="radio" class="input_option" id="option2_italian" name="option2_language" value="italian">
+                            <label for="option2_italian" class="label_option2_language">Italian</label>
+
+                            <input type="radio" class="input_option" id="option2_portuguese" name="option2_language" value="portuguese">
+                            <label for="option2_portuguese" class="label_option2_language">Portuguese</label>
+
+                            <input type="radio" class="input_option" id="option2_spanish" name="option2_language" value="spanish">
+                            <label for="option2_spanish" class="label_option2_language">Spanish</label>
                         </div>
                     </div>
 
 
+                    <div class="options_selector" id="noun_themes">
+                        <h3>Themes</h3>
+                        <div class="inputs_and_labels">
+                            <input type="checkbox" class="input_option" id="option_body" name="option_theme" value="body">
+                            <label for="option_body">Body</label>
 
-                    {{!-- <div class="dataset_label_input">
-                        <label for="input_grammar">Part of speech</label>
-                        <select class="class_select" name="name_grammar" id="input_grammar">
-                            <option value="adjectives">Adjectives</option>
-                            <option value="noun">Noun</option>
-                            <option value="verb">Verb</option>
-                        </select>
-                    </div> --}}
+                            <input type="checkbox" class="input_option" id="option_city" name="option_theme" value="city">
+                            <label for="option_city">City</label>
+
+                            <input type="checkbox" class="input_option" id="option_clothes" name="option_theme" value="clothes">
+                            <label for="option_clothes">Clothes and Accessories</label>
+
+                            {{!-- <input type="checkbox" class="input_option" id="option_objects" name="option_theme" value="objects">
+                            <label for="option_objects">Objects</label> --}}
+
+                            {{!-- <input type="checkbox" class="input_option" id="option_food" name="option_theme" value="food">
+                            <label for="option_food">Food</label> --}}
+
+                            {{!-- <input type="checkbox" class="input_option" id="option_animals" name="option_theme" value="animals">
+                            <label for="option_animals">Animals</label> --}}
+
+                            <input type="checkbox" class="input_option" id="option_nature" name="option_theme" value="nature">
+                            <label for="option_nature">Nature</label>
+
+                            <input type="checkbox" class="input_option" id="option_politic" name="option_theme" value="politic">
+                            <label for="option_politic">Politic</label>
+
+                            {{!-- REQUIRE: ARRUMAR ARRUMADINHO --}}
+                            <input type="checkbox" class="input_option" id="option_none" name="option_theme" checked value="none" hidden>
+                            <label for="option_none" hidden>arrumadinho</label>
+                        </div>
+                    </div>
+
+
+                    <div class="options_selector">
+                        <h3>Levels</h3>
+                        <div class="inputs_and_labels">
+
+                            {{!-- NEW LEVEL SETUP --}}
+                            <input type="checkbox" class="input_option" id="option_basic" name="option_level" value="basic">
+                            <label for="option_basic">Basic</label>
+
+                            <input type="checkbox" class="input_option" id="option_intermediate" name="option_level" value="intermediate">
+                            <label for="option_intermediate">Intermediate</label>
+
+                            <input type="checkbox" class="input_option" id="option_advanced" name="option_level" value="advanced">
+                            <label for="option_advanced">Advanced</label>
+
+
+
+                            {{!-- REQUIRE: RESOLVER ARRUMADINHO --}}
+                            <input type="checkbox" class="input_option" id="option_nada" name="option_level" checked value="none" hidden>
+                            <label hidden for="option_nada">arrumadinho</label>
+                            
+                        </div>
+                    </div>
                 </div>
                 
 
                 <div>
-                    {{!-- <button type="submit" id="button_check_data">Check</button> --}}
                     <input type="submit" id="button_check_data"  value="Check">
                 </div>
             </form>

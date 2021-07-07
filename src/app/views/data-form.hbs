@@ -7,17 +7,15 @@
 
             <form class="register_data" action="/words" method="post">
 
-                {{!-- <input type="hidden" id="id" name="id"> --}}
-
                 <div class="register_word">
-                    {{!-- <h2>Classification</h2> --}}
                     <div class="inputs_labels">
 
                         <div class="label_input">
                             <label for="input_theme">Theme</label>
                             <select class="class_select" name="name_theme" id="input_theme">
+
                                 {{!-- <option value="animals">Animals</option> --}}
-                                {{!-- <option value="adjectives">Adjectives</option> --}}
+                                <option value=""></option>
                                 <option value="body">Body</option>
                                 <option value="city">City</option>
                                 <option value="clothes">Clothes</option>
@@ -37,21 +35,21 @@
                                 <option value="nature">Nature</option>
                                 {{!-- <option value="numbers">Numbers</option> --}}
                                 {{!-- <option value="office">Office</option> --}}
+                                <option value="objects">Objects</option>
                                 <option value="politic">Politic</option>
                                 {{!-- <option value="religion">Religion</option> --}}
                                 {{!-- <option value="school">School</option> --}}
                                 {{!-- <option value="sports">Sports</option> --}}
                                 <option value="vehicles">Vehicles</option>
-                                {{!-- <option value="verbs">Verbs</option> --}}
                             </select>
-                            <!-- 
-                            <input type="text"> -->
+                            
                         </div>
 
                         <div class="label_input">
                             <label for="input_level">Difficulty </label>
                             <select class="class_select" name="name_level" id="input_level">
 
+                                <option value=""></option>
                                 <option value="basic">Basic</option>
                                 <option value="intermediate">Intermediate</option>
                                 <option value="advanced">Advanced</option>
@@ -62,6 +60,7 @@
                             <label for="input_grammar">Part of speech</label>
                             <select class="class_select" name="name_grammar" id="input_grammar">
 
+                                {{!-- <option value=""></option> --}}
                                 {{!-- TO ADD --}}
                                 {{!-- <option value="adjectives">Adjectives</option> --}}
                                 {{!-- <option value="adverbs">Adverbs</option> --}}
@@ -234,12 +233,9 @@
 
 
                 <div>
-                    {{!-- <button id="button_register" name="button_register">Register</button> --}}
                     <input type="submit" id="button_register"  value="Register">
                 </div>
             </form>
-
-            {{!-- {{{body}}} --}}
 
         </div>
     </div>

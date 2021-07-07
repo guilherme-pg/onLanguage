@@ -124,7 +124,7 @@ class Games {
     };
 
 
-    // PROBLEM: RETURN IN datareturned only the first theme selected
+
     multipleChoice(datareturned, bodyReqData) {
         return new Promise((resolve, reject) => {
             let languageSelected = bodyReqData.option_language;
@@ -182,17 +182,6 @@ class Games {
     //         return resolve();
     //     })
     // };
-
-
-
-    // REQUIRE: RELATIONAL DATABASE TO SET ARTICLES 
-    // chooseArticle(datareturned, bodyReqData) {
-    //     return new Promise((resolve, reject) => {
-
-    //         return resolve();
-    //     })
-    // };
-
 };
 
 module.exports = Games;
