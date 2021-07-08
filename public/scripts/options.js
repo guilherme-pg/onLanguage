@@ -190,25 +190,26 @@ function showAndHideOptions(event) {
 };
 
 
+// NOT WORKING
 // REQUIRE: SIMPLIFICATION
 // PREVENT THE NUMBER OF CARDS CHOOSED OF THE MEMORY GAME EXCEED THE NUMBER OF POSSIBILITIES
 function numberOfMemoryCards() {
 
-    // NUMBER OF MEMORY CARDS
-    let labelOptionCards12 = document.getElementById('label_option_cards_12');
-    let labelOptionCards16 = document.getElementById('label_option_cards_16');
-    let labelOptionCards20 = document.getElementById('label_option_cards_20');
-    let labelOptionCards24 = document.getElementById('label_option_cards_24');
+    // NUMBER OF MEMORY CARDS: LABELS
+    const labelOptionCards12 = document.getElementById('label_option_cards_12');
+    const labelOptionCards16 = document.getElementById('label_option_cards_16');
+    const labelOptionCards20 = document.getElementById('label_option_cards_20');
+    const labelOptionCards24 = document.getElementById('label_option_cards_24');
     labelOptionCards12.style.opacity = "0.5";
     labelOptionCards16.style.opacity = "0.5";
     labelOptionCards20.style.opacity = "0.5";
     labelOptionCards24.style.opacity = "0.5";
 
-    // DISABLE THE NUMBERS
-    let optionCards12 = document.getElementById('option_cards_12');
-    let optionCards16 = document.getElementById('option_cards_16');
-    let optionCards20 = document.getElementById('option_cards_20');
-    let optionCards24 = document.getElementById('option_cards_24');
+    // DISABLE THE NUMBERS: THE BUTTON
+    const optionCards12 = document.getElementById('option_cards_12');
+    const optionCards16 = document.getElementById('option_cards_16');
+    const optionCards20 = document.getElementById('option_cards_20');
+    const optionCards24 = document.getElementById('option_cards_24');
     optionCards12.disabled = true;
     optionCards16.disabled = true;
     optionCards20.disabled = true;

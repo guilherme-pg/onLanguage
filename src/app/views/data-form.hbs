@@ -5,6 +5,8 @@
         {{> header}}
         <div id="main_form">
 
+
+            {{!-- FORM TO ADD AND UPDATE DATA --}}
             <form class="register_data" action="/words" method="post">
 
                 <div class="register_word">
@@ -15,7 +17,7 @@
                             <select class="class_select" name="name_theme" id="input_theme">
 
                                 {{!-- <option value="animals">Animals</option> --}}
-                                <option value=""></option>
+                                <option value="empty"></option>
                                 <option value="body">Body</option>
                                 <option value="city">City</option>
                                 <option value="clothes">Clothes</option>
@@ -231,11 +233,112 @@
 
 
 
-
+                {{!-- BUTTON: TO ADD DATA --}}
                 <div>
-                    <input type="submit" id="button_register"  value="Register">
+                    <input type="submit" class="button_end" id="button_register" value="Register">
                 </div>
             </form>
+
+
+
+
+            {{!-- SHOW DATA --}}
+            <div class="show_data_column">
+                <form class="dataset_access" action="/data-tables" method="get">
+                
+                    <div class="box_input">
+                        <div class="dataset_label_input">
+                            <label for="input_first_language">Language</label>
+                            <select class="class_select" name="name_first_language" id="input_first_language">
+
+                                <option value="empty"></option>
+                                <option value="english">English</option>
+                                <option value="french">French</option>
+                                <option value="german">German</option>
+                                <option value="italian">Italian</option>
+                                <option value="portuguese">Portuguese</option>
+                                <option value="spanish">Spanish</option>
+                            </select>
+                        </div>
+
+                        <div class="dataset_label_input">
+                            <label for="input_grammar">Part of speech</label>
+                            <select class="class_select" name="name_grammar" id="input_grammar">
+
+                                <option value="empty"></option>
+                                <option value="adjective">Adjective</option>
+                                <option value="adverb">Adverb</option>
+                                <option value="noun">Noun</option>
+                                <option value="verb">Verb</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="box_input">
+                        <div class="dataset_label_input">
+                            <label for="input_level">Difficulty </label>
+                            <select class="class_select" name="name_level" id="input_level">
+
+                                <option value="empty"></option>
+                                <option value="basic">Basic</option>
+                                <option value="intermediate">Intermediate</option>
+                                <option value="advanced">Advanced</option>
+                            </select>
+                        </div>
+                        <div class="dataset_label_input">
+                            <label for="input_theme">Theme</label>
+                            <select class="class_select" name="name_theme" id="input_theme">
+
+                                <option value="empty"></option>
+                                <option value="body">Body</option>
+                                <option value="city">City</option>
+                                <option value="clothes">Clothes</option>
+                                <option value="food">Food</option>
+                                <option value="house">House</option>
+                                <option value="nature">Nature</option>
+                                <option value="objects">Objects</option>
+                                <option value="politic">Politic</option>
+                                <option value="vehicles">Vehicles</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    {{!-- BUTTON: FOR THE TABLE --}}
+                    <div>
+                        <input type="submit" class="button_end" id="button_find"  value="Find">
+                    </div>
+                </form>
+
+
+
+                <div class="data_table">
+
+                    {{!-- TABLE --}}
+                    <table>
+                        <thead>
+                            <tr>
+                                <th colspan="3">{{word.theFirstLanguage}}</th>
+                            </tr>
+                        </thead>
+
+                        <tr>
+                            <td>Article</td>
+                            <td>Word</td>
+                            <td>Gender</td>
+                        </tr>
+
+                        {{#each word}}
+                            <tr>
+                                <td>{{firstLanguage.article}}</td>
+                                <td>{{firstLanguage.word}}</td>
+                                <td>{{firstLanguage.gender}}</td>
+                            </tr>
+                        {{/each}}
+                    
+                    </table>
+                </div>
+            </div>
 
         </div>
     </div>

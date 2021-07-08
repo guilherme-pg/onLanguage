@@ -49,18 +49,30 @@ class WordsDao {
 		})
   	};
 
+
  
-  // UPDATE
-  // update() {
-  //     return new Promise((resolve, reject) => {
-  //     })
-  // }
+	// UPDATE
+	update() {
+		return new Promise((resolve, reject) => {
+			MongoClient.connect(urlAtlas, {useNewUrlParser: true, useUnifiedTopology: true}, function(err, db) {
+				if (err) throw err;
+				let dbo = db.db("wordsdata");
+				console.log('AAAAA DAO bodyReqData ===>>>  ', bodyReqData);
+
+				// REQUIRE: CHANGE NOUN to ANY OTHER GRAMMAR CLASS
+				dbo.collection("nouns")
+
+
+					
+			});
+		})
+	};
 
   // DELETE
-  // delete() {
-  //     return new Promise((resolve, reject) => {
-  //     })
-  // }
+  delete() {
+      return new Promise((resolve, reject) => {
+      })
+  }
 }
 
 

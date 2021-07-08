@@ -3,20 +3,64 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: row;
     width: 100%;
 }
+
+/* DATA COLUMN */
+.show_data_column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    width: 20%;  
+}
+.dataset_access {
+    background-color: orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 2px;
+    box-shadow: 2px 2px 6px 0 rgb(81, 0, 128);
+}
+.box_input {
+    width: 100%;
+}
+.dataset_label_input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.data_table {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 90%;
+}
+
+
+
+
+/* THE FORM */
 .register_data {
+    background-color: orange;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: flex-start;
-    padding: 10px;
-    border-radius: 6px;
     font-size: 18px;
-    height: 100%;
-    width: 75%;
+    height: 90%;
+    width: 50%;
+    margin: 10px;
+    border-radius: 2px;
+    box-shadow: 2px 2px 6px 0 rgb(81, 0, 128);
 }
-
 
 
 /* DATA REGISTER */
@@ -38,7 +82,7 @@
     justify-content: space-around;
 }
 .class_select {
-    width: 175px;
+    width: 130px;
     outline: none;
     border: 0;
     border-radius: 2px;
@@ -94,7 +138,33 @@
     text-align: center;
     margin: 5px;
 }
-#button_register {
+
+
+
+/* TABLE VISUALIZATION */
+th {
+    background-color: rgb(194, 194, 194);
+}
+.table_class th, .table_class td {
+    color: black;
+    padding: 5px;
+}
+td {
+    text-align: center;
+    /* box-shadow: 1px 1px 4px rgb(49, 49, 49); */
+}
+
+td:nth-child(1), 
+td:nth-child(2), 
+td:nth-child(3) {
+    background-color: rgb(146, 173, 255);
+}
+
+
+
+
+
+.button_end {
     background-color: rgb(26, 26, 26);
     border-radius: 4px;
     font-size: inherit;
@@ -107,10 +177,10 @@
     box-shadow: 2px 2px 6px 0 rgb(81, 0, 128);
     font-size: 15px;
 }
-#button_register:hover {
+.button_end:hover {
     background-color: rgb(58, 58, 58);
 }
-#button_register:active {
+.button_end:active {
     background-color: rgb(78, 78, 78);
 }
 
@@ -119,8 +189,12 @@
 /* RESPONSIVE: TO TABLET */
 @media (max-width: 770px) {
     #main_form {
+        flex-direction: column;
         margin: 20px 0;
         padding: 0px;
+    }
+    .show_data_column {
+        width: 50%;
     }
     .register_data {
         font-size: inherit;

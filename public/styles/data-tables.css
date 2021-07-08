@@ -19,33 +19,15 @@ td {
     text-align: center;
     /* box-shadow: 1px 1px 4px rgb(49, 49, 49); */
 }
+
 td:nth-child(1), 
 td:nth-child(2), 
 td:nth-child(3) {
     background-color: rgb(146, 173, 255);
 }
+
 td:nth-child(4), 
 td:nth-child(5), 
 td:nth-child(6) {
     background-color: rgb(253, 146, 146);
-}
-td:nth-child(7), 
-td:nth-child(8), 
-td:nth-child(9) {
-    background-color: rgb(182, 214, 250);
-}
-td:nth-child(10), 
-td:nth-child(11), 
-td:nth-child(12) {
-    background-color: rgb(174, 253, 174);
-}
-td:nth-child(13), 
-td:nth-child(14), 
-td:nth-child(15) {
-    background-color: rgb(250, 215, 151);
-}
-td:nth-child(16), 
-td:nth-child(17), 
-td:nth-child(18) {
-    background-color: rgb(152, 194, 152);
 }

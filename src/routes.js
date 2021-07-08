@@ -108,7 +108,9 @@ module.exports = (app) => {
         const wordsDao = new WordsDao(dbConnection);
         wordsDao.read(bodyReqData)
             .then(function(datareturned) {
-                // wordsDao.showdata(datareturned);
+                console.log('DDDDDDD ROUTES datareturned ------->>>>   ', datareturned)
+
+                // REQUIRE:   data sem tratamento
                 resp.render('data-tables', {
                     title: "Tables",
                     layout: 'mainLayouts',
