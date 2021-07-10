@@ -142,6 +142,9 @@
 
 
 /* TABLE VISUALIZATION */
+table {
+    margin-bottom: 10px;
+}
 th {
     background-color: rgb(194, 194, 194);
 }
@@ -157,6 +160,7 @@ td {
 td:nth-child(1), 
 td:nth-child(2), 
 td:nth-child(3) {
+    padding: 1px 5px;
     background-color: rgb(146, 173, 255);
 }
 

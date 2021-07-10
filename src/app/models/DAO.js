@@ -12,8 +12,8 @@ class WordsDao {
 				if (err) throw err;
 				let dbo = db.db("wordsdata");
 
-				console.log('AAAAA DAO bodyReqData ===>>>  ', bodyReqData);
-				console.log('BBBBBBB DAO bodyReqData.option_level ===>>>  ', typeof bodyReqData.option_level);
+				// console.log('AAAAA DAO bodyReqData ===>>>  ', bodyReqData);
+				// console.log('BBBBBBB DAO bodyReqData.option_level ===>>>  ', typeof bodyReqData.option_level);
 
 				// WORKAROUND !!!: some times only one value is selected
 				if (typeof bodyReqData.option_level == 'string') {
@@ -49,7 +49,7 @@ class WordsDao {
 				if (err) throw err;
 				let dbo = db.db("wordsdata");
 				let obj = bodyReqData;
-				console.log('DATA VISUALIZATION obj ====>>>>   ', obj);
+				// console.log('DATA VISUALIZATION obj ====>>>>   ', obj);
 
 				dbo.collection("nouns").insertOne(obj, function(err, res) {
 					if (err) throw err;

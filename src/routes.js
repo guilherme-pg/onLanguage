@@ -92,7 +92,6 @@ module.exports = (app) => {
         bodyReqData = req.query;
         const games = new Games();
         const wordsDao = new WordsDao(dbConnection);
-
         let datareturned = await wordsDao.read(bodyReqData);
 
         let processedData = [];   // variable repeated

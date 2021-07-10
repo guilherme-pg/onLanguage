@@ -185,34 +185,21 @@ class Games {
 
     tablesVisualization(datareturned, bodyReqData) {
         return new Promise((resolve, reject) => {
+            let dataset;
+            dataset = datareturned;
 
-            console.log('VVVVVVVV   Games datareturned   ======>>>>> ', datareturned);
+            // REQUIRE: SIMPLIFICATION
+            // REQUIRE: UPPER CASE IN TITLE
+            for (let i = 0; i < dataset.length; i++) {
+                dataset[i].firstLanguage = dataset[i][`${bodyReqData.name_first_language}`];
+                dataset[i].secondLanguage = dataset[i][`${bodyReqData.name_second_language}`];
+            };
 
-            
-            .toArray(function(err, result) {
-                if (err) throw err;
-                let dataset = [];
-                dataset = result;
+            dataset.theFirstLanguage = `${bodyReqData.name_first_language}`;
+            dataset.theSecondLanguage = `${bodyReqData.name_second_language}`;
 
-                // REQUIRE: SIMPLIFICATION
-                // REQUIRE: UPPER CASE IN TITLE
-                for (let i = 0; i < dataset.length; i++) {
-                    dataset[i].firstLanguage = dataset[i][`${bodyReqData.name_first_language}`];
-                    dataset[i].secondLanguage = dataset[i][`${bodyReqData.name_second_language}`];
-                };
-                dataset.theFirstLanguage = `${bodyReqData.name_first_language}`;
-                dataset.theSecondLanguage = `${bodyReqData.name_second_language}`;
-
-                // console.log("DATA ACCESS !!!");
-                if (err) throw err;	
-
-                db.close();
-                return resolve(dataset);
-            });
-                
-
-
-        })
+            return resolve(dataset);
+        });
     };
 
 
