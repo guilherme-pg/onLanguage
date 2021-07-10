@@ -11,7 +11,19 @@ class WordsDao {
 			MongoClient.connect(urlAtlas, {useNewUrlParser: true, useUnifiedTopology: true}, function(err, db) {
 				if (err) throw err;
 				let dbo = db.db("wordsdata");
+
 				console.log('AAAAA DAO bodyReqData ===>>>  ', bodyReqData);
+				console.log('BBBBBBB DAO bodyReqData.option_level ===>>>  ', typeof bodyReqData.option_level);
+
+				// WORKAROUND !!!: some times only one value is selected
+				if (typeof bodyReqData.option_level == 'string') {
+					bodyReqData.option_level = ["none", bodyReqData.option_level];
+					bodyReqData.option_theme = ["none", bodyReqData.option_theme];
+
+				} else {
+					bodyReqData.option_level = ["none", ...bodyReqData.option_level];
+					bodyReqData.option_theme = ["none", ...bodyReqData.option_theme];
+				};
 
 				// REQUIRE: CHANGE NOUN to ANY OTHER GRAMMAR CLASS
 				dbo.collection("nouns")
@@ -52,28 +64,29 @@ class WordsDao {
 
  
 	// UPDATE
-	update() {
-		return new Promise((resolve, reject) => {
-			MongoClient.connect(urlAtlas, {useNewUrlParser: true, useUnifiedTopology: true}, function(err, db) {
-				if (err) throw err;
-				let dbo = db.db("wordsdata");
-				console.log('AAAAA DAO bodyReqData ===>>>  ', bodyReqData);
+	// update() {
+	// 	return new Promise((resolve, reject) => {
+	// 		MongoClient.connect(urlAtlas, {useNewUrlParser: true, useUnifiedTopology: true}, function(err, db) {
+	// 			if (err) throw err;
+	// 			let dbo = db.db("wordsdata");
+	// 			console.log('AAAAA DAO bodyReqData ===>>>  ', bodyReqData);
 
-				// REQUIRE: CHANGE NOUN to ANY OTHER GRAMMAR CLASS
-				dbo.collection("nouns")
+	// 			// REQUIRE: CHANGE NOUN to ANY OTHER GRAMMAR CLASS
+	// 			dbo.collection("nouns")
 
 
 					
-			});
-		})
-	};
+	// 		});
+	// 	})
+	// };
 
   // DELETE
-  delete() {
-      return new Promise((resolve, reject) => {
-      })
-  }
-}
+//   delete() {
+//       return new Promise((resolve, reject) => {
+
+//       })
+//   }
+};
 
 
 

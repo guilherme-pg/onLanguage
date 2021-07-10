@@ -88,6 +88,28 @@ module.exports = (app) => {
     });
 
 
+    app.get('/data-form-table', async function(req, resp) {
+        bodyReqData = req.query;
+        const games = new Games();
+        const wordsDao = new WordsDao(dbConnection);
+
+        let datareturned = await wordsDao.read(bodyReqData);
+
+        let processedData = [];   // variable repeated
+        processedData = await games.tablesVisualization(datareturned, bodyReqData);
+
+        resp.render('data-form', {
+            title: "Data Form",
+            layout: 'mainLayouts',
+            style: "data-form.css",
+            word: processedData
+        });
+
+    });
+
+
+
+
     // ROUTE: DATA RECORD (MENU TO ACCESS DATA)
     app.get('/data-record', controller.dataRecord);
     app.get('/data-record', function(req, resp) {
@@ -100,22 +122,23 @@ module.exports = (app) => {
     
     
     // ROUTE: DATA SELECTED (TABLES)
-    app.get('/data-tables', function(req, resp) {
-        
+    app.get('/data-tables', async function(req, resp) {
         bodyReqData = req.query;
-        console.log('BBBBB routes bodyReqData  =====>>>   ', bodyReqData)
-
+        const games = new Games();
         const wordsDao = new WordsDao(dbConnection);
-        wordsDao.read(bodyReqData)
+
+        let datareturned = await wordsDao.read(bodyReqData);
+
+        let processedData = [];   // variable repeated
+        processedData = await games.tablesVisualization(datareturned, bodyReqData)
             .then(function(datareturned) {
-                console.log('DDDDDDD ROUTES datareturned ------->>>>   ', datareturned)
 
                 // REQUIRE:   data sem tratamento
                 resp.render('data-tables', {
                     title: "Tables",
                     layout: 'mainLayouts',
                     style: "data-tables.css",
-                    word: datareturned
+                    word: processedData
                 });
             })
             .catch(erro => console.log(erro));

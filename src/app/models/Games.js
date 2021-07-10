@@ -182,6 +182,40 @@ class Games {
     //         return resolve();
     //     })
     // };
+
+    tablesVisualization(datareturned, bodyReqData) {
+        return new Promise((resolve, reject) => {
+
+            console.log('VVVVVVVV   Games datareturned   ======>>>>> ', datareturned);
+
+            
+            .toArray(function(err, result) {
+                if (err) throw err;
+                let dataset = [];
+                dataset = result;
+
+                // REQUIRE: SIMPLIFICATION
+                // REQUIRE: UPPER CASE IN TITLE
+                for (let i = 0; i < dataset.length; i++) {
+                    dataset[i].firstLanguage = dataset[i][`${bodyReqData.name_first_language}`];
+                    dataset[i].secondLanguage = dataset[i][`${bodyReqData.name_second_language}`];
+                };
+                dataset.theFirstLanguage = `${bodyReqData.name_first_language}`;
+                dataset.theSecondLanguage = `${bodyReqData.name_second_language}`;
+
+                // console.log("DATA ACCESS !!!");
+                if (err) throw err;	
+
+                db.close();
+                return resolve(dataset);
+            });
+                
+
+
+        })
+    };
+
+
 };
 
 module.exports = Games;
