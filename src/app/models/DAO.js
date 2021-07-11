@@ -12,9 +12,6 @@ class WordsDao {
 				if (err) throw err;
 				let dbo = db.db("wordsdata");
 
-				// console.log('AAAAA DAO bodyReqData ===>>>  ', bodyReqData);
-				// console.log('BBBBBBB DAO bodyReqData.option_level ===>>>  ', typeof bodyReqData.option_level);
-
 				// WORKAROUND !!!: some times only one value is selected
 				if (typeof bodyReqData.option_level == 'string') {
 					bodyReqData.option_level = ["none", bodyReqData.option_level];
@@ -49,9 +46,9 @@ class WordsDao {
 				if (err) throw err;
 				let dbo = db.db("wordsdata");
 				let obj = bodyReqData;
-				// console.log('DATA VISUALIZATION obj ====>>>>   ', obj);
+				console.log('DATA VISUALIZATION obj ====>>>>   ', obj);
 
-				dbo.collection("nouns").insertOne(obj, function(err, res) {
+				dbo.collection(`${obj.name_grammar}s`).insertOne(obj, function(err, res) {
 					if (err) throw err;
 					console.log("1 document INSERTED");
 
@@ -90,7 +87,7 @@ class WordsDao {
 
 
 
-// REQUIRE: FIX THE THEME QUERY TO ALL THEMES REQUIRED OR CHANGE THE COLLECTIONS TO ONLY ONE
+
 // REQUIRE: IMPLEMENT THE DATA ACCESS TO EDIT, CREATE AND DELETE AT SAME TIME
 // REQUIRE: IN DATA-FORM SHOW ALL DATA RELATED TO THE SPECIFICATIONS EACH TIME ONE IS POINTED
 
