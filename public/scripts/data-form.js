@@ -1,24 +1,52 @@
 
-// NEW DATA FORM FOR RDBS
-// const languageInput = document.getElementById('input_language');
-// languageInput.onclick = selectedLanguageChangeForm;
+const grammarOption = document.getElementById('input_grammar');
+const themesContainer = document.getElementsByClassName('themes_container');
+const articleInput = document.getElementsByClassName('article_input');
+const genderInput = document.getElementsByClassName(' gender_input');
 
 
-// // SHOW AND HIDE THE MEANINGS IN OTHER LANGUAGE FOR THE LANGUAGE SELECTED
-// function selectedLanguageChangeForm() {
-// 	let languageSelected = languageInput.options[languageInput.selectedIndex].value;
-// 	let languageMeaning = document.getElementsByClassName('language_meaning');
+// WORKAROUND
+grammarOption.addEventListener('change', event => {
+    
+    let checkedOption = [...event.target.children].find(c => c.selected);
+    
+    if (checkedOption.value == 'noun') {
+        for (let i = 0; i < themesContainer.length; i++) {
+            themesContainer[i].style.display = 'flex';
+        };
+        for (let i = 0; i < articleInput.length; i++) {
+            articleInput[i].style.display = 'flex';
+        };
+        for (let i = 0; i < genderInput.length; i++) {
+            genderInput[i].style.display = 'flex';
+        };
 
-// 	for (let i = 0; i < languageMeaning.length; i++) {
+    } else {
+        for (let i = 0; i < themesContainer.length; i++) {
+            themesContainer[i].style.display = 'none';
+        };
+        for (let i = 0; i < articleInput.length; i++) {
+            articleInput[i].style.display = 'none';
+        };
+        for (let i = 0; i < genderInput.length; i++) {
+            genderInput[i].style.display = 'none';
+        };
 
-// 		if (languageMeaning[i].getAttribute('data-value') == languageSelected) {
-// 			languageMeaning[i].style.display = "none";
+    };
+});
 
-// 		} else {
-// 			languageMeaning[i].style.display = "flex";
-// 		};
-// 	};
-// };
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -26,179 +54,179 @@
 
 
 // GENERAL VARIABLES
-var theme = '';
-var level = '';
-var grammar = '';
-var artSpan;
-var wordSpan;
-var spanGend;
-var artPort;
-var wordPort;
-var portGend;
-var artItal;
-var wordItal;
-var italGend;
-var artGerm;
-var wordGerm;
-var germGend;
-var artFren;
-var wordFren;
-var frenGend;
-var artEng;
-var wordEng;
-var engGend;
+// var theme = '';
+// var level = '';
+// var grammar = '';
+// var artSpan;
+// var wordSpan;
+// var spanGend;
+// var artPort;
+// var wordPort;
+// var portGend;
+// var artItal;
+// var wordItal;
+// var italGend;
+// var artGerm;
+// var wordGerm;
+// var germGend;
+// var artFren;
+// var wordFren;
+// var frenGend;
+// var artEng;
+// var wordEng;
+// var engGend;
 
 
-function setObject() {
+// function setObject() {
 
-    // CREATE OR THROW THE DATA IN THE FILE
+//     // CREATE OR THROW THE DATA IN THE FILE
 
-    let file = 'dataLanguage.txt';
-    let data = DYNAMICALY_VARIABLE;
-    const callback = (err) => {
-        if (err) throw err;
-        console.log('Saved!');
-    };
+//     let file = 'dataLanguage.txt';
+//     let data = DYNAMICALY_VARIABLE;
+//     const callback = (err) => {
+//         if (err) throw err;
+//         console.log('Saved!');
+//     };
 
-    fs.appendFile(file, data, callback);
+//     fs.appendFile(file, data, callback);
 
-    // require: create a VAR dynamically to set the object numerically;
-    // require: create a DATA to store all the VARs;
-    // require: acess the data and count how many VARs are there;
-    // prevent: if no DATA, create;
-    // require: store the DATA;
+//     // require: create a VAR dynamically to set the object numerically;
+//     // require: create a DATA to store all the VARs;
+//     // require: acess the data and count how many VARs are there;
+//     // prevent: if no DATA, create;
+//     // require: store the DATA;
 
-    // ACCESS AND READ THE FILE.TXT
-
-
-    var DYNAMICALY_VARIABLE = new DataWord(theme, level, grammar, artEng, wordEng, engGend, artFren, wordFren, frenGend, artGerm, wordGerm, germGend, artItal, wordItal, italGend, artPort, wordPort, portGend, artSpan, wordSpan, spanGend);
-};
-
-class DataWord {
-    createObject(theme, level, grammar, artEng, wordEng, engGend, artFren, wordFren, frenGend, artGerm, wordGerm, germGend, artItal, wordItal, italGend, artPort, wordPort, portGend, artSpan, wordSpan, spanGend) {
-        this.theme = theme,
-            this.level = level,
-            this.grammar = grammar,
-            this.english = {
-                art_eng: artEng,
-                word_eng: wordEng,
-                gend_eng: engGend
-            },
-            this.french = {
-                art_fren: artFren,
-                word_fren: wordFren,
-                gend_fren: frenGend
-            },
-            this.german = {
-                art_germ: artGerm,
-                word_germ: wordGerm,
-                gend_germ: germGend
-            },
-            this.italian = {
-                art_ital: artItal,
-                word_ital: wordItal,
-                gend_ital: italGend
-            },
-            this.portuguese = {
-                art_port: artPort,
-                word_port: wordPort,
-                gend_port: portGend
-            },
-            this.spanish = {
-                art_span: artSpan,
-                word_span: wordSpan,
-                gend_span: spanGend
-            }
-    };
-};
+//     // ACCESS AND READ THE FILE.TXT
 
 
+//     var DYNAMICALY_VARIABLE = new DataWord(theme, level, grammar, artEng, wordEng, engGend, artFren, wordFren, frenGend, artGerm, wordGerm, germGend, artItal, wordItal, italGend, artPort, wordPort, portGend, artSpan, wordSpan, spanGend);
+// };
 
-function wordEnglish() {
-    artEng = document.getElementById('art_eng').value;
-    wordEng = document.getElementById('word_eng').value;
-
-    let optEngGend = document.getElementById('english_gender');
-    engGend = optEngGend.options[optEngGend.selectedIndex].value;
-};
-
-function wordFrench() {
-    artFren = document.getElementById('art_fren').value;
-    wordFren = document.getElementById('word_fren').value;
-
-    let optFrenGend = document.getElementById('french_gender');
-    frenGend = optFrenGend.options[optFrenGend.selectedIndex].value;
-};
-
-function wordGerman() {
-    artGerm = document.getElementById('art_germ').value;
-    wordGerm = document.getElementById('word_germ').value;
-
-    let optGermGend = document.getElementById('german_gender');
-    germGend = optGermGend.options[optGermGend.selectedIndex].value;
-};
-
-function wordItalian() {
-    artItal = document.getElementById('art_ital').value;
-    wordItal = document.getElementById('word_ital').value;
-
-    let optItalGend = document.getElementById('italian_gender');
-    italGend = optItalGend.options[optItalGend.selectedIndex].value;
-};
-
-function wordPortuguese() {
-    artPort = document.getElementById('art_port').value;
-    wordPort = document.getElementById('word_port').value;
-
-    let optPortGend = document.getElementById('portuguese_gender');
-    portGend = optPortGend.options[optPortGend.selectedIndex].value;
-};
-
-function wordSpanish() {
-    artSpan = document.getElementById('art_span').value;
-    wordSpan = document.getElementById('word_span').value;
-
-    let optSpanGend = document.getElementById('spanish_gender');
-    spanGend = optSpanGend.options[optSpanGend.selectedIndex].value;
-};
+// class DataWord {
+//     createObject(theme, level, grammar, artEng, wordEng, engGend, artFren, wordFren, frenGend, artGerm, wordGerm, germGend, artItal, wordItal, italGend, artPort, wordPort, portGend, artSpan, wordSpan, spanGend) {
+//         this.theme = theme,
+//             this.level = level,
+//             this.grammar = grammar,
+//             this.english = {
+//                 art_eng: artEng,
+//                 word_eng: wordEng,
+//                 gend_eng: engGend
+//             },
+//             this.french = {
+//                 art_fren: artFren,
+//                 word_fren: wordFren,
+//                 gend_fren: frenGend
+//             },
+//             this.german = {
+//                 art_germ: artGerm,
+//                 word_germ: wordGerm,
+//                 gend_germ: germGend
+//             },
+//             this.italian = {
+//                 art_ital: artItal,
+//                 word_ital: wordItal,
+//                 gend_ital: italGend
+//             },
+//             this.portuguese = {
+//                 art_port: artPort,
+//                 word_port: wordPort,
+//                 gend_port: portGend
+//             },
+//             this.spanish = {
+//                 art_span: artSpan,
+//                 word_span: wordSpan,
+//                 gend_span: spanGend
+//             }
+//     };
+// };
 
 
 
+// function wordEnglish() {
+//     artEng = document.getElementById('art_eng').value;
+//     wordEng = document.getElementById('word_eng').value;
 
+//     let optEngGend = document.getElementById('english_gender');
+//     engGend = optEngGend.options[optEngGend.selectedIndex].value;
+// };
 
-function wordGrammar() {
-    let inputGrammar = document.getElementById('input_grammar');
-    grammar = inputGrammar.options[inputGrammar.selectedIndex].value;
-};
+// function wordFrench() {
+//     artFren = document.getElementById('art_fren').value;
+//     wordFren = document.getElementById('word_fren').value;
 
-function wordLevel() {
-    let inputLevel = document.getElementById('input_level');
-    level = inputLevel.options[inputLevel.selectedIndex].value;
-};
+//     let optFrenGend = document.getElementById('french_gender');
+//     frenGend = optFrenGend.options[optFrenGend.selectedIndex].value;
+// };
 
-function wordTheme() {
-    let inputTheme = document.getElementById('input_theme');
-    theme = inputTheme.options[inputTheme.selectedIndex].value;
-};
+// function wordGerman() {
+//     artGerm = document.getElementById('art_germ').value;
+//     wordGerm = document.getElementById('word_germ').value;
+
+//     let optGermGend = document.getElementById('german_gender');
+//     germGend = optGermGend.options[optGermGend.selectedIndex].value;
+// };
+
+// function wordItalian() {
+//     artItal = document.getElementById('art_ital').value;
+//     wordItal = document.getElementById('word_ital').value;
+
+//     let optItalGend = document.getElementById('italian_gender');
+//     italGend = optItalGend.options[optItalGend.selectedIndex].value;
+// };
+
+// function wordPortuguese() {
+//     artPort = document.getElementById('art_port').value;
+//     wordPort = document.getElementById('word_port').value;
+
+//     let optPortGend = document.getElementById('portuguese_gender');
+//     portGend = optPortGend.options[optPortGend.selectedIndex].value;
+// };
+
+// function wordSpanish() {
+//     artSpan = document.getElementById('art_span').value;
+//     wordSpan = document.getElementById('word_span').value;
+
+//     let optSpanGend = document.getElementById('spanish_gender');
+//     spanGend = optSpanGend.options[optSpanGend.selectedIndex].value;
+// };
 
 
 
 
 
-function dataSet() {
+// function wordGrammar() {
+//     let inputGrammar = document.getElementById('input_grammar');
+//     grammar = inputGrammar.options[inputGrammar.selectedIndex].value;
+// };
 
-    wordTheme();
-    wordLevel();
-    wordGrammar();
+// function wordLevel() {
+//     let inputLevel = document.getElementById('input_level');
+//     level = inputLevel.options[inputLevel.selectedIndex].value;
+// };
 
-    wordEnglish();
-    wordFrench();
-    wordGerman();
-    wordItalian();
-    wordPortuguese();
-    wordSpanish();
+// function wordTheme() {
+//     let inputTheme = document.getElementById('input_theme');
+//     theme = inputTheme.options[inputTheme.selectedIndex].value;
+// };
 
-    setObject();
-};
 
-document.getElementById('button_register').addEventListener('click', dataSet);
+
+
+
+// function dataSet() {
+
+//     wordTheme();
+//     wordLevel();
+//     wordGrammar();
+
+//     wordEnglish();
+//     wordFrench();
+//     wordGerman();
+//     wordItalian();
+//     wordPortuguese();
+//     wordSpanish();
+
+//     setObject();
+// };
+
+// document.getElementById('button_register').addEventListener('click', dataSet);
