@@ -1,9 +1,11 @@
 // GLOBAL VARIABLES
+
+const buttonNext = document.getElementById('button_next');
+const buttonPrevious = document.getElementById('button_previous');
+const containerHiddenArray = document.getElementsByClassName('containerHidden');
+
 let previousNumber = -1;
 let nextNumber = 0;
-let buttonNext = document.getElementById('button_next');
-let buttonPrevious = document.getElementById('button_previous');
-let containerHiddenArray = document.getElementsByClassName('containerHidden');
 let wrongWords = [];
 let correctWords = [];
 let counter = 0;
@@ -14,7 +16,7 @@ document.getElementById('containerHidden_0').style.display = "flex";
 
 
 // QUEST COUNTER
-let numberOfQuests = document.getElementsByClassName('containerHidden').length;
+let numberOfQuests = containerHiddenArray.length;
 for (let i = 0; i < numberOfQuests; i++) {
     document.getElementById(`quest_counter_number_${i}`).innerText = `${i+1}/${numberOfQuests}`;
 };
@@ -49,10 +51,14 @@ function endingFeedback() {
         // COUNTER OF CORRECTS OUT OF TOTAL
         document.getElementById('container_feedback_numbers').textContent = `You got ${correctWords.length} out of ${containerHiddenArray.length}`;
 
+        console.log('CORRRR === >>>  ', correctWords.length);
+        console.log('WWRROONNN   === >>>  ', wrongWords.length);
 
         // SHOW NUMBER OF NOT MARKED QUESTS IF THERE IS AT LEAST 1 NOT MARKED
         let answered = correctWords.length + wrongWords.length;
         let notMarked = document.getElementById('container_feedback_not_marked');
+        console.log('AAAAAA  notMarked --->>>  ', notMarked)
+
         if (containerHiddenArray.length == answered + 1) {
             notMarked.style.display = 'flex';
             notMarked.textContent = "1 question was not answered";
@@ -68,14 +74,15 @@ function endingFeedback() {
             let pElementCorrect = document.createElement('p');
             let correctWord = document.createTextNode(`${correctWords[i]}`);
             pElementCorrect.appendChild(correctWord);
-            let correctWordsFeedback = document.getElementById('correct_answers');
+            const correctWordsFeedback = document.getElementById('correct_answers');
             correctWordsFeedback.appendChild(pElementCorrect);
         };
+
         for (let i = 0; i < wrongWords.length; i++) {
             let pElementWrong = document.createElement('p');
             let wrongWord = document.createTextNode(`${wrongWords[i]}`);
             pElementWrong.appendChild(wrongWord);
-            let wrongWordsFeedback = document.getElementById('wrong_answers');
+            const wrongWordsFeedback = document.getElementById('wrong_answers');
             wrongWordsFeedback.appendChild(pElementWrong);
         };
         // REQUIRE: SHOW WHAT EACH WRONG ANSWER SHOULD BE
@@ -138,6 +145,7 @@ function nextQuest() {
         previousNumber++;
         nextNumber++;
     };
+
     document.getElementById(`containerHidden_${previousNumber}`).style.display = "none";
     try {
         document.getElementById(`containerHidden_${nextNumber}`).style.display = "flex";
@@ -153,7 +161,3 @@ buttonNext.onclick = nextQuest;
 
 // POSSIBILITY: SHOW RESULTS (TABLE WITH WORDS WRONG AND RIGHT WITH NUMBER OF CORRECTS AND INCORRECTS)
 // POSSIBILITY: SHOW PERCENTAGES INSTEAD OF THE NUMBER OF CORRECT ANSWERS
-
-
-
-

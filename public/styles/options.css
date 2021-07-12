@@ -33,7 +33,7 @@
     color: whitesmoke;
 }
 .options_selector label {
-    color: rgb(45, 0, 77); 
+    color: indigo;
 }
 .inputs_and_labels {
     display: flex;
@@ -53,11 +53,11 @@
     transform: scale(1.1);
 }
 .inputs_and_labels input:checked + label {
-    background-color: indigo;
+    background-color: rgb(41, 41, 41);
     color: whitesmoke;
 }
 .inputs_and_labels input:checked + label:active {
-    background-color: indigo;
+    background-color: rgb(78, 78, 78);
     color: whitesmoke;
 }
 
