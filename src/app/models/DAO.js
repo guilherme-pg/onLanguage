@@ -23,7 +23,7 @@ class WordsDao {
 				};
 
 				// REQUIRE: CHANGE NOUN to ANY OTHER GRAMMAR CLASS
-				dbo.collection("nouns")
+				dbo.collection(`${bodyReqData.option_grammar}s`)
 					.find({
 						name_level: {$in: bodyReqData.option_level},
 						name_theme: {$in: bodyReqData.option_theme}

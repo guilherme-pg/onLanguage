@@ -7,6 +7,8 @@
     width: 100%;
 }
 
+
+
 /* DATA COLUMN */
 .show_data_column {
     display: flex;
@@ -56,7 +58,7 @@
     justify-content: flex-start;
     font-size: 18px;
     height: 90%;
-    width: 50%;
+    width: 40%;
     margin: 10px;
     border-radius: 2px;
     box-shadow: 2px 2px 6px 0 rgb(81, 0, 128);
@@ -103,6 +105,9 @@
     margin: 5px;
     /* margin: 5px 10px 5px 10px; */
 }
+.article_input input {
+    width: 60px;
+}
 .language_meaning {
     width: 100%;
     display: flex;
@@ -141,6 +146,7 @@
 
 
 
+
 /* TABLE VISUALIZATION */
 table {
     margin-bottom: 10px;
@@ -167,25 +173,9 @@ td:nth-child(3) {
 
 
 
-
-.button_end {
-    background-color: rgb(26, 26, 26);
-    border-radius: 4px;
-    font-size: inherit;
-    margin: 5px 5px 5px 5px;
-    padding: 10px;
-    border: 0;
-    transition: 0.5s, color 0.5s;
-    outline: none;
-    cursor: pointer;
-    box-shadow: 2px 2px 6px 0 rgb(81, 0, 128);
-    font-size: 15px;
-}
-.button_end:hover {
-    background-color: rgb(58, 58, 58);
-}
-.button_end:active {
-    background-color: rgb(78, 78, 78);
+/* BUTTONS SETS */
+.general_button {
+    margin: 20px 5px;
 }
 
 
@@ -202,6 +192,6 @@ td:nth-child(3) {
     }
     .register_data {
         font-size: inherit;
-        width: 100%;
+        width: 80%;
     }
 }

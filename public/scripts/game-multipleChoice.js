@@ -51,13 +51,9 @@ function endingFeedback() {
         // COUNTER OF CORRECTS OUT OF TOTAL
         document.getElementById('container_feedback_numbers').textContent = `You got ${correctWords.length} out of ${containerHiddenArray.length}`;
 
-        console.log('CORRRR === >>>  ', correctWords.length);
-        console.log('WWRROONNN   === >>>  ', wrongWords.length);
-
         // SHOW NUMBER OF NOT MARKED QUESTS IF THERE IS AT LEAST 1 NOT MARKED
         let answered = correctWords.length + wrongWords.length;
         let notMarked = document.getElementById('container_feedback_not_marked');
-        console.log('AAAAAA  notMarked --->>>  ', notMarked)
 
         if (containerHiddenArray.length == answered + 1) {
             notMarked.style.display = 'flex';
