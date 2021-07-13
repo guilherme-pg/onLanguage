@@ -7,27 +7,37 @@
 
         <div id="main_form_words">
 
-            {{!-- CORRECT WORD --}}
-            <div hidden>
-                {{#each words.wordletters}}
-                    <p class="checkable" id="letter_checkable_{{@index}}" hidden>{{letter}}</p>
-                {{/each}}
-            </div>
+            {{#each words.arrayOfCorrectWOrds}}
+                <div class="container_challenger">
+                    
+                    {{!-- CORRECT WORD --}}
+                    <div hidden>
+                        {{!-- require: change set letter to word in Game as an object --}}
+                        <p class="checkable" id="letter_checkable_{{@index}}" hidden>{{arrayOfCorrectWOrds.letter}}</p>
+                    </div>
 
-            {{!-- CONTAINER TO DROP --}}
-            <div class="container partsofmain_form_words" id="container_answer">
-                
-            </div>
+                    {{!-- CONTAINER TO DROP --}}
+                    <div class="container partsofmain_form_words" id="container_answer">
+                        
+                    </div>
 
 
-            {{!-- CONTAINER OF LETTERS --}}
-            <div class="container partsofmain_form_words">
-                {{#each words.mixedletters}}
+                    {{!-- CONTAINER OF LETTERS --}}
+                    <div class="container partsofmain_form_words">
+                        {{#each words.arrayOfMixedLetters}}
 
-                    <p class="draggable" id="letter_{{@index}}" draggable="true">{{letter}}</p>
+                            <p class="draggable" id="letter_{{@index}}" draggable="true">{{arrayOfMixedLetters.letter}}</p>
+                    
+                        {{/each}}
+                    </div>
+
+
+                </div>
+            {{/each}}
+
+
+
             
-                {{/each}}
-            </div>
 
             {{!-- BUTTONS --}}
             <div class="buttons_container">

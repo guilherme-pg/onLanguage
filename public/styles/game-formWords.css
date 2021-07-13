@@ -7,6 +7,9 @@
     height: 100vh;
     width: 100%;
 }
+.container_challenger {
+    background-color: darkred;
+}
 .partsofmain_form_words {
     display: flex;
     align-items: center;

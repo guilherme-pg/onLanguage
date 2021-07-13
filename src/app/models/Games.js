@@ -91,33 +91,51 @@ class Games {
 
     formWords(datareturned, bodyReqData) {
         return new Promise((resolve, reject) => {
-            let arrayOfLetters = [];
-            let arrayOfMixedLetters = [];
+            let wordsSelected = [];
+            let arrayOfLetters = [[], [], [], [], [], [], [], [], [], []];
+            let arrayOfArrayOfLetters = [[], [], [], [], [], [], [], [], [], []];
+            let arrayOfMixedLetters = [[], [], [], [], [], [], [], [], [], []];
             let objectWithWordAndLetters = [];
             let dataMixed = datareturned.sort(() => Math.random() - 0.5);
-            let dataSliced = dataMixed.slice(0, 1); 
+            let dataSliced = dataMixed.slice(0, 10);
             let languageSelected = bodyReqData.option_language;
-            let wordSelected = dataSliced[0][languageSelected]['word'];
-            let lettersArray = wordSelected.split('');
 
-            for (let i = 0; i < lettersArray.length; i++) {
-                arrayOfLetters.push({letter: lettersArray[i]});
+            // selecting the words
+            for (let i = 0; i < dataSliced.length; i++) {
+                wordsSelected.push(dataSliced[i][languageSelected]['word']);
             };
 
-            for (let i = 0; i < lettersArray.length; i++) {
-                arrayOfMixedLetters.push({letter: lettersArray[i]});
+            // separating words into letters inside each array
+            for (let i = 0; i < wordsSelected.length; i++) {
+                arrayOfLetters[i].push(`${wordsSelected[i]}`);           //push word to an array
+                arrayOfLetters[i] = arrayOfLetters[i][0].split('');        //transform word in letters     
             };
-            arrayOfMixedLetters = arrayOfMixedLetters.sort(() => Math.random() - 0.5);
 
-            // PREVENT ORDERED WORD =======================      not working
-            if (arrayOfMixedLetters == arrayOfLetters) {
-                while (arrayOfMixedLetters == arrayOfLetters) {
-                    arrayOfMixedLetters = arrayOfMixedLetters.sort(() => Math.random() - 0.5);
+            // transform an array of words array into array of array of letters
+            for (let i = 0; i < arrayOfLetters.length; i++) {           // for each array in array
+                for (let z = 0; z < arrayOfLetters[i].length; z++) {     // for each element in array
+                    arrayOfArrayOfLetters[i].push({letter: arrayOfLetters[i][z]});
+                };
+
+                // populate and mix the arrays of letters
+                arrayOfMixedLetters[i] = [...arrayOfArrayOfLetters[i]];
+                arrayOfMixedLetters[i] = arrayOfMixedLetters[i].sort(() => Math.random() - 0.5);
+            };
+
+
+            for (let i = 0; i < arrayOfLetters.length; i++) {
+                if (arrayOfArrayOfLetters[i] == arrayOfMixedLetters[i]) {
+                    while (arrayOfArrayOfLetters[i] == arrayOfMixedLetters[i]) {
+                        arrayOfMixedLetters[i] = arrayOfMixedLetters[i].sort(() => Math.random() - 0.5);
+                    };
                 };
             };
 
-            objectWithWordAndLetters.wordletters = arrayOfLetters;
-            objectWithWordAndLetters.mixedletters = arrayOfMixedLetters;
+            objectWithWordAndLetters.push({
+                arrayOfCorrectWOrds: wordsSelected,
+                arrayOfOrderedLetters: arrayOfArrayOfLetters,
+                arrayOfMixedLetters: arrayOfMixedLetters
+            });
 
             return resolve(objectWithWordAndLetters);
         })
@@ -164,9 +182,7 @@ class Games {
                     answerC: fourAnswersArrayMixed[2],
                     answerD: fourAnswersArrayMixed[3],
                 });
-            }
-            let multipleChoiceArrayMixed = multipleChoiceArray.sort(() => Math.random() - 0.5);
-            // console.log('YYYYYY   multipleChoiceArrayMixed  ------    ', multipleChoiceArrayMixed);
+            };
 
             return resolve(multipleChoiceArray);
         })
