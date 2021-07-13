@@ -8,8 +8,56 @@
     width: 100%;
 }
 .container_challenger {
-    background-color: darkred;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
 }
+.results_and_counter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 65%;
+}
+.container_results {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.result_letter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 150%;
+    background-color: rgb(41, 41, 41);
+    color: white;
+    border: none;
+    padding: 5px 7px;
+    box-shadow: 2px 2px 6px 0 rgb(81, 0, 128);
+    margin: 5px;
+}
+.container_counter {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row-reverse;
+    width: 100%;
+}
+.quest_counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    background-color: whitesmoke;
+    color: indigo;
+    box-shadow: 2px 2px 6px 0 rgb(81, 0, 128);
+}
+
+
+
+/* container for the drag and drop */
 .partsofmain_form_words {
     display: flex;
     align-items: center;
@@ -70,10 +118,22 @@
     justify-content: space-between;
     width: 65%;
 }
-
 .general_button {
     margin: 5px;
 }
 .button_resource {
     width: 20%;
+}
+
+
+.hiddenElement {
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.correct_answer {
+    background-color: rgb(45, 185, 45);
+}
+.wrong_answer {
+    background-color: rgb(230, 63, 63);
 }

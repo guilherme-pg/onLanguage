@@ -136,8 +136,19 @@ class Games {
                 arrayOfOrderedLetters: arrayOfArrayOfLetters,
                 arrayOfMixedLetters: arrayOfMixedLetters
             });
+            console.log('AAAAAAAAAAAA arrayOfArrayOfLetters  === >>>  ', arrayOfArrayOfLetters)
 
-            return resolve(objectWithWordAndLetters);
+            let finalArray = [];
+            for (let i = 0; i < arrayOfLetters.length; i++) {
+                finalArray.push({
+                    correctWord: wordsSelected[i],
+                    arrayOfOrderedLetters: arrayOfArrayOfLetters[i],
+                    arrayOfMixedLetters: arrayOfMixedLetters[i],
+                })
+            };
+            
+
+            return resolve(finalArray);
         })
     };
 

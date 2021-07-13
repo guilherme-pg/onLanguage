@@ -7,26 +7,40 @@
 
         <div id="main_form_words">
 
-            {{#each words.arrayOfCorrectWOrds}}
-                <div class="container_challenger">
+            {{#each words}}
+                <div class="container_challenger hiddenElement">
                     
                     {{!-- CORRECT WORD --}}
                     <div hidden>
                         {{!-- require: change set letter to word in Game as an object --}}
-                        <p class="checkable" id="letter_checkable_{{@index}}" hidden>{{arrayOfCorrectWOrds.letter}}</p>
+                        <p class="checkable" id="letter_checkable_{{@index}}" hidden>{{correctWord}}</p>
+                    </div>
+
+                    <div class="results_and_counter">
+                        <div class="container_results hiddenElement">
+                            {{#each arrayOfOrderedLetters}}
+
+                                <p class="result_letter letter_{{@index}}">{{letter}}</p>
+
+                            {{/each}}
+                        </div>
+
+                        <div class="container_counter">
+                            <p class="quest_counter">{{@index}}/15</p>
+                        </div>
                     </div>
 
                     {{!-- CONTAINER TO DROP --}}
-                    <div class="container partsofmain_form_words" id="container_answer">
+                    <div class="container partsofmain_form_words" id="container_answer_{{@index}}">
                         
                     </div>
 
 
-                    {{!-- CONTAINER OF LETTERS --}}
+                    {{!-- CONTAINER LETTERS START --}}
                     <div class="container partsofmain_form_words">
-                        {{#each words.arrayOfMixedLetters}}
+                        {{#each arrayOfMixedLetters}}
 
-                            <p class="draggable" id="letter_{{@index}}" draggable="true">{{arrayOfMixedLetters.letter}}</p>
+                            <p class="draggable letter_{{@index}}" draggable="true">{{letter}}</p>
                     
                         {{/each}}
                     </div>
