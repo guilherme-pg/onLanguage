@@ -8,7 +8,7 @@
         <div id="main_form_words">
 
             {{#each words}}
-                <div class="container_challenger hiddenElement">
+                <div class="container_challenger">
                     
                     {{!-- CORRECT WORD --}}
                     <div hidden>
@@ -17,7 +17,7 @@
                     </div>
 
                     <div class="results_and_counter">
-                        <div class="container_results hiddenElement">
+                        <div class="container_results">
                             {{#each arrayOfOrderedLetters}}
 
                                 <p class="result_letter letter_{{@index}}">{{letter}}</p>
@@ -26,9 +26,10 @@
                         </div>
 
                         <div class="container_counter">
-                            <p class="quest_counter">{{@index}}/15</p>
+                            <p class="quest_counter" id="quest_counter_{{@index}}"></p>
                         </div>
                     </div>
+
 
                     {{!-- CONTAINER TO DROP --}}
                     <div class="container partsofmain_form_words" id="container_answer_{{@index}}">
@@ -50,7 +51,28 @@
             {{/each}}
 
 
+            {{!-- FEEDBACK --}}
+            <div class="container_feedback">
 
+                <div id="container_feedback_numbers"></div>
+
+                <div class="container_answers_feedback">
+                        
+                    <div id="correct_answers">
+                        <div class="feedback_h3">
+                            <h3>Corrects</h3>
+                        </div>
+                    </div>
+
+                    <div id="wrong_answers">
+                        <div class="feedback_h3">
+                            <h3>Wrongs</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="container_feedback_not_marked"></div>
+            </div>
             
 
             {{!-- BUTTONS --}}

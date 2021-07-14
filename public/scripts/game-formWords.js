@@ -14,7 +14,7 @@ let correctWord = document.getElementById(`letter_checkable_${questNumber}`).tex
 
 // INITIAL DISPLAY CONFIGURATIONS
 const containerChallenger = document.querySelectorAll('.container_challenger');
-containerChallenger[0].classList.remove('hiddenElement');
+containerChallenger[0].classList.add('showElement');
 
 
 
@@ -59,12 +59,14 @@ draggables.forEach(draggable => {
                     draggables[z].classList.add('correct_answer')
                     draggables[z].draggable = false;
                 };
+                // checkAnswers(concatenatedWord, true);
 
             } else {
                 for (let z = 0; z < draggables.length; z++) {
                     draggables[z].classList.add('wrong_answer')
                     draggables[z].draggable = false;
                 };
+                // checkAnswers(concatenatedWord, false);
             };
         };
     });
@@ -109,44 +111,62 @@ function getDragAfterElement(container, x) {
 
 
 // CHECK RESULT
-// let checkables = document.querySelectorAll('.checkable');
-// let concatenatedWord = '';
-// for (let i = 0; i < checkables.length; i++) {
-//     let str = checkables[i].textContent;
-//     concatenatedWord = concatenatedWord.concat(str);
-// };
+function checkAnswers(concatenatedWord, answer) {
+    if (answer == true) {
+
+    } else {
+        
+    };
+};
 
 
 
 
 
-// resolve problem:
-// 1. move all draggables to the correct place
-// 2. move in the correct order
 function resolveProblem() {
     if (cont == 0) {
-        containersResults[questNumber].classList.remove('hiddenElement');
+        containersResults[questNumber].classList.add('showElement');
         cont = 1;
     } else {
-        containersResults[questNumber].classList.add('hiddenElement');
+        containersResults[questNumber].classList.remove('showElement');
         cont = 0;
     };
 };
 buttonResolve.onclick = resolveProblem;
 
 
+// quest counter
+let numberOfQuests = containerChallenger.length;
+for (let i = 0; i < numberOfQuests; i++) {
+    document.getElementById(`quest_counter_${i}`).innerText = `${i+1} / ${numberOfQuests}`;
+};
+
+
+function endingFeedback() {
+    document.getElementsByClassName('container_feedback')[0].classList.add('showElement');
+};
+
+
 
 
 // Next quest
 function nextQuest() {
-    containerChallenger[questNumber].classList.add('hiddenElement');
+    containerChallenger[questNumber].classList.remove('showElement');
     questNumber++
-    containerChallenger[questNumber].classList.remove('hiddenElement');
-    for (let i = 0; i < draggables.length; i++) {
-        draggables[i].draggable = true;
-        draggables[i].classList.remove('correct_answer');
-        draggables[i].classList.remove('wrong_answer');
+
+    if (questNumber >= containerChallenger.length) {
+        console.log('FEEDBACK !!!!!!!!!!!!!!!!!');
+        endingFeedback();
+
+    } else {
+        console.log('AAAAAAAAAAAA questNumber ', questNumber);
+        containerChallenger[questNumber].classList.add('showElement');
+        for (let i = 0; i < draggables.length; i++) {
+            draggables[i].draggable = true;
+            draggables[i].classList.remove('correct_answer');
+            draggables[i].classList.remove('wrong_answer');
+        };
+        correctWord = document.getElementById(`letter_checkable_${questNumber}`).textContent;
     };
-    correctWord = document.getElementById(`letter_checkable_${questNumber}`).textContent;
 };
 buttonNext.onclick = nextQuest;

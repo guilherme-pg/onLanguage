@@ -90,6 +90,7 @@ class Games {
 
 
     formWords(datareturned, bodyReqData) {
+        // require: prevent after mixed the correct name
         return new Promise((resolve, reject) => {
             let wordsSelected = [];
             let arrayOfLetters = [[], [], [], [], [], [], [], [], [], []];
