@@ -43,9 +43,9 @@ function endingFeedback() {
 
     // CHANGE DISPLAY OF THE NEXTBUTTON, THE QUEST AND SHOW THE RESULTS
     if (counter == containerHiddenArray.length) {
-        document.getElementById('container_feedback').style.display = 'flex';
-        document.getElementById('container_side_buttons').style.display = 'none';
-        document.getElementById('partsofmain_multiple_choice').style.display = 'none';
+        document.getElementsByClassName('container_feedback')[0].classList.add('showElement');
+        document.getElementsByClassName('buttons_container')[0].classList.add('hiddenElement');
+        document.getElementsByClassName('partsofmain_multiple_choice')[0].classList.add('hiddenElement');
 
 
         // COUNTER OF CORRECTS OUT OF TOTAL

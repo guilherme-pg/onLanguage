@@ -7,90 +7,92 @@
 
         <div id="main_multiple_choice">
 
-            <div class="container_game_sidebuttons">
+            {{!-- <div class="container_game_sidebuttons"> --}}
 
                 {{!-- POSSIBILITY: ADD A BUTTON TO SEE PREVIOUS ANSWERS --}}
                 {{!-- <div class="container_side_buttons">
                     <button class="side_button" id="button_previous">PREVIOUS</button>
                 </div> --}}
 
-                <div id="partsofmain_multiple_choice">
-                    {{#each words}}
-                        <div class="containerHidden" id="containerHidden_{{@index}}">
+            <div class="partsofmain_multiple_choice">
+                {{#each words}}
+                    <div class="containerHidden" id="containerHidden_{{@index}}">
 
-                            <div class="container_counter">
-                                <p class="quest_counter" id="quest_counter_number_{{@index}}"></p>
-                            </div>
-
-                            <div class="reference_word">
-                                <p id="article_{{@index}}" class="{{gender}}">{{article}}</p>
-                                <p class="reference_word {{gender}}" id="reference_question_{{@index}}">{{referenceWord}}</p>
-                            </div>
-
-                            <p id="correctAnswer_{{@index}}" hidden>{{correctAnswer}}</p>
-
-                            <div class="answers_container" id="reference_question_{{@index}}">
-                                <div class="answer_place">
-                                    <button class="answer_word answers_group_{{@index}} {{gender}}" value="{{answerA}}" id="answer_A_{{@index}}">{{answerA}}</button>
-                                </div>
-
-                                <div class="answer_place">
-                                    <button class="answer_word answers_group_{{@index}} {{gender}}" value="{{answerB}}" id="answer_B_{{@index}}">{{answerB}}</button>
-                                </div>
-
-                                <div class="answer_place">
-                                    <button class="answer_word answers_group_{{@index}} {{gender}}" value="{{answerC}}" id="answer_C_{{@index}}">{{answerC}}</button>
-                                </div>
-
-                                <div class="answer_place">
-                                    <button class="answer_word answers_group_{{@index}} {{gender}}" value="{{answerD}}" id="answer_D_{{@index}}">{{answerD}}</button>
-                                </div>
-                            </div>
-                        </div>
-                    {{/each}}
-                </div>
-
-
-                <div id="container_side_buttons">
-                    <button class="side_button" id="button_next">NEXT</button>
-                </div>
-
-
-                <div id="container_feedback">
-                    <div id="container_feedback_numbers"></div>
-
-                    <div class="container_answers_feedback">
-                        
-                        <div id="correct_answers">
-                            <div class="feedback_h3">
-                                <h3>Corrects</h3>
-                            </div>
+                        <div class="container_counter">
+                            <p class="quest_counter" id="quest_counter_number_{{@index}}"></p>
                         </div>
 
-                        <div id="wrong_answers">
-                            <div class="feedback_h3">
-                                <h3>Wrongs</h3>
+                        <div class="reference_word">
+                            <p id="article_{{@index}}" class="{{gender}}">{{article}}</p>
+                            <p class="reference_word {{gender}}" id="reference_question_{{@index}}">{{referenceWord}}</p>
+                        </div>
+
+                        <p id="correctAnswer_{{@index}}" hidden>{{correctAnswer}}</p>
+
+                        <div class="answers_container" id="reference_question_{{@index}}">
+                            <div class="answer_place">
+                                <button class="answer_word answers_group_{{@index}} {{gender}}" value="{{answerA}}" id="answer_A_{{@index}}">{{answerA}}</button>
+                            </div>
+
+                            <div class="answer_place">
+                                <button class="answer_word answers_group_{{@index}} {{gender}}" value="{{answerB}}" id="answer_B_{{@index}}">{{answerB}}</button>
+                            </div>
+
+                            <div class="answer_place">
+                                <button class="answer_word answers_group_{{@index}} {{gender}}" value="{{answerC}}" id="answer_C_{{@index}}">{{answerC}}</button>
+                            </div>
+
+                            <div class="answer_place">
+                                <button class="answer_word answers_group_{{@index}} {{gender}}" value="{{answerD}}" id="answer_D_{{@index}}">{{answerD}}</button>
                             </div>
                         </div>
-                        
-                        {{!-- POSSIBILITY: ADD WRONG ANSWERS SHOULD BE --}}
-                        {{!-- <div id="should_be_answers">
-                            <div class="feedback_h3">
-                                <h3>What should be </h3>
-                            </div>
-                        </div> --}}
+                    </div>
+                {{/each}}
+            </div>
+
+
+            <div class="container_feedback">
+                <div id="container_feedback_numbers"></div>
+
+                <div class="container_answers_feedback">
+                    
+                    <div id="correct_answers">
+                        <div class="feedback_h3">
+                            <h3>Corrects</h3>
+                        </div>
                     </div>
 
-                    <div id="container_feedback_not_marked"></div>
+                    <div id="wrong_answers">
+                        <div class="feedback_h3">
+                            <h3>Wrongs</h3>
+                        </div>
+                    </div>
+                    
+                    {{!-- POSSIBILITY: ADD WRONG ANSWERS SHOULD BE --}}
+                    {{!-- <div id="should_be_answers">
+                        <div class="feedback_h3">
+                            <h3>What should be </h3>
+                        </div>
+                    </div> --}}
                 </div>
 
+                <div id="container_feedback_not_marked"></div>
+            </div>
+
+            {{!-- </div> --}}
+
+
+            {{!-- BUTTONS: NEXT --}}
+            <div class="buttons_container">
+                <button class="button_resource general_button" id="button_next">NEXT</button>
             </div>
 
 
+            {{!-- RESTART BUTTON --}}
             <div>
-                {{!-- RESTART BUTTON --}}
                 <input type="submit" onClick="window.location.reload();" class="general_button" id="button_restart" value="Restart">
             </div>
+
         </div>
     </div>
 
