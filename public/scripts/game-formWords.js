@@ -1,6 +1,3 @@
-// REQUIRE: IMPLEMENT NEXT BUTTON
-// REQUIRE: IMPLEMENT FEEDBACK
-// REQUIRE: IMPLEMENT NUMBER OF QUESTS
 
 const buttonNext = document.getElementById('button_next');
 const buttonResolve = document.getElementById('button_resolve');
@@ -122,7 +119,7 @@ function checkAnswers(concatenatedWord, answer) {
 
 
 
-
+// resolution
 function resolveProblem() {
     if (cont == 0) {
         containersResults[questNumber].classList.add('showElement');
@@ -144,6 +141,8 @@ for (let i = 0; i < numberOfQuests; i++) {
 
 function endingFeedback() {
     document.getElementsByClassName('container_feedback')[0].classList.add('showElement');
+    document.getElementsByClassName('button_resource')[0].classList.add('hiddenElement');
+    document.getElementsByClassName('button_resource')[1].classList.add('hiddenElement');
 };
 
 
@@ -155,11 +154,9 @@ function nextQuest() {
     questNumber++
 
     if (questNumber >= containerChallenger.length) {
-        console.log('FEEDBACK !!!!!!!!!!!!!!!!!');
         endingFeedback();
 
     } else {
-        console.log('AAAAAAAAAAAA questNumber ', questNumber);
         containerChallenger[questNumber].classList.add('showElement');
         for (let i = 0; i < draggables.length; i++) {
             draggables[i].draggable = true;

@@ -102,6 +102,75 @@
 
 
 
-/* FEEDBACK */
 
+/* FEEDBACK */
+.container_feedback {
+    height: auto;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    background-color: whitesmoke;
+    box-shadow: 2px 2px 6px 0 rgb(81, 0, 128);
+}
+#container_feedback_numbers, #container_feedback_not_marked {
+    text-align: center;
+    padding: 10px;
+    background-color: darkslateblue;
+    margin: 5px;
+}
+#container_feedback_not_marked {
+    background-color: whitesmoke;
+    display: none;
+    color: black;
+}
+.container_answers_feedback {
+    display: flex;
+    justify-content: center;
+}
+.container_answers_feedback p {
+    color: black;
+}
+#correct_answers {
+    justify-content: center;
+    padding: 10px;
+    background-color: rgb(61, 216, 69);
+    margin: 5px;
+}
+#wrong_answers {
+    padding: 10px;
+    background-color: rgb(255, 116, 116);
+    margin: 5px;
+}
+.feedback_h3 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+h3 {
+    color: black;
+}
+
+
+
+
+
+
+/* GENERAL CLASS */
+.hiddenElement {
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.showElement {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.correct_answer {
+    background-color: rgb(45, 185, 45);
+}
+.wrong_answer {
+    background-color: rgb(230, 63, 63);
+}
 
