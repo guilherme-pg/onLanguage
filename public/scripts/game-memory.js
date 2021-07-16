@@ -1,13 +1,15 @@
 // REQUIRE: IMPLEMENT RESTART BUTTON WITHOUT RELOAD
 // REQUIRE: CHANGE COLOR WHEN ITS CORRECT
 
+const firstPartMain = document.querySelectorAll('.partsofmain_memory')[0];
+let cardsContainers = document.querySelectorAll('.cards_container');
 const buttonCardsNumber = document.querySelectorAll('.input_option')
 const checks = document.querySelectorAll('.checks');
 const flipCards = document.querySelectorAll('.flip_card');
 const restartButton = document.getElementById('button_restart');
 let checkedChecks = [];
 let contadorPares = 0;
-let loadPage = 0;
+let reloadPage = false;
 let numberOfCards = 12;
 
 // CHANGE COLORS ACCORDING THE GENDERS
@@ -27,17 +29,42 @@ for (let i = 0; i < neutralArray.length; i++) {
 
 
 
-if (loadPage == 0) {
-	numberOfCards = 12;
-	setCardsNumber();
+// initial standard
+setCardsNumber();
+
+
+// shuffle function
+// NOT WORKING
+function shuffleArray(arrays) {
+	console.log('MMMMMMM  array111  ===>>>  ', arrays)
+	let array = JSON.parse(JSON.stringify(arrays));
+	
+	for (let i = array.length - 1; i > 0; i--) {
+		const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+	};
+	console.log('DDDDDDD  array2222  ===>>>  ', array)
+	return array;
 };
 
 
+// let arraybs = [[0, 1], [1, 2] ,[2, 3] ,[3, 4], [4, 5], [5, 6]];
+// shuffleArray(arraybs);
 
+// Remove, shuffle and add cards containers to DOM
+function shuffleContainers() {
+	// remove all elements
+	for (let i = 0; i < cardsContainers.length; i++) {
+		cardsContainers[i].remove();
+	};
 
+	let mixedContainers = shuffleArray(cardsContainers);
 
-
-
+	// set all elements
+	for (let i = 0; i < cardsContainers.length; i++) {
+		firstPartMain.appendChild(mixedContainers[i]);
+	};
+};
 
 
 
@@ -101,14 +128,15 @@ function resetChecks() {
 
 // buttons for number of cards
 function setCardsNumber() {
-	for (let z = 0; z < buttonCardsNumber.length; z++) {
-		if (buttonCardsNumber[z].checked) {
-			numberOfCards = buttonCardsNumber[z].value;
+	if (reloadPage) {
+		for (let z = 0; z < buttonCardsNumber.length; z++) {
+			if (buttonCardsNumber[z].checked) {
+				numberOfCards = buttonCardsNumber[z].value;
+			};
 		};
 	};
 
 	// start with 12 cards
-	// bug: some times appear the number of cards - 2
 	for (let z = 0; z < checks.length; z++) {
 		for (let k = 0; k < checks.length; k++) {
 			if (checks[z].value == checks[k].value && contadorPares < numberOfCards) {
@@ -117,11 +145,7 @@ function setCardsNumber() {
 				flipCards[k].classList.add('showElement');
 				contadorPares++;
 
-			} 
-			// else {
-			// 	flipCards[z].classList.remove('showElement');
-			// 	flipCards[k].classList.remove('showElement');
-			// };
+			};
 		};
 	};
 };
@@ -131,20 +155,28 @@ function setCardsNumber() {
 
 // RESTART BUTTON: INITIAL CARDS CONDITIONS
 function initialCardsSets() {
-	loadPage++
+	reloadPage = true;
+	contadorPares = 0;
 
-	for (let y = 0; y < checks.length; y++) {     // uncheck all cards
+	// uncheck all cards
+	for (let y = 0; y < checks.length; y++) {
 		checks[y].checked = false;
 		checks[y].disabled = false;
   	};
 
+	// remove all check card to another cards
+	for (let z = 0; z < checks.length; z++) {
+		flipCards[z].classList.remove('showElement');
+	};
+
+	shuffleContainers();
+
 	// set the number of cards
 	setCardsNumber();
 
-	for (let z = 0; z < buttonCardsNumber.length; z++) {    // uncheck buttons of cards number
+	// uncheck buttons of cards number
+	for (let z = 0; z < buttonCardsNumber.length; z++) {
 		buttonCardsNumber[z].checked = false;
 	};
-
-
 };
 restartButton.onclick = initialCardsSets;

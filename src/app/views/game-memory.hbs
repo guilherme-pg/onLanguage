@@ -10,14 +10,14 @@
             {{!-- CORRECT THE DIV CHANGES --}}
             <div class="partsofmain_memory">
                 {{#each words}}
-                    <div class="cards_container">
+                    <div class="cards_container" id="idid_{{word}}">
                         <input type="checkbox" class="checks" id="flip_card_{{@index}}" value="{{id}}">
                         <label class="flip_card" id="label_card_{{@index}}" for="flip_card_{{@index}}">
                             <div class="flip_card_inner" id="flip_inner_{{@index}}">
-
                                 <div class="flip_card_front">
                                     
                                 </div>
+                                
                                 <div class="flip_card_back">
                                     <h3 id="article_{{@index}}" class="{{gender}}">{{article}}</h3>
                                     <h3 id="word_{{@index}}" class="{{gender}}">{{word}}</h3>

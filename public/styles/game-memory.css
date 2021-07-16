@@ -75,7 +75,9 @@
 #flip_card_34, #flip_card_35,
 #flip_card_36, #flip_card_37,
 #flip_card_38, #flip_card_39,
-#flip_card_40 {
+#flip_card_40, #flip_card_41,
+#flip_card_42, #flip_card_43,
+#flip_card_44 {
     display: none;
 }
 
@@ -120,7 +122,11 @@
 #flip_card_37:checked ~ #label_card_37 #flip_inner_37,
 #flip_card_38:checked ~ #label_card_38 #flip_inner_38,
 #flip_card_39:checked ~ #label_card_39 #flip_inner_39,
-#flip_card_40:checked ~ #label_card_40 #flip_inner_40 {   
+#flip_card_40:checked ~ #label_card_40 #flip_inner_40,
+#flip_card_40:checked ~ #label_card_40 #flip_inner_41,
+#flip_card_40:checked ~ #label_card_40 #flip_inner_42,
+#flip_card_40:checked ~ #label_card_40 #flip_inner_43,
+#flip_card_40:checked ~ #label_card_40 #flip_inner_44 {   
     transform: rotateY(180deg);
 }
 
