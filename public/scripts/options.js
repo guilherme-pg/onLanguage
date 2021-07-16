@@ -17,9 +17,9 @@ const optionDual = document.getElementById('option_dual');
 const optionMemoryCards = document.getElementsByName('option_cards');
 const secondLanguageToHide = document.getElementsByClassName('label_option2_language');
 
-const memoryGameOption = document.getElementById('memory_cards_options');
-const secondLanguageContainer = document.getElementById('second_language');
-const methodLanguageContainer = document.getElementById('method_language');
+const methodLanguageContainer = document.getElementsByClassName('method_language')[0];
+const secondLanguageContainer = document.getElementsByClassName('second_language')[0];
+
 
 
 
@@ -154,34 +154,30 @@ for (let i = 0; i < optionGame.length; i++) {
     optionGame[i].onclick = showAndHideOptions;
 };
 
-memoryGameOption.style.display = "none";
-secondLanguageContainer.style.display = "none";
-methodLanguageContainer.style.display = "none";
+
 
 // SHOW AND HIDE OPTIONS FOR EACH GAME SELECTED
 function showAndHideOptions(event) {
     
-    // REQUIRE: CHANGE THE DISPLAY PROPERTY TO ANOTHER THING OTHER THAN 'NONE'7
+    // REQUIRE: CHANGE THE DISPLAY PROPERTY TO ANOTHER THING OTHER THAN 'NONE'
     // HIDE AND SHOW SECOND LANGUAGE AND METHOD
     if (optionMemory.checked) {
-        memoryGameOption.style.display = "flex";
-        secondLanguageContainer.style.display = "flex";
-        methodLanguageContainer.style.display = "flex";
+        methodLanguageContainer.classList.add('showElement');
+        secondLanguageContainer.classList.add('showElement');
         titleSecondLanguage.innerText = "Second Language";
 
     } else if (optionHangman.checked == true || optionFormWords.checked == true) {
-        secondLanguageContainer.style.display = "none";
-        methodLanguageContainer.style.display = "none";
-        memoryGameOption.style.display = "none";
+        methodLanguageContainer.classList.remove('showElement');
+        secondLanguageContainer.classList.remove('showElement');
+        
         
         for (let i = 0; i < optionMemoryCards.length; i++) {optionMemoryCards[i].checked = false};
         for (let i = 0; i < methodLanguage.length; i++) {methodLanguage[i].checked = false};
         for (let i = 0; i < optionSecondLanguage.length; i++) {optionSecondLanguage[i].checked = false;};
 
     } else if (optionMultipleChoice.checked) {
-        methodLanguageContainer.style.display = "none";
-        memoryGameOption.style.display = "none";
-        secondLanguageContainer.style.display = "flex";
+        methodLanguageContainer.classList.remove('showElement');
+        secondLanguageContainer.classList.add('showElement');
 
         for (let i = 0; i < optionMemoryCards.length; i++) {optionMemoryCards[i].checked = false};
         for (let i = 0; i < methodLanguage.length; i++) {methodLanguage[i].checked = false};

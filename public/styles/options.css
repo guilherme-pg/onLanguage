@@ -25,11 +25,13 @@
     flex-direction: column;
     justify-content: center;
 }
+.method_language {
+    display: none;
+}
 .options_selector h3 {
     margin: 17px 0px 5px 0px;
 }
 .options_selector h3 {
-    /* color: black; */
     color: whitesmoke;
 }
 .options_selector label {
@@ -59,6 +61,27 @@
 .inputs_and_labels input:checked + label:active {
     background-color: rgb(78, 78, 78);
     color: whitesmoke;
+}
+
+
+
+
+
+
+/* GENERAL CLASS */
+.hiddenElement {
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.showElement {
+    display: flex;
+}
+.correct_answer {
+    background-color: rgb(45, 185, 45);
+}
+.wrong_answer {
+    background-color: rgb(230, 63, 63);
 }
 
 

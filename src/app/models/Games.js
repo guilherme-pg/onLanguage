@@ -10,8 +10,7 @@ class Games {
     memory(datareturned, bodyReqData) {
         return new Promise((resolve, reject) => {
             let arrayOfObjects = [];
-            let cardsNumber = bodyReqData.option_cards / 2;   //cards number selected
-            // console.log('cardsNumber  ===  ', cardsNumber);
+            // let cardsNumber = bodyReqData.option_cards / 2;   //cards number selected
             
             primaryLanguage = bodyReqData.option_language;
             secondaryLanguage = bodyReqData.option2_language;
@@ -19,9 +18,9 @@ class Games {
             // query for on language
             if (bodyReqData.option_language_method == 'mono') {
                 let dataMixed = datareturned.sort(() => Math.random() - 0.5);
-                let dataSliced = dataMixed.slice(0, cardsNumber);
-                let duplicatedArray = JSON.parse(JSON.stringify(dataSliced));
-                let concatArray = dataSliced.concat(duplicatedArray);
+                // let dataSliced = dataMixed.slice(0, cardsNumber);
+                let duplicatedArray = JSON.parse(JSON.stringify(dataMixed));
+                let concatArray = dataMixed.concat(duplicatedArray);
                 let shuffledArray = concatArray.sort(() => Math.random() - 0.5);
 
                 arrayOfObjects = [];
@@ -37,16 +36,16 @@ class Games {
             // query for dual language
             } else if (bodyReqData.option_language_method == 'dual') {
                 let dataMixed = datareturned.sort(() => Math.random() - 0.5);
-                let dataSliced = dataMixed.slice(0, cardsNumber);
-                let duplicatedArray = JSON.parse(JSON.stringify(dataSliced));
+                // let dataSliced = dataMixed.slice(0, cardsNumber);
+                let duplicatedArray = JSON.parse(JSON.stringify(dataMixed));
 
                 arrayOfObjects = [];
-                for (let i = 0; i < dataSliced.length; i++) {
+                for (let i = 0; i < dataMixed.length; i++) {
                     arrayOfObjects.push({
-                        id: dataSliced[i]['_id'],
-                        article: dataSliced[i][primaryLanguage]['article'],
-                        word: dataSliced[i][primaryLanguage]['word'],
-                        gender: dataSliced[i][primaryLanguage]['gender']
+                        id: dataMixed[i]['_id'],
+                        article: dataMixed[i][primaryLanguage]['article'],
+                        word: dataMixed[i][primaryLanguage]['word'],
+                        gender: dataMixed[i][primaryLanguage]['gender']
                     });
                     arrayOfObjects.push({
                         id: duplicatedArray[i]['_id'],

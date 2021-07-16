@@ -170,13 +170,9 @@ h3 {
 /* GENERAL CLASS */
 .hiddenElement {
     display: none;
-    align-items: center;
-    justify-content: center;
 }
 .showElement {
     display: flex;
-    align-items: center;
-    justify-content: center;
 }
 .correct_answer {
     background-color: rgb(45, 185, 45);

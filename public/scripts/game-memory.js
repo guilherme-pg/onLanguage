@@ -1,9 +1,14 @@
-// REQUIRE: SEND ALL DATA AT ONCE TO PREVENT RELOAD THE PAGE
 // REQUIRE: IMPLEMENT RESTART BUTTON WITHOUT RELOAD
 // REQUIRE: CHANGE COLOR WHEN ITS CORRECT
 
-
+const buttonCardsNumber = document.querySelectorAll('.input_option')
+const checks = document.querySelectorAll('.checks');
+const flipCards = document.querySelectorAll('.flip_card');
+const restartButton = document.getElementById('button_restart');
 let checkedChecks = [];
+let contadorPares = 0;
+let loadPage = 0;
+let numberOfCards = 12;
 
 // CHANGE COLORS ACCORDING THE GENDERS
 const masculineArray = document.getElementsByClassName('masculine');
@@ -22,8 +27,22 @@ for (let i = 0; i < neutralArray.length; i++) {
 
 
 
+if (loadPage == 0) {
+	numberOfCards = 12;
+	setCardsNumber();
+};
+
+
+
+
+
+
+
+
+
+
+
 // MATCH, UNMATCH, LIMIT THE POSSIBILITY OF FLIP TO ONLY TWO,
-const checks = document.querySelectorAll('.checks');
 for (let i = 0; i < checks.length; i++) {
   	checks[i].onclick = checkFlip;
 };
@@ -68,22 +87,64 @@ function checkFlip (event) {
   	};
 };
 
+
+
 // reset checks from option not matched
 function resetChecks() {
 	for (let j = 0; j < checkedChecks.length; j++) {
 		checkedChecks[j].checked = false;
 	};
 	checkedChecks = [];
-}
+};
 
 
 
-// RESTART INITIAL CARDS CONDITIONS
+// buttons for number of cards
+function setCardsNumber() {
+	for (let z = 0; z < buttonCardsNumber.length; z++) {
+		if (buttonCardsNumber[z].checked) {
+			numberOfCards = buttonCardsNumber[z].value;
+		};
+	};
+
+	// start with 12 cards
+	// bug: some times appear the number of cards - 2
+	for (let z = 0; z < checks.length; z++) {
+		for (let k = 0; k < checks.length; k++) {
+			if (checks[z].value == checks[k].value && contadorPares < numberOfCards) {
+
+				flipCards[z].classList.add('showElement');
+				flipCards[k].classList.add('showElement');
+				contadorPares++;
+
+			} 
+			// else {
+			// 	flipCards[z].classList.remove('showElement');
+			// 	flipCards[k].classList.remove('showElement');
+			// };
+		};
+	};
+};
+
+
+
+
+// RESTART BUTTON: INITIAL CARDS CONDITIONS
 function initialCardsSets() {
-	for (let y = 0; y < checks.length; y++) {
+	loadPage++
+
+	for (let y = 0; y < checks.length; y++) {     // uncheck all cards
 		checks[y].checked = false;
 		checks[y].disabled = false;
   	};
+
+	// set the number of cards
+	setCardsNumber();
+
+	for (let z = 0; z < buttonCardsNumber.length; z++) {    // uncheck buttons of cards number
+		buttonCardsNumber[z].checked = false;
+	};
+
+
 };
-const restartButton = document.getElementById('button_restart');
 restartButton.onclick = initialCardsSets;
