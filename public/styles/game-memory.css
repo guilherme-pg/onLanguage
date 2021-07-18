@@ -200,12 +200,20 @@
     margin: 5px;
     padding: 10px;
 }
-
-
-
-
 #button_restart {
     margin: 15px;
+}
+
+
+
+.masculine {
+    color: royalblue;
+}
+.feminine {
+    color: rgb(230, 63, 63);
+}
+.neutral {
+    color: rgb(45, 185, 45);
 }
 
 

@@ -2,7 +2,7 @@
 // REQUIRE: CHANGE COLOR WHEN ITS CORRECT
 
 const firstPartMain = document.querySelectorAll('.partsofmain_memory')[0];
-let cardsContainers = document.querySelectorAll('.cards_container');
+const cardsContainers = document.querySelectorAll('.cards_container');
 const buttonCardsNumber = document.querySelectorAll('.input_option')
 const checks = document.querySelectorAll('.checks');
 const flipCards = document.querySelectorAll('.flip_card');
@@ -12,57 +12,81 @@ let contadorPares = 0;
 let reloadPage = false;
 let numberOfCards = 12;
 
-// CHANGE COLORS ACCORDING THE GENDERS
-const masculineArray = document.getElementsByClassName('masculine');
-const feminineArray = document.getElementsByClassName('feminine');
-const neutralArray = document.getElementsByClassName('neutral');
 
-for (let i = 0; i < masculineArray.length; i++) {
-    masculineArray[i].style.color = "royalblue";
+
+
+
+
+
+
+// CHANGE COLORS ACCORDING THE GENDERS
+function setColorsAccordingToGender() {
+	for (let i = 0; i < cardsContainers.length; i++) {
+
+		if (document.getElementById(`gender_${i}`).innerHTML == "neutral") {
+	
+			document.getElementById(`article_${i}`).classList.add('neutral');
+			document.getElementById(`word_${i}`).classList.add('neutral');
+	
+		} else if (document.getElementById(`gender_${i}`).innerHTML == "feminine") {
+	
+			document.getElementById(`article_${i}`).classList.add('feminine');
+			document.getElementById(`word_${i}`).classList.add('feminine');
+			
+		} else if (document.getElementById(`gender_${i}`).innerHTML == "masculine") {
+	
+			document.getElementById(`article_${i}`).classList.add('masculine');
+			document.getElementById(`word_${i}`).classList.add('masculine');
+		};
+	};
 };
-for (let i = 0; i < feminineArray.length; i++) {
-    feminineArray[i].style.color = "rgb(230, 63, 63)";
-};
-for (let i = 0; i < neutralArray.length; i++) {
-    neutralArray[i].style.color = "rgb(45, 185, 45)";
-};
+
 
 
 
 // initial standard
 setCardsNumber();
+setColorsAccordingToGender();
 
 
 // shuffle function
 // NOT WORKING
 function shuffleArray(arrays) {
-	console.log('MMMMMMM  array111  ===>>>  ', arrays)
 	let array = JSON.parse(JSON.stringify(arrays));
 	
 	for (let i = array.length - 1; i > 0; i--) {
 		const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
 	};
-	console.log('DDDDDDD  array2222  ===>>>  ', array)
 	return array;
 };
 
 
-// let arraybs = [[0, 1], [1, 2] ,[2, 3] ,[3, 4], [4, 5], [5, 6]];
-// shuffleArray(arraybs);
+let mixedContainers = [];
+let arrayOfWordsProperties = [];
 
-// Remove, shuffle and add cards containers to DOM
-function shuffleContainers() {
-	// remove all elements
+// reassign all cards contents
+function shuffleCardsContent() {
+	// populate an array with cards values
 	for (let i = 0; i < cardsContainers.length; i++) {
-		cardsContainers[i].remove();
+		arrayOfWordsProperties.push({
+			value: document.getElementById(`flip_card_${i}`).value,
+			gender: document.getElementById(`gender_${i}`).textContent,
+			article: document.getElementById(`article_${i}`).textContent,
+			word: document.getElementById(`word_${i}`).textContent
+		});
 	};
 
-	let mixedContainers = shuffleArray(cardsContainers);
+	console.log('OOOOOOOOOOOO arrayOfWordsProperties ==>>  ', arrayOfWordsProperties);
+	arrayOfWordsProperties = shuffleArray(arrayOfWordsProperties);
+	console.log('PPPPPPPPPPPP arrayOfWordsProperties ==>>  ', arrayOfWordsProperties);
 
-	// set all elements
+	// reset or reassign all cards values
 	for (let i = 0; i < cardsContainers.length; i++) {
-		firstPartMain.appendChild(mixedContainers[i]);
+		document.getElementById(`flip_card_${i}`).value = arrayOfWordsProperties[i].value;
+		document.getElementById(`gender_${i}`).textContent = arrayOfWordsProperties[i].gender;
+		document.getElementById(`article_${i}`).textContent = arrayOfWordsProperties[i].article;
+		document.getElementById(`word_${i}`).textContent = arrayOfWordsProperties[i].word;
 	};
 };
 
@@ -136,6 +160,8 @@ function setCardsNumber() {
 		};
 	};
 
+	console.log('CCCCC numberOfCards ===>>>  ', numberOfCards)
+
 	// start with 12 cards
 	for (let z = 0; z < checks.length; z++) {
 		for (let k = 0; k < checks.length; k++) {
@@ -150,6 +176,16 @@ function setCardsNumber() {
 	};
 };
 
+
+
+
+function resetColorsClass() {
+	console.log('RESET    ATTRIBUTES   FUNCTION <><><><><>')
+	for (let i = 0; i < cardsContainers.length; i++) {
+		document.getElementById(`article_${i}`).removeAttribute('class');
+		document.getElementById(`word_${i}`).removeAttribute('class');
+	};
+};
 
 
 
@@ -169,9 +205,12 @@ function initialCardsSets() {
 		flipCards[z].classList.remove('showElement');
 	};
 
-	shuffleContainers();
+	shuffleCardsContent();
 
-	// set the number of cards
+	resetColorsClass();
+
+	setColorsAccordingToGender();
+
 	setCardsNumber();
 
 	// uncheck buttons of cards number
