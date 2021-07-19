@@ -13,27 +13,27 @@
     margin-bottom: 30px;
 }
 .table_class th, .table_class td {
-    color: black;
+    /* color: indigo; */
     padding: 5px;
 }
 td {
     text-align: center;
     /* box-shadow: 1px 1px 4px rgb(49, 49, 49); */
 }
-
 td:nth-child(1),
-td:nth-child(2) {
-    background-color: rgb(146, 255, 173);
+td:nth-child(2),
+td:nth-child(3) {
+    background-color: rgb(147, 219, 99);
 }
 
-td:nth-child(3), 
-td:nth-child(4),
-td:nth-child(5) {
+td:nth-child(4), 
+td:nth-child(5),
+td:nth-child(6) {
     background-color: rgb(146, 173, 255);
 }
 
-td:nth-child(6), 
 td:nth-child(7), 
-td:nth-child(8) {
+td:nth-child(8), 
+td:nth-child(9) {
     background-color: rgb(253, 146, 146);
 }

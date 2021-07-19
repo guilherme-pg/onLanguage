@@ -4,21 +4,19 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 100vh;
+    height: 100%;
     width: 100%;
 }
 
 .dataset_access {
-    /* background-color: rgb(124, 199, 13); */
     display: flex;
     align-items: center;
     flex-direction: column;
-    
     justify-content: space-around;
     padding: 10px;
     border-radius: 6px;
     font-size: 18px;
-    height: 60vh;
+    height: 60%;
     width: 60%;
 }
 .dataset_inputs_labels {
@@ -40,8 +38,19 @@
 .options_selector h3 {
     margin: 17px 0px 5px 0px;
 }
-.options_selector h3, .options_selector label {
-    color: black;
+.inputs_and_labels {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.inputs_and_labels input {
+    display: none;
+}
+.inputs_and_labels label {
+    float:left;
+    font-size: inherit;
+    margin: 5px 7px 5px 7px;
+    padding: 5px;
 }
 .inputs_and_labels {
     display: flex;
@@ -53,58 +62,20 @@
 }
 .inputs_and_labels label {
     float:left;
-    background-color: whitesmoke;
-    border-radius: 3px;
-    font-size: inherit;
     margin: 5px 7px 5px 7px;
     padding: 5px;
     transition: 0.3s, color;
-    outline: none;
-    cursor: pointer;
-    box-shadow: 2px 2px 6px 0 rgb(81, 0, 128);
 }
 .inputs_and_labels label:hover {
-    background-color: rgb(41, 41, 41);
-    /* background-color: orange; */
-    color: whitesmoke;
     transform: scale(1.1);
 }
-.inputs_and_labels label:active {
-    background-color: rgb(66, 66, 66);
-    color: whitesmoke;
-}
 .inputs_and_labels input:checked + label {
-    background-color:  rgb(26, 26, 26);
+    background-color: rgb(41, 41, 41);
     color: whitesmoke;
-}
-.inputs_and_labels input:checked + label:hover {
-    background-color: rgb(66, 66, 66);
 }
 .inputs_and_labels input:checked + label:active {
-    background-color: rgb(41, 41, 41);
-}
-
-
-
-
-
-#button_check_data {
-    background-color: rgb(26, 26, 26);
-    border-radius: 4px;
-    font-size: inherit;
-    margin: 40px 15px 15px 15px;
-    padding: 15px;
-    border: 0;
-    transition: 0.5s, color 0.5s;
-    outline: none;
-    cursor: pointer;
-    box-shadow: 2px 2px 6px 0 rgb(81, 0, 128);
-}
-#button_check_data:hover {
-    background-color: rgb(58, 58, 58);
-}
-#button_check_data:active {
     background-color: rgb(78, 78, 78);
+    color: whitesmoke;
 }
 
 

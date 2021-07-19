@@ -160,12 +160,14 @@ th {
 }
 td {
     text-align: center;
-    /* box-shadow: 1px 1px 4px rgb(49, 49, 49); */
 }
-
-td:nth-child(1), 
+td:nth-child(1) {
+    padding: 1px 5px;
+    background-color: rgb(110, 175, 143);
+}
 td:nth-child(2), 
-td:nth-child(3) {
+td:nth-child(3),
+td:nth-child(4) {
     padding: 1px 5px;
     background-color: rgb(146, 173, 255);
 }

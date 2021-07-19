@@ -329,6 +329,7 @@
                         </thead>
 
                         <tr>
+                            <td></td>
                             <td>Article</td>
                             <td>Word</td>
                             <td>Gender</td>
@@ -336,9 +337,10 @@
 
                         {{#each word}}
                             <tr>
-                                <td>{{firstLanguage.article}}</td>
-                                <td>{{firstLanguage.word}}</td>
-                                <td>{{firstLanguage.gender}}</td>
+                                <td>{{@index}}</td>
+                                <td>{{dataFirstLanguage.article}}</td>
+                                <td>{{dataFirstLanguage.word}}</td>
+                                <td>{{dataFirstLanguage.gender}}</td>
                             </tr>
                         {{/each}}
                     
