@@ -117,3 +117,16 @@
         padding: 0;
     }
 }
+
+
+
+
+
+
+/* GENERAL CLASS */
+.hiddenElement {
+    display: none;
+}
+.showElement {
+    display: flex;
+}

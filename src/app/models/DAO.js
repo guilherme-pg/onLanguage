@@ -12,17 +12,22 @@ class WordsDao {
 				if (err) throw err;
 				let dbo = db.db("wordsdata");
 
-				// WORKAROUND !!!: some times only one value is selected
+
+				// WORKAROUND !!!: some times only one value is selected to be query as an array
+				// or level and theme, or level or theme
 				if (typeof bodyReqData.option_level == 'string') {
 					bodyReqData.option_level = ["none", bodyReqData.option_level];
-					bodyReqData.option_theme = ["none", bodyReqData.option_theme];
 
 				} else {
 					bodyReqData.option_level = ["none", ...bodyReqData.option_level];
+				};
+				if (typeof bodyReqData.option_theme == 'string') {
+					bodyReqData.option_theme = ["none", bodyReqData.option_theme];
+				} else {
 					bodyReqData.option_theme = ["none", ...bodyReqData.option_theme];
 				};
 
-				// REQUIRE: CHANGE NOUN to ANY OTHER GRAMMAR CLASS
+
 				dbo.collection(`${bodyReqData.option_grammar}s`)
 					.find({
 						name_level: {$in: bodyReqData.option_level},

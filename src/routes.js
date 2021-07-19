@@ -1,6 +1,7 @@
 const dbConnection = require('./app/models/ConnectionDB');
 const WordsDao = require('./app/models/DAO');
 const Games = require('./app/models/Games');
+const games = new Games();
 const controller = require('./app/controllers/Controller')
 
 var bodyReqData = [];
@@ -22,9 +23,7 @@ module.exports = (app) => {
 
     // ROUTE: GET ACTION FROM FORM (DATA SELECTED)
     app.get('/gameoptions', async function(req, resp) {
-
         bodyReqData = req.query;
-        const games = new Games();
         const wordsDao = new WordsDao(dbConnection);
 
         // let datareturned = await wordsDao.optionsdata(bodyReqData);
@@ -87,10 +86,9 @@ module.exports = (app) => {
             .catch(erro => console.log(erro));
     });
 
-
+    // ROUTE: SHOW SOME DATA on the form
     app.get('/data-form-table', async function(req, resp) {
         bodyReqData = req.query;
-        const games = new Games();
         const wordsDao = new WordsDao(dbConnection);
         let datareturned = await wordsDao.read(bodyReqData);
 
@@ -123,24 +121,20 @@ module.exports = (app) => {
     // ROUTE: DATA SELECTED (TABLES)
     app.get('/data-tables', async function(req, resp) {
         bodyReqData = req.query;
-        const games = new Games();
         const wordsDao = new WordsDao(dbConnection);
-
         let datareturned = await wordsDao.read(bodyReqData);
 
         let processedData = [];   // variable repeated
         processedData = await games.tablesVisualization(datareturned, bodyReqData)
-            .then(function(datareturned) {
 
-                // REQUIRE:   data sem tratamento
-                resp.render('data-tables', {
-                    title: "Tables",
-                    layout: 'mainLayouts',
-                    style: "data-tables.css",
-                    word: processedData
-                });
-            })
-            .catch(erro => console.log(erro));
+        // REQUIRE:   data sem tratamento
+        resp.render('data-tables', {
+            title: "Tables",
+            layout: 'mainLayouts',
+            style: "data-tables.css",
+            word: processedData
+        });
+
     });
 
 

@@ -59,6 +59,24 @@
                     </div>
 
 
+                    <div class="options_selector">
+                        <h3>Part of speech</h3>
+                        <div class="inputs_and_labels">
+                        {{!-- <input type="radio" class="input_option" id="option_adjective" name="option_grammar" value="adjective">
+                        <label class="general_button" for="option_adjective">Adjectives</label> --}}
+
+                        {{!-- <input type="radio" class="input_option" id="option_adverb" name="option_grammar" value="adverb">
+                        <label class="general_button" for="option_adverb">Adverbs</label> --}}
+
+                        <input type="radio" class="input_option" id="option_noun" name="option_grammar" value="noun">
+                        <label class="general_button" for="option_noun">Nouns</label>
+
+                        <input type="radio" class="input_option" id="option_verb" name="option_grammar" value="verb">
+                        <label class="general_button" for="option_verb">Verbs</label>
+                        </div>
+                    </div>
+
+
                     <div class="options_selector" id="noun_themes">
                         <h3>Themes</h3>
                         <div class="inputs_and_labels">
@@ -85,10 +103,6 @@
 
                             <input type="checkbox" class="input_option" id="option_politic" name="option_theme" value="politic">
                             <label for="option_politic">Politic</label>
-
-                            {{!-- REQUIRE: ARRUMAR ARRUMADINHO --}}
-                            <input type="checkbox" class="input_option" id="option_none" name="option_theme" checked value="none" hidden>
-                            <label for="option_none" hidden>arrumadinho</label>
                         </div>
                     </div>
 
@@ -105,14 +119,7 @@
                             <label for="option_intermediate">Intermediate</label>
 
                             <input type="checkbox" class="input_option" id="option_advanced" name="option_level" value="advanced">
-                            <label for="option_advanced">Advanced</label>
-
-
-
-                            {{!-- REQUIRE: RESOLVER ARRUMADINHO --}}
-                            <input type="checkbox" class="input_option" id="option_nada" name="option_level" checked value="none" hidden>
-                            <label hidden for="option_nada">arrumadinho</label>
-                            
+                            <label for="option_advanced">Advanced</label>                      
                         </div>
                     </div>
                 </div>
@@ -128,4 +135,5 @@
     {{> footer}}
 </main>
 
+<script src="/scripts/data-record.js"></script>
 {{> scripts}}

@@ -5,11 +5,12 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 100vh;
+    height: 100%;
     width: 100%;
 }
-th {
-    background-color: rgb(194, 194, 194);
+.table_class {
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
 .table_class th, .table_class td {
     color: black;
@@ -20,14 +21,19 @@ td {
     /* box-shadow: 1px 1px 4px rgb(49, 49, 49); */
 }
 
-td:nth-child(1), 
-td:nth-child(2), 
-td:nth-child(3) {
+td:nth-child(1),
+td:nth-child(2) {
+    background-color: rgb(146, 255, 173);
+}
+
+td:nth-child(3), 
+td:nth-child(4),
+td:nth-child(5) {
     background-color: rgb(146, 173, 255);
 }
 
-td:nth-child(4), 
-td:nth-child(5), 
-td:nth-child(6) {
+td:nth-child(6), 
+td:nth-child(7), 
+td:nth-child(8) {
     background-color: rgb(253, 146, 146);
 }

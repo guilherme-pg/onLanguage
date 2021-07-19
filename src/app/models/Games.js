@@ -212,18 +212,20 @@ class Games {
 
     tablesVisualization(datareturned, bodyReqData) {
         return new Promise((resolve, reject) => {
-            let dataset;
-            dataset = datareturned;
+            let dataset = [];
 
             // REQUIRE: SIMPLIFICATION
             // REQUIRE: UPPER CASE IN TITLE
-            for (let i = 0; i < dataset.length; i++) {
-                dataset[i].firstLanguage = dataset[i][`${bodyReqData.name_first_language}`];
-                dataset[i].secondLanguage = dataset[i][`${bodyReqData.name_second_language}`];
+            for (let i = 0; i < datareturned.length; i++) {
+                dataset.push({
+                    theme: datareturned[i].name_theme,
+                    level: datareturned[i].name_level,
+                    firstLanguage: `${bodyReqData.option_language}`,
+                    secondLanguage: `${bodyReqData.option2_language}`,
+                    dataFirstLanguage: datareturned[i][`${bodyReqData.option_language}`],
+                    dataSecondLanguage: datareturned[i][`${bodyReqData.option2_language}`]
+                });
             };
-
-            dataset.theFirstLanguage = `${bodyReqData.name_first_language}`;
-            dataset.theSecondLanguage = `${bodyReqData.name_second_language}`;
 
             return resolve(dataset);
         });
