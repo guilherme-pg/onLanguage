@@ -10,8 +10,13 @@
             <form id="games_options" action="/gameoptions" method="get">
 
                 <div class="options_selector">
-                    <h3>Games Options</h3>
+                    <h3>Activities</h3>
                     <div class="inputs_and_labels">
+                        {{!-- <input type="radio" class="input_option" id="option_association" name="option_game" value="association">
+                        <label class="general_button" for="option_association">Association</label> --}}
+
+                        {{!-- <input type="radio" class="input_option" id="option_flash_card" name="option_game" value="flashCard">
+                        <label class="general_button" for="option_flash_card">Flash Card</label> --}}
 
                         <input type="radio" class="input_option" id="option_form_words" name="option_game" value="Form Words">
                         <label class="general_button" for="option_form_words">Form Words</label>
@@ -19,22 +24,17 @@
                         <input type="radio" class="input_option" id="option_hangman" name="option_game" value="Hangman">
                         <label class="general_button" for="option_hangman">Hangman</label>
 
+                        {{!-- <input type="radio" class="input_option" id="option_link_article" name="option_game" value="linkArticle">
+                        <label class="general_button" for="option_link_article">Link Article</label> --}}
+
                         <input type="radio" class="input_option" id="option_memory" name="option_game" value="Memory">
                         <label class="general_button" for="option_memory">Memory</label>
 
                         <input type="radio" class="input_option" id="option_multipleChoice" name="option_game" value="Multiple Choice">
                         <label class="general_button" for="option_multipleChoice">Multiple Choice</label>
 
-
-                        {{!-- OTHERS GAMES POSSIBILITIES --}}
-                        {{!-- <input type="radio" class="input_option" id="option_flash_card" name="option_game" value="flashCard">
-                        <label for="option_flash_card">Flash Card</label> --}}
-
-                        {{!-- <input type="radio" class="input_option" id="option_link_article" name="option_game" value="linkArticle">
-                        <label for="option_link_article">Link Article</label> --}}
-
-                        {{!-- <input type="radio" class="input_option" id="option_association" name="option_game" value="association">
-                        <label for="option_association">Association</label> --}}
+                        {{!-- <input type="radio" class="input_option" id="option_write" name="option_game" value="write">
+                        <label class="general_button" for="option_write">Write the Translation</label> --}}
                     </div>
                 </div>
 
@@ -85,27 +85,15 @@
 
 
 
-                <div class="options_selector">
-                    <h3>Levels</h3>
-                    <div class="inputs_and_labels">
-
-                        {{!-- NEW LEVEL SETUP --}}
-                        <input type="checkbox" class="input_option" id="option_basic" name="option_level" value="basic">
-                        <label class="general_button" for="option_basic">Basic</label>
-
-                        <input type="checkbox" class="input_option" id="option_intermediate" name="option_level" value="intermediate">
-                        <label class="general_button" for="option_intermediate">Intermediate</label>
-
-                        <input type="checkbox" class="input_option" id="option_advanced" name="option_level" value="advanced">
-                        <label class="general_button" for="option_advanced">Advanced</label>                        
-                    </div>
-                </div>
-
-
-
                 <div class="options_selector" id="noun_themes">
                     <h3>Themes</h3>
                     <div class="inputs_and_labels">
+                        {{!-- <input type="checkbox" class="input_option" id="option_abstract" name="option_theme" value="abstract">
+                        <label class="general_button" for="option_abstract">Abstract Nouns</label> --}}
+
+                        {{!-- <input type="checkbox" class="input_option" id="option_animals" name="option_theme" value="animals">
+                        <label class="general_button" for="option_animals">Animals</label> --}}
+
                         <input type="checkbox" class="input_option" id="option_body" name="option_theme" value="body">
                         <label class="general_button" for="option_body">Body</label>
 
@@ -115,8 +103,23 @@
                         <input type="checkbox" class="input_option" id="option_clothes" name="option_theme" value="clothes">
                         <label class="general_button" for="option_clothes">Clothes and Accessories</label>
 
+                        {{!-- <input type="checkbox" class="input_option" id="option_economy" name="option_theme" value="economy">
+                        <label class="general_button" for="option_economy">Economy</label> --}}
+
+                        {{!-- <input type="checkbox" class="input_option" id="option_erudite" name="option_theme" value="erudite">
+                        <label class="general_button" for="option_erudite">Erudite</label> --}}
+
+                        {{!-- <input type="checkbox" class="input_option" id="option_fantasy" name="option_theme" value="fantasy">
+                        <label class="general_button" for="option_fantasy">Fantasy and RPG</label> --}}
+
                         <input type="checkbox" class="input_option" id="option_food" name="option_theme" value="food">
                         <label class="general_button" for="option_food">Foods and Drinks</label>
+
+                        {{!-- <input type="checkbox" class="input_option" id="option_house" name="option_theme" value="house">
+                        <label class="general_button" for="option_house">House</label> --}}
+
+                        {{!-- <input type="checkbox" class="input_option" id="option_law" name="option_theme" value="law">
+                        <label class="general_button" for="option_law">Law</label> --}}
 
                         <input type="checkbox" class="input_option" id="option_nature" name="option_theme" value="nature">
                         <label class="general_button" for="option_nature">Nature</label>
@@ -124,11 +127,23 @@
                         <input type="checkbox" class="input_option" id="option_objects" name="option_theme" value="objects">
                         <label class="general_button" for="option_objects">Objects</label>
 
-                        {{!-- <input type="checkbox" class="input_option" id="option_animals" name="option_theme" value="animals">
-                        <label for="option_animals">Animals</label> --}}
-
                         <input type="checkbox" class="input_option" id="option_politic" name="option_theme" value="politic">
                         <label class="general_button" for="option_politic">Politic</label>
+
+                        {{!-- <input type="checkbox" class="input_option" id="option_religion" name="option_theme" value="religion">
+                        <label class="general_button" for="option_religion">Religion</label> --}}
+
+                        {{!-- <input type="checkbox" class="input_option" id="option_science" name="option_theme" value="science">
+                        <label class="general_button" for="option_science">Science</label> --}}
+
+                        {{!-- <input type="checkbox" class="input_option" id="option_sports" name="option_theme" value="sports">
+                        <label class="general_button" for="option_sports">Sports</label> --}}
+
+                        {{!-- <input type="checkbox" class="input_option" id="option_substances" name="option_theme" value="substances">
+                        <label class="general_button" for="option_substances">Substances</label> --}}
+
+                        {{!-- <input type="checkbox" class="input_option" id="option_vehicles" name="option_theme" value="vehicles">
+                        <label class="general_button" for="option_vehicles">Vehicles</label> --}}
                     </div>
                 </div>
 
@@ -145,6 +160,24 @@
 
                         {{!-- <input type="radio" class="input_option" id="option_mono_supp" name="option_language_method" value="monosupp">
                         <label for="option_mono_supp">One Language with Support</label> --}}
+                    </div>
+                </div>
+
+
+
+                <div class="options_selector">
+                    <h3>Levels</h3>
+                    <div class="inputs_and_labels">
+
+                        {{!-- NEW LEVEL SETUP --}}
+                        <input type="checkbox" class="input_option" id="option_basic" name="option_level" value="basic">
+                        <label class="general_button" for="option_basic">Basic</label>
+
+                        <input type="checkbox" class="input_option" id="option_intermediate" name="option_level" value="intermediate">
+                        <label class="general_button" for="option_intermediate">Intermediate</label>
+
+                        {{!-- <input type="checkbox" class="input_option" id="option_advanced" name="option_level" value="advanced">
+                        <label class="general_button" for="option_advanced">Advanced</label> --}}
                     </div>
                 </div>
 

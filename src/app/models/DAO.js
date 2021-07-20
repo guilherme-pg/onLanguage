@@ -15,6 +15,9 @@ class WordsDao {
 
 				// WORKAROUND !!!: some times only one value is selected to be query as an array
 				// or level and theme, or level or theme
+				if (bodyReqData.option_grammar == 'verb') {     // requre: change in the db to switch 'empty' classification to verbs
+					bodyReqData.option_theme = 'empty'
+				};
 				if (typeof bodyReqData.option_level == 'string') {
 					bodyReqData.option_level = ["none", bodyReqData.option_level];
 
@@ -23,6 +26,8 @@ class WordsDao {
 				};
 				if (typeof bodyReqData.option_theme == 'string') {
 					bodyReqData.option_theme = ["none", bodyReqData.option_theme];
+				} else if (bodyReqData.option_theme == undefined) {
+					bodyReqData.option_theme = ["none", ''];
 				} else {
 					bodyReqData.option_theme = ["none", ...bodyReqData.option_theme];
 				};

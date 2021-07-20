@@ -25,17 +25,37 @@ body {
     display: flex;
     flex-direction: row;
 }
-.site_main_title {
+.main_site {
     display: flex;
     align-items: center;
     justify-content: center;
-    justify-content: space-around;
-    padding: 10px;
-    height: 100vh;
-    font-size: 18px;
+    flex-direction: column;
     width: 100%;
 }
-
+.main_title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-size: 28px;
+    width: 100%;
+}
+.main_info {
+    background-color: rgb(160, 117, 209);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+.info_section {
+    width: 20%;
+    margin: 20px;
+    text-align: justify;
+}
+.main_info h3 {
+    margin-bottom: 10px;
+}
 
 
 /* HEADER */
