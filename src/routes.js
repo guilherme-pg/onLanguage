@@ -52,6 +52,10 @@ module.exports = (app) => {
             processedData = await games.flashCard(datareturned, bodyReqData);
             viewReference = "game-flashCard";
 
+        } else if (bodyReqData.option_game == 'Write the Translation') {
+            processedData = await games.write(datareturned, bodyReqData);
+            viewReference = "game-write";
+
         } else {
             processedData = await games.flashCard(datareturned, bodyReqData);
             viewReference = "game-links";

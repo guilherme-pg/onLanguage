@@ -201,6 +201,41 @@ class Games {
 
 
 
+
+    write(datareturned, bodyReqData) {
+        return new Promise((resolve, reject) => {
+            let languageSelected = bodyReqData.option_language;
+            let secondLanguageSelected = bodyReqData.option2_language;
+            // let referenceWordArray = [];
+            // let secondLanguageAnswersArray = [];
+            let objArray = [];
+
+            datareturned.forEach(element => {
+                
+                objArray.push({
+                    language1Article: element[languageSelected]['article'],
+                    language1Word: element[languageSelected]['word'],
+                    language2Article: element[secondLanguageSelected]['word'],
+                    language2Word: element[secondLanguageSelected]['word']
+                });
+
+                // referenceWordArray.push(element[languageSelected]['word']);
+                // secondLanguageAnswersArray.push(element[secondLanguageSelected]['word']);
+            });
+
+            // objArray.push({
+            //     referenceWord: referenceWord,
+            //     referenceTranslation: referenceTranslation
+            // });
+
+            objArray = shuffleArray(objArray);
+
+            return resolve(objArray);
+        });
+    };
+
+
+
     // REQUIRE: SET MULTIPLE CARDS
     // falshCard(datareturned, bodyReqData) {
     //     return new Promise((resolve, reject) => {
@@ -233,5 +268,19 @@ class Games {
 
 
 };
+
+
+
+
+function shuffleArray(arrays) {
+	let array = JSON.parse(JSON.stringify(arrays));
+	
+	for (let i = array.length - 1; i > 0; i--) {
+		const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+	};
+	return array;
+};
+
 
 module.exports = Games;

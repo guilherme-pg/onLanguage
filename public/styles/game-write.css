@@ -1,0 +1,60 @@
+#main_write {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+}
+
+.main_container {
+    background-color: orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    width: 50%;
+}
+.activitie_container {
+    height: 40%;
+}
+.buttons_container {
+    justify-content: space-between;
+}
+.container_challenger {
+    background-color: springgreen;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px;
+}
+.container_counter {
+    background-color: tomato;
+}
+.container_reference_word {
+    background-color: navy;
+}
+.container_answer_input {
+    background-color: lime;
+}
+
+.general_button, #button_restart {
+    margin: 5px;
+}
+
+
+
+/* GENERAL CLASS */
+.hiddenElement {
+    display: none;
+}
+.showElement {
+    display: flex;
+}
+.correct_answer {
+    background-color: rgb(45, 185, 45);
+}
+.wrong_answer {
+    background-color: rgb(230, 63, 63);
+}

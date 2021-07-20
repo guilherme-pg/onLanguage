@@ -1,0 +1,58 @@
+
+<main id="main_and_footer">
+
+    <div id="header_and_main">
+
+        {{> header}}    
+
+        <div id="main_write">
+
+            <div class="main_container activitie_container">
+                {{#each words}}
+                    <div class="container_challenger">
+
+                        {{!-- correct word for parameter --}}
+                        <p class="checkable" id="artcile_checkable_{{@index}}" hidden>{{language2Article}}</p>
+                        <p class="checkable" id="word_checkable_{{@index}}" hidden>{{language2Word}}</p>
+
+                        {{!-- counter --}}
+                        <div class="container_counter">
+                            <p class="quest_counter" id="quest_counter_number_{{@index}}">7/14</p>
+                        </div>
+
+                        {{!-- user reference word container --}}
+                        <div class="container_reference_word">
+                            <p id="article_{{@index}}">{{language1Article}}</p>
+                            <p class="reference_word" id="reference_question_{{@index}}">{{language1Word}}</p>
+                        </div>
+
+                        {{!-- ANSWER container --}}
+                        <div class="container_answer_input">
+                            <input id="input_article_{{@index}}" type="text">
+                            <input id="input_word_{{@index}}" type="text">
+                        </div>
+
+
+                    </div>
+                {{/each}}
+
+            </div>
+
+            <div class="main_container buttons_container">
+                <input class="general_button button_resource" name="button_resolve" id="button_resolve" value="Resolve">
+                <input class="general_button button_resource" name="button_next" id="button_next" value="Next">
+            </div>
+
+
+            <div class="main_container">
+                {{!-- RESTART BUTTON --}}
+                <input type="submit" onClick="window.location.reload();" class="general_button" id="button_restart" value="Restart">
+            </div>
+        </div>
+    </div>
+
+    {{> footer}}
+</main>
+
+<script src="/scripts/game-write.js"></script>
+{{> scripts}}

@@ -33,8 +33,8 @@
                         <input type="radio" class="input_option" id="option_multipleChoice" name="option_game" value="Multiple Choice">
                         <label class="general_button" for="option_multipleChoice">Multiple Choice</label>
 
-                        {{!-- <input type="radio" class="input_option" id="option_write" name="option_game" value="write">
-                        <label class="general_button" for="option_write">Write the Translation</label> --}}
+                        <input type="radio" class="input_option" id="option_write" name="option_game" value="Write the Translation">
+                        <label class="general_button" for="option_write">Write the Translation</label>
                     </div>
                 </div>
 
@@ -149,6 +149,24 @@
 
 
 
+                <div class="options_selector">
+                    <h3>Complexity</h3>
+                    <div class="inputs_and_labels">
+
+                        {{!-- NEW LEVEL SETUP --}}
+                        <input type="checkbox" class="input_option" id="option_basic" name="option_level" value="basic">
+                        <label class="general_button" for="option_basic">Basic</label>
+
+                        <input type="checkbox" class="input_option" id="option_intermediate" name="option_level" value="intermediate">
+                        <label class="general_button" for="option_intermediate">Intermediate</label>
+
+                        {{!-- <input type="checkbox" class="input_option" id="option_deepened" name="option_level" value="deepened">
+                        <label class="general_button" for="option_deepened">Deepened</label> --}}
+                    </div>
+                </div>
+
+
+
                 <div class="options_selector method_language">
                     <h3>Language Options</h3>
                     <div class="inputs_and_labels">
@@ -160,24 +178,6 @@
 
                         {{!-- <input type="radio" class="input_option" id="option_mono_supp" name="option_language_method" value="monosupp">
                         <label for="option_mono_supp">One Language with Support</label> --}}
-                    </div>
-                </div>
-
-
-
-                <div class="options_selector">
-                    <h3>Levels</h3>
-                    <div class="inputs_and_labels">
-
-                        {{!-- NEW LEVEL SETUP --}}
-                        <input type="checkbox" class="input_option" id="option_basic" name="option_level" value="basic">
-                        <label class="general_button" for="option_basic">Basic</label>
-
-                        <input type="checkbox" class="input_option" id="option_intermediate" name="option_level" value="intermediate">
-                        <label class="general_button" for="option_intermediate">Intermediate</label>
-
-                        {{!-- <input type="checkbox" class="input_option" id="option_advanced" name="option_level" value="advanced">
-                        <label class="general_button" for="option_advanced">Advanced</label> --}}
                     </div>
                 </div>
 

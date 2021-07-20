@@ -50,7 +50,6 @@ setColorsAccordingToGender();
 
 
 // shuffle function
-// NOT WORKING
 function shuffleArray(arrays) {
 	let array = JSON.parse(JSON.stringify(arrays));
 	

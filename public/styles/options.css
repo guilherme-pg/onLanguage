@@ -18,6 +18,7 @@
 }
 
 
+
 /* OPTIONS MENU */
 .options_selector {
     display: flex;
@@ -63,7 +64,9 @@
     color: whitesmoke;
 }
 
-
+.second_language {
+    display: none;
+}
 
 
 

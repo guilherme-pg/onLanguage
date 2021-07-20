@@ -11,6 +11,7 @@ const optionHangman = document.getElementById('option_hangman');
 const optionFormWords = document.getElementById('option_form_words');
 const optionMemory = document.getElementById('option_memory');
 const optionMultipleChoice = document.getElementById('option_multipleChoice');
+const optionWriteTranslation = document.getElementById('option_write');
 
 const titleSecondLanguage = document.getElementById('title_second_language');
 const optionDual = document.getElementById('option_dual');
@@ -103,7 +104,7 @@ function validatioForm(event) {
 
     // REQUIRE SEPARETE VALIDATION OF THE LANGUAGE METHOD FROM 2 LANGUAGE
     // VALIDATION: IF SECONDARY LANGUAGE SELECTED 
-    if (optionDual.checked || optionMultipleChoice.checked) {
+    if (optionDual.checked || optionMultipleChoice.checked || optionWriteTranslation.checked) {
 
         for (let i = 0; i < optionSecondLanguage.length; i++) {
             
@@ -166,7 +167,7 @@ function showAndHideOptions(event) {
         secondLanguageContainer.classList.add('showElement');
         titleSecondLanguage.innerText = "Second Language";
 
-    } else if (optionHangman.checked == true || optionFormWords.checked == true) {
+    } else if (optionHangman.checked || optionFormWords.checked) {
         methodLanguageContainer.classList.remove('showElement');
         secondLanguageContainer.classList.remove('showElement');
         
@@ -175,7 +176,7 @@ function showAndHideOptions(event) {
         for (let i = 0; i < methodLanguage.length; i++) {methodLanguage[i].checked = false};
         for (let i = 0; i < optionSecondLanguage.length; i++) {optionSecondLanguage[i].checked = false;};
 
-    } else if (optionMultipleChoice.checked) {
+    } else if (optionMultipleChoice.checked || optionWriteTranslation.checked) {
         methodLanguageContainer.classList.remove('showElement');
         secondLanguageContainer.classList.add('showElement');
 
@@ -186,112 +187,6 @@ function showAndHideOptions(event) {
 };
 
 
-// NOT WORKING
-// REQUIRE: SIMPLIFICATION
-// PREVENT THE NUMBER OF CARDS CHOOSED OF THE MEMORY GAME EXCEED THE NUMBER OF POSSIBILITIES
-function numberOfMemoryCards() {
-
-    // NUMBER OF MEMORY CARDS: LABELS
-    const labelOptionCards12 = document.getElementById('label_option_cards_12');
-    const labelOptionCards16 = document.getElementById('label_option_cards_16');
-    const labelOptionCards20 = document.getElementById('label_option_cards_20');
-    const labelOptionCards24 = document.getElementById('label_option_cards_24');
-    labelOptionCards12.style.opacity = "0.5";
-    labelOptionCards16.style.opacity = "0.5";
-    labelOptionCards20.style.opacity = "0.5";
-    labelOptionCards24.style.opacity = "0.5";
-
-    // DISABLE THE NUMBERS: THE BUTTON
-    const optionCards12 = document.getElementById('option_cards_12');
-    const optionCards16 = document.getElementById('option_cards_16');
-    const optionCards20 = document.getElementById('option_cards_20');
-    const optionCards24 = document.getElementById('option_cards_24');
-    optionCards12.disabled = true;
-    optionCards16.disabled = true;
-    optionCards20.disabled = true;
-    optionCards24.disabled = true;
-
-    // DEPENDENCE FROM THE NUMBER OF LEVELS AND THEMES SELECTED
-    for (let i = 0; i < optionLevel.length; i++) {
-        optionLevel[i].onclick = numberOfMemoryCards;
-    };
-    for (let i = 0; i < optionTheme.length; i++) {
-        optionTheme[i].onclick = numberOfMemoryCards;
-    };
-
-
-    let optionLevelChecked = 0;
-    let optionThemeChecked = 0;
-    for (let i = 0; i < optionLevel.length; i++) {
-        if (optionLevel[i].checked) {
-            optionLevelChecked++  
-        };
-    };
-    for (let i = 0; i < optionTheme.length; i++) {
-        if (optionTheme[i].checked) {
-            optionThemeChecked++
-        };
-    };
-
-
-    let levelAndThemeChecked = optionLevelChecked + optionThemeChecked;
-
-    // IMPLICATIONS: ARRUMADINHO
-    if (optionLevelChecked == 3 && optionThemeChecked == 2 || optionThemeChecked == 3 && optionLevelChecked == 2) {
-        labelOptionCards12.style.opacity = "1";
-        labelOptionCards16.style.opacity = "1";
-        optionCards12.disabled = false;
-        optionCards16.disabled = false;
-        labelOptionCards20.style.opacity = "0.5";
-        labelOptionCards24.style.opacity = "0.5";
-        optionCards20.disabled = true;
-        optionCards24.disabled = true;
-        optionCards20.checked = false;
-        optionCards24.checked = false;
-
-    } else if (levelAndThemeChecked >= 6 &&  optionThemeChecked >= 2 && optionLevelChecked >= 2) {
-        labelOptionCards12.style.opacity = "1";
-        labelOptionCards16.style.opacity = "1";
-        labelOptionCards20.style.opacity = "1";
-        labelOptionCards24.style.opacity = "1";
-        optionCards12.disabled = false;
-        optionCards16.disabled = false;
-        optionCards20.disabled = false;
-        optionCards24.disabled = false;
-
-    } else if (optionThemeChecked == 1 || optionLevelChecked == 1) {
-        labelOptionCards12.style.opacity = "0.5";
-        labelOptionCards16.style.opacity = "0.5";
-        labelOptionCards20.style.opacity = "0.5";
-        labelOptionCards24.style.opacity = "0.5";
-        optionCards12.disabled = true;
-        optionCards16.disabled = true;
-        optionCards20.disabled = true;
-        optionCards24.disabled = true;
-        for (let i = 0; i < optionMemoryCards.length; i++) {
-            optionMemoryCards[i].checked = false;
-        };
-
-    } else if (levelAndThemeChecked <= 5) {
-        labelOptionCards20.style.opacity = "0.5";
-        labelOptionCards24.style.opacity = "0.5";
-        optionCards20.disabled = true;
-        optionCards24.disabled = true;
-        for (let i = 0; i < optionMemoryCards.length; i++) {
-            optionMemoryCards[i].checked = false;
-        };
-
-        if (optionLevelChecked < 3 || optionThemeChecked < 3) {
-            labelOptionCards12.style.opacity = "0.5";
-            labelOptionCards16.style.opacity = "0.5";
-            optionCards12.disabled = true;
-            optionCards16.disabled = true;
-            for (let i = 0; i < optionMemoryCards.length; i++) {
-                optionMemoryCards[i].checked = false;
-            };
-        };
-    };
-};
 
 
 // GRAMMATICAL CLASS DISPLAY IMPLICATIONS

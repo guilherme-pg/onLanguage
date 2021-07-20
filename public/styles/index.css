@@ -99,9 +99,9 @@ body {
     justify-content: space-between;
 }
 #button_game_options {
-    box-shadow: 2px 0 0 0 rgb(81, 0, 128);
+    background-color: rgb(41, 41, 41);
+    box-shadow: 2px 0px 6px 0 rgb(81, 0, 128);
 }
-#button_game_options, 
 #button_words_record {
     width: 130px;
     background-color: rgb(41, 41, 41);
@@ -205,6 +205,9 @@ body {
     #button_game_options:hover, 
     #button_words_record:hover {
         width: 70px;
+    }
+    .main_info {
+        height: 100%;
     }
 }
 
