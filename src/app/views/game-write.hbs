@@ -22,14 +22,12 @@
 
                         {{!-- user reference word container --}}
                         <div class="container_reference_word">
-                            <p id="article_{{@index}}">{{language1Article}}</p>
-                            <p class="reference_word" id="reference_question_{{@index}}">{{language1Word}}</p>
+                            <p class="reference_word" id="reference_question_{{@index}}">{{language1Article}} {{language1Word}}</p>
                         </div>
 
                         {{!-- ANSWER container --}}
                         <div class="container_answer_input">
-                            <input id="input_article_{{@index}}" type="text">
-                            <input id="input_word_{{@index}}" type="text">
+                            <input class="input_word" id="input_word_{{@index}}" type="text">
                         </div>
 
 

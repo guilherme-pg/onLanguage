@@ -8,7 +8,6 @@
 }
 
 .main_container {
-    background-color: orange;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -22,25 +21,56 @@
     justify-content: space-between;
 }
 .container_challenger {
-    background-color: springgreen;
+    background-color: rgb(41, 41, 41);
     display: none;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
-    margin: 10px;
+    height: 100%;
+    width: 100%;
+    box-shadow: 2px 0px 6px 0 rgb(81, 0, 128);
 }
 .container_counter {
-    background-color: tomato;
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+}
+.quest_counter {
+    margin: 10px;
 }
 .container_reference_word {
-    background-color: navy;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 250%;
+    height: 80%;
+    width: 80%;
 }
 .container_answer_input {
-    background-color: lime;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    height: 35px;
+    width: 100%;
 }
-
+.input_word {
+    display: flex;
+    justify-content: center;
+    outline: none;
+    text-align: center;
+    font-size: 150%;
+    color: indigo;
+    padding: 3px;
+    height: 100%;
+    width: 70%;
+}
+/* .buttons_container {
+    background-color: lawngreen;
+} */
+.button_resource {
+    width: 25%;
+}
 .general_button, #button_restart {
-    margin: 5px;
+    margin: 0px;
 }
 
 
