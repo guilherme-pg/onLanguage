@@ -12,12 +12,21 @@ class WordsDao {
 				if (err) throw err;
 				let dbo = db.db("wordsdata");
 
+				// WORKAROUND: require: change db intermediate and advanced to merge into 'deepened'
+				if (bodyReqData.option_level == 'deepened') {
+					bodyReqData.option_level = ['intermediate' , 'advanced'];
 
-				// WORKAROUND !!!: some times only one value is selected to be query as an array
-				// or level and theme, or level or theme
+				} else if (bodyReqData.option_level.includes('deepened')) {
+					bodyReqData.option_level.push('intermediate');
+					bodyReqData.option_level.push('advanced');
+				};
+				
+				// WORKAROUND: or level and theme, or level or theme
 				if (bodyReqData.option_grammar == 'verb') {     // requre: change in the db to switch 'empty' classification to verbs
 					bodyReqData.option_theme = 'empty'
 				};
+
+				// WORKAROUND: some times only one value is selected to be query as an array
 				if (typeof bodyReqData.option_level == 'string') {
 					bodyReqData.option_level = ["none", bodyReqData.option_level];
 
