@@ -11,18 +11,19 @@
                 {{#each words}}
                     <div class="container_challenger">
 
-                        {{!-- correct word for parameter --}}
-                        <p class="checkable" id="artcile_checkable_{{@index}}" hidden>{{language2Article}}</p>
-                        <p class="checkable" id="word_checkable_{{@index}}" hidden>{{language2Word}}</p>
+                        
 
                         {{!-- counter --}}
                         <div class="container_counter">
-                            <p class="quest_counter" id="quest_counter_number_{{@index}}">7/14</p>
+                            <p class="quest_counter" id="quest_counter_number_{{@index}}"></p>
                         </div>
 
                         {{!-- user reference word container --}}
                         <div class="container_reference_word">
                             <p class="reference_word" id="reference_question_{{@index}}">{{language1Article}} {{language1Word}}</p>
+
+                            {{!-- correct word for parameter --}}
+                            <p class="checkable" id="word_checkable_{{@index}}">{{language2Article}} {{language2Word}}</p>
                         </div>
 
                         {{!-- ANSWER container --}}

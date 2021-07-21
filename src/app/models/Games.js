@@ -215,7 +215,7 @@ class Games {
                 objArray.push({
                     language1Article: element[languageSelected]['article'],
                     language1Word: element[languageSelected]['word'],
-                    language2Article: element[secondLanguageSelected]['word'],
+                    language2Article: element[secondLanguageSelected]['article'],
                     language2Word: element[secondLanguageSelected]['word']
                 });
 
