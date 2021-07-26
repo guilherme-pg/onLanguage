@@ -136,7 +136,6 @@ class Games {
                 arrayOfOrderedLetters: arrayOfArrayOfLetters,
                 arrayOfMixedLetters: arrayOfMixedLetters
             });
-            console.log('AAAAAAAAAAAA arrayOfArrayOfLetters  === >>>  ', arrayOfArrayOfLetters)
 
             let finalArray = [];
             for (let i = 0; i < arrayOfLetters.length; i++) {
@@ -206,27 +205,16 @@ class Games {
         return new Promise((resolve, reject) => {
             let languageSelected = bodyReqData.option_language;
             let secondLanguageSelected = bodyReqData.option2_language;
-            // let referenceWordArray = [];
-            // let secondLanguageAnswersArray = [];
             let objArray = [];
 
             datareturned.forEach(element => {
-                
                 objArray.push({
                     language1Article: element[languageSelected]['article'],
                     language1Word: element[languageSelected]['word'],
                     language2Article: element[secondLanguageSelected]['article'],
                     language2Word: element[secondLanguageSelected]['word']
                 });
-
-                // referenceWordArray.push(element[languageSelected]['word']);
-                // secondLanguageAnswersArray.push(element[secondLanguageSelected]['word']);
             });
-
-            // objArray.push({
-            //     referenceWord: referenceWord,
-            //     referenceTranslation: referenceTranslation
-            // });
 
             objArray = shuffleArray(objArray);
 
@@ -236,20 +224,42 @@ class Games {
 
 
 
-    // REQUIRE: SET MULTIPLE CARDS
-    // falshCard(datareturned, bodyReqData) {
-    //     return new Promise((resolve, reject) => {
+
+    flashCard(datareturned, bodyReqData) {
+        return new Promise((resolve, reject) => {
+            let primaryLanguage = bodyReqData.option_language;
+            let secondaryLanguage = bodyReqData.option2_language;
+            let objArray = [];
+
+
+
+            datareturned.forEach(element => {
+                objArray.push({
+                    article1: element[primaryLanguage]['article'],
+                    word1: element[primaryLanguage]['word'],
+                    gender1: element[primaryLanguage]['gender']
+                });
+                objArray.push({
+                    article2: element[secondaryLanguage]['article'],
+                    word2: element[secondaryLanguage]['word'],
+                    gender2: element[secondaryLanguage]['gender']
+                });
+            });
+
+            objArray = shuffleArray(objArray);
             
-            
-    //         return resolve();
-    //     })
-    // };
+            return resolve(objArray);
+        })
+    };
+
+
+
 
     tablesVisualization(datareturned, bodyReqData) {
         return new Promise((resolve, reject) => {
             let dataset = [];
 
-            // REQUIRE: SIMPLIFICATION
+
             // REQUIRE: UPPER CASE IN TITLE
             for (let i = 0; i < datareturned.length; i++) {
                 dataset.push({

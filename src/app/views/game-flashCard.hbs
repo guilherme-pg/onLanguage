@@ -6,7 +6,31 @@
 
         <div id="main_flash_card">
 
-            <h1>FLASH CARD    FLASH CARD</h1>
+            {{!-- CARDS --}}
+            <div class="partsofmain_memory">
+                {{#each words}}
+                    <div class="cards_container" id="idid_{{word}}">
+                        <input type="radio" class="checks" id="flip_card_{{@index}}">
+                        <label class="flip_card" id="label_card_{{@index}}" for="flip_card_{{@index}}">
+                            <div class="flip_card_inner" id="flip_inner_{{@index}}">
+
+                                <div class="flip_card_front">
+                                    <div id="gender_{{@index}}" hidden>{{gender1}}</div>
+                                    <h3 id="article_{{@index}}">{{article1}}</h3>
+                                    <h3 id="word_{{@index}}">{{word1}}</h3>
+                                </div>
+                                
+                                <div class="flip_card_back">
+                                    <div id="gender_{{@index}}" hidden>{{gender2}}</div>
+                                    <h3 id="article_{{@index}}">{{article2}}</h3>
+                                    <h3 id="word_{{@index}}">{{word2}}</h3>
+                                </div>
+
+                            </div>
+                        </label>
+                    </div>  
+                {{/each}}
+            </div>
             
         </div>
     </div>

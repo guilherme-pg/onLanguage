@@ -14,7 +14,7 @@ class WordsDao {
 
 				// WORKAROUND: require: change db intermediate and advanced to merge into 'deepened'
 				if (bodyReqData.option_level == 'deepened') {
-					bodyReqData.option_level = ['intermediate' , 'advanced'];
+					bodyReqData.option_level = ['intermediate' , 'advanced', 'deepened'];
 
 				} else if (bodyReqData.option_level.includes('deepened')) {
 					bodyReqData.option_level.push('intermediate');

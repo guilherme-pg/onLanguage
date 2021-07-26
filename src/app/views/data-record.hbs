@@ -59,20 +59,37 @@
                     </div>
 
 
-                    <div class="options_selector">
-                        <h3>Part of speech</h3>
-                        <div class="inputs_and_labels">
-                        {{!-- <input type="radio" class="input_option" id="option_adjective" name="option_grammar" value="adjective">
-                        <label class="general_button" for="option_adjective">Adjectives</label> --}}
+                    <div class="grammar_complexity">
+                        <div class="options_selector">
+                            <h3>Part of speech</h3>
+                            <div class="inputs_and_labels">
+                                {{!-- <input type="radio" class="input_option" id="option_adjective" name="option_grammar" value="adjective">
+                                <label class="general_button" for="option_adjective">Adjectives</label> --}}
 
-                        {{!-- <input type="radio" class="input_option" id="option_adverb" name="option_grammar" value="adverb">
-                        <label class="general_button" for="option_adverb">Adverbs</label> --}}
+                                {{!-- <input type="radio" class="input_option" id="option_adverb" name="option_grammar" value="adverb">
+                                <label class="general_button" for="option_adverb">Adverbs</label> --}}
 
-                        <input type="radio" class="input_option" id="option_noun" name="option_grammar" value="noun">
-                        <label class="general_button" for="option_noun">Nouns</label>
+                                <input type="radio" class="input_option" id="option_noun" name="option_grammar" value="noun">
+                                <label class="general_button" for="option_noun">Nouns</label>
 
-                        <input type="radio" class="input_option" id="option_verb" name="option_grammar" value="verb">
-                        <label class="general_button" for="option_verb">Verbs</label>
+                                <input type="radio" class="input_option" id="option_verb" name="option_grammar" value="verb">
+                                <label class="general_button" for="option_verb">Verbs</label>
+                            </div>
+                        </div>
+
+
+
+                        <div class="options_selector">
+                            <h3>Complexity</h3>
+                            <div class="inputs_and_labels">
+
+                                {{!-- NEW LEVEL SETUP --}}
+                                <input type="checkbox" class="input_option" id="option_basic" name="option_level" value="basic">
+                                <label class="general_button" for="option_basic">Basic</label>
+
+                                <input type="checkbox" class="input_option" id="option_deepened" name="option_level" value="deepened">
+                                <label class="general_button" for="option_deepened">Deepened</label>
+                            </div>
                         </div>
                     </div>
 
@@ -80,43 +97,62 @@
                     <div class="options_selector" id="noun_themes">
                         <h3>Themes</h3>
                         <div class="inputs_and_labels">
-                            <input type="checkbox" class="input_option" id="option_body" name="option_theme" value="body">
-                            <label class="general_button" for="option_body">Body</label>
+                        <input type="checkbox" class="input_option" id="option_abstract" name="option_theme" value="abstract">
+                        <label class="general_button" for="option_abstract">Abstract Nouns</label>
 
-                            <input type="checkbox" class="input_option" id="option_city" name="option_theme" value="city">
-                            <label class="general_button" for="option_city">City</label>
+                        {{!-- <input type="checkbox" class="input_option" id="option_animals" name="option_theme" value="animals">
+                        <label class="general_button" for="option_animals">Animals</label> --}}
 
-                            <input type="checkbox" class="input_option" id="option_clothes" name="option_theme" value="clothes">
-                            <label class="general_button" for="option_clothes">Clothes and Accessories</label>
+                        <input type="checkbox" class="input_option" id="option_body" name="option_theme" value="body">
+                        <label class="general_button" for="option_body">Body</label>
 
-                            <input type="checkbox" class="input_option" id="option_food" name="option_theme" value="food">
-                            <label class="general_button" for="option_food">Foods and Drinks</label>
+                        <input type="checkbox" class="input_option" id="option_city" name="option_theme" value="city">
+                        <label class="general_button" for="option_city">City</label>
 
-                            <input type="checkbox" class="input_option" id="option_nature" name="option_theme" value="nature">
-                            <label class="general_button" for="option_nature">Nature</label>
+                        <input type="checkbox" class="input_option" id="option_clothes" name="option_theme" value="clothes">
+                        <label class="general_button" for="option_clothes">Clothes and Accessories</label>
 
-                            <input type="checkbox" class="input_option" id="option_objects" name="option_theme" value="objects">
-                            <label class="general_button" for="option_objects">Objects</label>
+                        <input type="checkbox" class="input_option" id="option_economy" name="option_theme" value="economy">
+                        <label class="general_button" for="option_economy">Economy</label>
 
-                            <input type="checkbox" class="input_option" id="option_politic" name="option_theme" value="politic">
-                            <label class="general_button" for="option_politic">Politic</label>
+                        {{!-- <input type="checkbox" class="input_option" id="option_erudite" name="option_theme" value="erudite">
+                        <label class="general_button" for="option_erudite">Erudite</label> --}}
 
-                            <input type="checkbox" class="input_option" id="option_vehicles" name="option_theme" value="vehicles">
-                            <label class="general_button" for="option_vehicles">Vehicles</label>
-                        </div>
-                    </div>
+                        <input type="checkbox" class="input_option" id="option_fantasy" name="option_theme" value="fantasy">
+                        <label class="general_button" for="option_fantasy">Fantasy and RPG</label>
 
+                        <input type="checkbox" class="input_option" id="option_food" name="option_theme" value="food">
+                        <label class="general_button" for="option_food">Foods and Drinks</label>
 
-                    <div class="options_selector">
-                        <h3>Levels</h3>
-                        <div class="inputs_and_labels">
+                        <input type="checkbox" class="input_option" id="option_house" name="option_theme" value="house">
+                        <label class="general_button" for="option_house">House</label>
 
-                            {{!-- NEW LEVEL SETUP --}}
-                            <input type="checkbox" class="input_option" id="option_basic" name="option_level" value="basic">
-                            <label class="general_button" for="option_basic">Basic</label>
+                        <input type="checkbox" class="input_option" id="option_law" name="option_theme" value="law">
+                        <label class="general_button" for="option_law">Law</label>
 
-                            <input type="checkbox" class="input_option" id="option_deepened" name="option_level" value="deepened">
-                            <label class="general_button" for="option_deepened">Deepened</label>
+                        <input type="checkbox" class="input_option" id="option_nature" name="option_theme" value="nature">
+                        <label class="general_button" for="option_nature">Nature</label>
+
+                        <input type="checkbox" class="input_option" id="option_objects" name="option_theme" value="objects">
+                        <label class="general_button" for="option_objects">Objects</label>
+
+                        <input type="checkbox" class="input_option" id="option_politic" name="option_theme" value="politic">
+                        <label class="general_button" for="option_politic">Politic</label>
+
+                        <input type="checkbox" class="input_option" id="option_religion" name="option_theme" value="religion">
+                        <label class="general_button" for="option_religion">Religion</label>
+
+                        <input type="checkbox" class="input_option" id="option_science" name="option_theme" value="science">
+                        <label class="general_button" for="option_science">Science</label>
+
+                        <input type="checkbox" class="input_option" id="option_sports" name="option_theme" value="sports">
+                        <label class="general_button" for="option_sports">Sports</label>
+
+                        {{!-- <input type="checkbox" class="input_option" id="option_substances" name="option_theme" value="substances">
+                        <label class="general_button" for="option_substances">Substances</label> --}}
+
+                        <input type="checkbox" class="input_option" id="option_vehicles" name="option_theme" value="vehicles">
+                        <label class="general_button" for="option_vehicles">Vehicles</label>
                         </div>
                     </div>
                 </div>

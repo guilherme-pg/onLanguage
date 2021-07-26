@@ -25,8 +25,6 @@ module.exports = (app) => {
     app.get('/gameoptions', async function(req, resp) {
         bodyReqData = req.query;
         const wordsDao = new WordsDao(dbConnection);
-
-        // let datareturned = await wordsDao.optionsdata(bodyReqData);
         let datareturned = await wordsDao.read(bodyReqData);
 
         let viewReference = "";
@@ -55,10 +53,6 @@ module.exports = (app) => {
         } else if (bodyReqData.option_game == 'Write the Translation') {
             processedData = await games.write(datareturned, bodyReqData);
             viewReference = "game-write";
-
-        } else {
-            processedData = await games.flashCard(datareturned, bodyReqData);
-            viewReference = "game-links";
         };
 
         resp.render(`${viewReference}`, {

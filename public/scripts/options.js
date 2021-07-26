@@ -7,6 +7,7 @@ const optionTheme = document.getElementsByName('option_theme');
 const methodLanguage = document.getElementsByName('option_language_method');
 const optionSecondLanguage = document.getElementsByName('option2_language');
 
+const optionFlashCards = document.getElementById('option_flash_card');
 const optionHangman = document.getElementById('option_hangman');
 const optionFormWords = document.getElementById('option_form_words');
 const optionMemory = document.getElementById('option_memory');
@@ -104,7 +105,7 @@ function validatioForm(event) {
 
     // REQUIRE SEPARETE VALIDATION OF THE LANGUAGE METHOD FROM 2 LANGUAGE
     // VALIDATION: IF SECONDARY LANGUAGE SELECTED 
-    if (optionDual.checked || optionMultipleChoice.checked || optionWriteTranslation.checked) {
+    if (optionDual.checked || optionMultipleChoice.checked || optionWriteTranslation.checked || optionFlashCards.checked) {
 
         for (let i = 0; i < optionSecondLanguage.length; i++) {
             
@@ -176,13 +177,15 @@ function showAndHideOptions(event) {
         for (let i = 0; i < methodLanguage.length; i++) {methodLanguage[i].checked = false};
         for (let i = 0; i < optionSecondLanguage.length; i++) {optionSecondLanguage[i].checked = false;};
 
-    } else if (optionMultipleChoice.checked || optionWriteTranslation.checked) {
+    } else if (optionMultipleChoice.checked || optionWriteTranslation.checked || optionFlashCards.checked) {
         methodLanguageContainer.classList.remove('showElement');
         secondLanguageContainer.classList.add('showElement');
 
         for (let i = 0; i < optionMemoryCards.length; i++) {optionMemoryCards[i].checked = false};
         for (let i = 0; i < methodLanguage.length; i++) {methodLanguage[i].checked = false};
-        titleSecondLanguage.innerText = "Answers Language";
+        if (optionMultipleChoice.checked || optionWriteTranslation.checked) {
+            titleSecondLanguage.innerText = "Answers Language";
+        };
     };
 };
 
@@ -195,17 +198,17 @@ for (let i = 0; i < optionGrammar.length; i++) {
 };
 
 function showAndHideGrammarOptions() {
-    let optionAdjective = document.getElementById('option_adjective');
-    let optionAdvreb = document.getElementById('option_adverb');
-    let optionNoun = document.getElementById('option_noun');
-    let optionVerb = document.getElementById('option_verb');
+    const optionNoun = document.getElementById('option_noun');
+    const optionVerb = document.getElementById('option_verb');
+    // let optionAdjective = document.getElementById('option_adjective');
+    // let optionAdvreb = document.getElementById('option_adverb');
     const nounThemes = document.getElementById('noun_themes');
 
     if (optionNoun.checked) {
-        nounThemes.style.display = "flex";
+        nounThemes.classList.remove('hiddenElement');
 
-    } else if (optionAdjective.checked == true || optionAdvreb.checked == true || optionVerb.checked == true) {
-        nounThemes.style.display = "none";
+    } else if (optionVerb.checked) {
+        nounThemes.classList.add('hiddenElement');
     };
 };
 
