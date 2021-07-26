@@ -12,12 +12,9 @@
 body {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 100%;
+    /* width: 100%;
+    height: 100%; */
 }
-/* #main_and_footer {
-    background-color: crimson;
-} */
 #header_and_main {
     background-color: rgb(131, 54, 219);
     width: 100%;
@@ -155,6 +152,7 @@ body {
     }
     #header_and_main {
         flex-direction: column;
+        height: 100%;
     }
     #header {
         position: relative;

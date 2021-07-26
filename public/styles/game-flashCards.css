@@ -1,24 +1,20 @@
 
-#main_flash_card{
+#main_flash_card {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    height: 100vh;
     width: 100%;
-    padding: 15px;
 }
 .partsofmain_flash_card {
-    background-color: rgb(112, 218, 156);
+    background-color: whitesmoke;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
     margin: 10px;
     padding: 10px;
     width: 70%;
+    overflow: auto;
 }
 .cards_container {
-    background-color: orange;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -29,8 +25,8 @@
 
 .flip_card {
     display: flex;
-    height: 120px;
-    width: 120px;
+    height: 250px;
+    width: 180px;
     font-size: inherit;
     margin: 5px;
     cursor: pointer;
@@ -48,12 +44,11 @@
     position: relative;
     transition: transform .7s;
     transform-style: preserve-3d;
-    box-shadow: 2px 2px 6px 0 rgb(81, 0, 128);
+    /* box-shadow: 2px 2px 6px 0 rgb(81, 0, 128); */
 }
 .flip_card:active .flip_card_inner {
     transform: scale(0.97);
     transition: transform .2s;
-    /* transform: rotateY(180deg); */
 }
 
 /* HIDING CHECKBOX */
@@ -157,7 +152,7 @@ input[id^="flip_card_"]:checked ~ label[id^="label_card_"] div[id^="flip_inner_"
 /* RESPONSIVE: TO TABLET */
 @media (max-width: 770px) {
     .partsofmain_flash_card {
-        width: 100%;
+        width: 90%;
     }
 }
 
@@ -166,7 +161,7 @@ input[id^="flip_card_"]:checked ~ label[id^="label_card_"] div[id^="flip_inner_"
 /* RESPONSIVE: TO LARGE CELL PHONE */
 @media (max-width: 425px) {
     .partsofmain_flash_card {
-        width: 100%;
+        width: 90%;
     }
 }
 
@@ -175,7 +170,7 @@ input[id^="flip_card_"]:checked ~ label[id^="label_card_"] div[id^="flip_inner_"
 /* RESPONSIVE: TO TINY CELL PHONE */
 @media (max-width: 320px) {
     .partsofmain_flash_card {
-        width: 100%;
+        width: 90%;
     }
 }
 
