@@ -227,6 +227,7 @@ class Games {
 
     flashCard(datareturned, bodyReqData) {
         return new Promise((resolve, reject) => {
+            console.log('AAAAA  GAMES  bodyReqData ====>>>   ', bodyReqData)
             let primaryLanguage = bodyReqData.option_language;
             let secondaryLanguage = bodyReqData.option2_language;
             let objArray = [];
@@ -237,9 +238,7 @@ class Games {
                 objArray.push({
                     article1: element[primaryLanguage]['article'],
                     word1: element[primaryLanguage]['word'],
-                    gender1: element[primaryLanguage]['gender']
-                });
-                objArray.push({
+                    gender1: element[primaryLanguage]['gender'],
                     article2: element[secondaryLanguage]['article'],
                     word2: element[secondaryLanguage]['word'],
                     gender2: element[secondaryLanguage]['gender']

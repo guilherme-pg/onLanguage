@@ -48,7 +48,7 @@ module.exports = (app) => {
 
         } else if (bodyReqData.option_game == 'Flash Cards') {
             processedData = await games.flashCard(datareturned, bodyReqData);
-            viewReference = "game-flashCard";
+            viewReference = "game-flashCards";
 
         } else if (bodyReqData.option_game == 'Write the Translation') {
             processedData = await games.write(datareturned, bodyReqData);
