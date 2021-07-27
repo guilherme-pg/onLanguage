@@ -2,6 +2,8 @@
 const cardsContainers = document.querySelectorAll('.cards_container');
 const buttonPrevious = document.getElementById('previous_button');
 const buttonNext = document.getElementById('next_button');
+const feedback = document.getElementsByClassName('feedback')[0];
+const buttonSelected = document.getElementById('button_selected');
 let questNumber = 0;
 
 // Initial display
@@ -24,11 +26,26 @@ buttonPrevious.onclick = previousButton;
 
 
 function nextButton() {
-    // not working
-    if (ardsContainers.length >= questNumber) {
+    
+    if (questNumber <= cardsContainers.length) {
         cardsContainers[questNumber].classList.remove('showElement');
         questNumber++;
+
         cardsContainers[questNumber].classList.add('showElement');
-    };
+
+    } else {
+        feedback.classList.add('showElement');
+    }
 };
 buttonNext.onclick = nextButton;
+
+
+
+
+
+
+// RESTART: with selected cards
+function restartWithSelectedCards() {
+
+};
+buttonSelected.onclick = restartWithSelectedCards;

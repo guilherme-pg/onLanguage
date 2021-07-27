@@ -6,6 +6,16 @@
 
         <div id="main_flash_card">
 
+
+
+            <div class="counter_container">
+                <div class="general_button">
+                    <p>21/22</p>
+                </div>
+            </div>
+
+
+
             <div class="container_cards_buttons">
                 <div class="container_side_buttons">
                     <button class="general_button" id="previous_button">Prev</button>
@@ -45,6 +55,12 @@
 
 
 
+                <div class="feedback">
+                    <p>feedback feedback feedback</p>
+                </div>
+
+
+
                 <div class="container_side_buttons">
                     <button class="general_button" id="next_button">Next</button>
                 </div>
@@ -53,8 +69,12 @@
 
 
             <div class="buttons_container">
-                <p>Select options for a new list </p>
-                <input class="general_button button_resource" name="button_selected" id="button_selected" value="Selected">
+                <input type="submit" onClick="window.location.reload();" class="general_button  button_resource" id="button_restart" value="Restart">
+
+                <div class="select_resource">
+                    <p>Select options for a new list </p>
+                    <input class="general_button button_resource" name="button_selected" id="button_selected" value="Selected">
+                </div>
             </div>
             
         </div>
