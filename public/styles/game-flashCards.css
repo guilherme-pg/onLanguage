@@ -3,14 +3,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     height: 100vh;
     width: 100%;
 }
 .partsofmain_flash_card {
-    background-color: whitesmoke;
+    /* background-color: whitesmoke; */
     display: flex;
     margin: 10px;
-    padding: 10px;
+    /* padding: 10px; */
     width: 70%;
     overflow: auto;
 }
@@ -20,17 +21,13 @@
     justify-content: center;
     flex-wrap: wrap;
 }
-
-
-
 .flip_card {
     display: flex;
-    height: 250px;
-    width: 180px;
+    height: 310px;
+    width: 220px;
     font-size: inherit;
     margin: 5px;
     cursor: pointer;
-    
     perspective: 1000px;
 }
 
@@ -52,10 +49,10 @@
 }
 
 /* HIDING CHECKBOX */
-input[id^="flip_card_"] {
+input[id^="flip_card_"],
+input[id^="back_card_"] {
     display: none;
 }
-
 
 /* ROTATION RULE: WHEN CHECKED */
 input[id^="flip_card_"]:checked ~ label[id^="label_card_"] div[id^="flip_inner_"] {
@@ -63,8 +60,7 @@ input[id^="flip_card_"]:checked ~ label[id^="label_card_"] div[id^="flip_inner_"
 }
 
 
-.flip_card_front, 
-.flip_card_back {
+.flip_card_front {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -89,69 +85,72 @@ input[id^="flip_card_"]:checked ~ label[id^="label_card_"] div[id^="flip_inner_"
     flex-direction: column;
     transform: rotateY( 180deg );
 }
-.flip_card_back h3 {
-    font-size: 1em;
+.flip_card_back h3,
+.flip_card_front h3 {
+    font-size: 1.5em;
 }
-.flip_card_back:hover, .word_container:hover {
-    background-color: rgb(58, 58, 58);
+.flip_card_back {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    text-align: center;
+    background-color: rgb(41, 41, 41);
 }
-.flip_card_back:active, .word_container:active {
-    background-color: rgb(78, 78, 78);
+.general_button {
+    padding: 5px;
+}
+.button_select label {
+    box-shadow: none;
+}
+.button_select label:hover {
+    color: whitesmoke;
+    background-color: rgb(15, 161, 15);
+}
+.button_select label:active {
+    color: whitesmoke;
+    background-color: rgb(6, 128, 6);
+}
+.button_select input:checked + label {
+    background-color: rgb(15, 161, 15);
+    color: whitesmoke;
+}
+.button_select input:checked + label:hover {
+    background-color: rgb(6, 128, 6);
+}
+.button_select input:checked + label:active {
+    background-color: whitesmoke;
+    color: indigo;
 }
 
-/* ADD IN THE FUTURE: gradient red or green if match or not */
-/* .correc_match {
-    background: radial-gradient(rgb(41, 41, 41), green);
-}
-.wrong_match {
-    background: radial-gradient(rgb(41, 41, 41), red);
-} */
 
-
+/* 
 .container_cards_numbers {
     justify-content: space-evenly;
     margin: 0px;
-}
-.inputs_and_labels input {
-    display: none;
-}
-.inputs_and_labels label:hover {
-    transform: scale(1.1);
-}
-.inputs_and_labels input:checked + label {
-    background-color: rgb(41, 41, 41);
-    color: whitesmoke;
-}
-.inputs_and_labels input:checked + label:active {
-    background-color: rgb(78, 78, 78);
-    color: whitesmoke;
+} */
+.buttons_container {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 70%;
 }
 .button_resource {
-    margin: 5px;
-    padding: 10px;
+    margin: 10px 0 0 0;
+    padding: 15px;
 }
-#button_restart {
-    margin: 15px;
-}
-
-
-
-.masculine {
-    color: royalblue;
-}
-.feminine {
-    color: rgb(230, 63, 63);
-}
-.neutral {
-    color: rgb(45, 185, 45);
-}
-
 
 
 
 /* RESPONSIVE: TO TABLET */
 @media (max-width: 770px) {
     .partsofmain_flash_card {
+        width: 90%;
+    }
+    .buttons_container {
         width: 90%;
     }
 }

@@ -140,15 +140,7 @@ input[id^="flip_card_"]:checked ~ label[id^="label_card_"] div[id^="flip_inner_"
 
 
 
-.masculine {
-    color: royalblue;
-}
-.feminine {
-    color: rgb(230, 63, 63);
-}
-.neutral {
-    color: rgb(45, 185, 45);
-}
+
 
 
 
@@ -193,4 +185,13 @@ input[id^="flip_card_"]:checked ~ label[id^="label_card_"] div[id^="flip_inner_"
 }
 .wrong_answer {
     background-color: rgb(230, 63, 63);
+}
+.masculine {
+    color: royalblue;
+}
+.feminine {
+    color: rgb(230, 63, 63);
+}
+.neutral {
+    color: rgb(45, 185, 45);
 }
