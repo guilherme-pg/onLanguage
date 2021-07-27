@@ -7,26 +7,51 @@
     height: 100vh;
     width: 100%;
 }
-.partsofmain_flash_card {
-    /* background-color: whitesmoke; */
+.container_cards_buttons {
     display: flex;
-    margin: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+}
+.container_side_buttons {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    height: 100%;
+}
+.container_side_buttons button {
+    height: 20%;
+    cursor: pointer;
+    color: indigo;
     /* padding: 10px; */
-    width: 70%;
-    overflow: auto;
+    transition: all 0.5s;
+}
+.container_side_buttons button:hover {
+    background-color: rgb(58, 58, 58);
+}
+.container_side_buttons button:active {
+    background-color: rgb(78, 78, 78);
+}
+.partsofmain_flash_card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    /* overflow: auto; */
 }
 .cards_container {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
 }
 .flip_card {
     display: flex;
-    height: 310px;
-    width: 220px;
+    height: 350px;
+    width: 350px;
     font-size: inherit;
-    margin: 5px;
+    margin: 8px;
     cursor: pointer;
     perspective: 1000px;
 }
@@ -101,26 +126,46 @@ input[id^="flip_card_"]:checked ~ label[id^="label_card_"] div[id^="flip_inner_"
     text-align: center;
     background-color: rgb(41, 41, 41);
 }
+.back_card_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+.down_part {
+    height: 20%;
+    background-color: whitesmoke;
+}
 .general_button {
+    margin: 0;
     padding: 5px;
 }
 .button_select label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
     box-shadow: none;
+    padding: 0;
+    width: 100%;
+    height: 100%;
 }
 .button_select label:hover {
     color: whitesmoke;
-    background-color: rgb(15, 161, 15);
+    background-color: indigo;
 }
 .button_select label:active {
     color: whitesmoke;
-    background-color: rgb(6, 128, 6);
+    background-color: rgb(66, 5, 110);
 }
 .button_select input:checked + label {
-    background-color: rgb(15, 161, 15);
+    background-color: indigo;
     color: whitesmoke;
 }
 .button_select input:checked + label:hover {
-    background-color: rgb(6, 128, 6);
+    background-color: rgb(66, 5, 110);
 }
 .button_select input:checked + label:active {
     background-color: whitesmoke;
@@ -134,12 +179,19 @@ input[id^="flip_card_"]:checked ~ label[id^="label_card_"] div[id^="flip_inner_"
     margin: 0px;
 } */
 .buttons_container {
+    margin-top: 10px;
     display: flex;
-    flex-direction: row-reverse;
-    width: 70%;
+    align-items: center;
+    justify-content: end;
+    flex-direction: row;
+    width: 60%;
+}
+.buttons_container p {
+    margin: 10px;
+    padding: 5px;
 }
 .button_resource {
-    margin: 10px 0 0 0;
+    margin: 0;
     padding: 15px;
 }
 
@@ -172,6 +224,20 @@ input[id^="flip_card_"]:checked ~ label[id^="label_card_"] div[id^="flip_inner_"
         width: 90%;
     }
 }
+
+
+
+
+/* transformed */
+.first_plan {
+    height: 350px;
+    width: 260px;
+}
+.second_plan {
+    height: 330px;
+    width: 240px;
+}
+
 
 
 
