@@ -76,9 +76,7 @@ function shuffleCardsContent() {
 		});
 	};
 
-	console.log('OOOOOOOOOOOO arrayOfWordsProperties ==>>  ', arrayOfWordsProperties);
 	arrayOfWordsProperties = shuffleArray(arrayOfWordsProperties);
-	console.log('PPPPPPPPPPPP arrayOfWordsProperties ==>>  ', arrayOfWordsProperties);
 
 	// reset or reassign all cards values
 	for (let i = 0; i < cardsContainers.length; i++) {
@@ -159,7 +157,6 @@ function setCardsNumber() {
 		};
 	};
 
-	console.log('CCCCC numberOfCards ===>>>  ', numberOfCards)
 
 	// start with 12 cards
 	for (let z = 0; z < checks.length; z++) {
@@ -179,7 +176,6 @@ function setCardsNumber() {
 
 
 function resetColorsClass() {
-	console.log('RESET    ATTRIBUTES   FUNCTION <><><><><>')
 	for (let i = 0; i < cardsContainers.length; i++) {
 		document.getElementById(`article_${i}`).removeAttribute('class');
 		document.getElementById(`word_${i}`).removeAttribute('class');

@@ -14,7 +14,7 @@
     flex-direction: row-reverse;
 }
 .counter_container p {
-    color: tomato;
+    color: indigo;
 }
 .container_cards_buttons {
     display: flex;
@@ -111,12 +111,12 @@ input[id^="flip_card_"]:checked ~ label[id^="label_card_"] div[id^="flip_inner_"
 .flip_card_front {
     background-color: rgb(41, 41, 41);
 }
-.flip_card_front:hover {
+/* .flip_card_front:hover {
     background-color: rgb(58, 58, 58);
-}
-.flip_card_front:active {
+} */
+/* .flip_card_front:active {
     background-color: rgb(78, 78, 78);
-}
+} */
 .flip_card_back {
     flex-direction: column;
     transform: rotateY( 180deg );
@@ -232,6 +232,9 @@ input[id^="flip_card_"]:checked ~ label[id^="label_card_"] div[id^="flip_inner_"
         width: 90%;
     }
     .buttons_container {
+        width: 90%;
+    }
+    .counter_container {
         width: 90%;
     }
 }
