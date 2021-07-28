@@ -9,6 +9,7 @@ var bodyReqData = [];
 
 
 // REQUIRE: TITLE PAGE
+console.log('routes');
 
 
 module.exports = (app) => {
