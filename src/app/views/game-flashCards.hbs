@@ -9,7 +9,7 @@
 
 
             <div class="counter_container">
-                <div class="general_button">
+                <div class="cards_container_counter">
                     <p id="cards_counter"></p>
                 </div>
             </div>
@@ -31,18 +31,20 @@
                                 <div class="flip_card_inner" id="flip_inner_{{@index}}">
 
                                     <div class="flip_card_front">
-                                        <h3 class="{{gender1}}">{{article1}}</h3>
-                                        <h3 class="{{gender1}}">{{word1}}</h3>
+                                        <h3 id="gender1_{{@index}}" hidden>{{gender1}}</h3>
+                                        <h3 id="article1_{{@index}}" class="{{gender1}}">{{article1}}</h3>
+                                        <h3 id="word1_{{@index}}"  class="{{gender1}}">{{word1}}</h3>
                                     </div>
                                     
                                     <div class="flip_card_back">
                                         <div class="back_card_container up_part">
-                                            <h3 class="{{gender2}}">{{article2}}</h3>
-                                            <h3 class="{{gender2}}">{{word2}}</h3>
+                                            <h3 id="gender2_{{@index}}" hidden>{{gender2}}</h3>
+                                            <h3 id="article2_{{@index}}" class="{{gender2}}">{{article2}}</h3>
+                                            <h3 id="word2_{{@index}}" class="{{gender2}}">{{word2}}</h3>
                                         </div>
 
                                         <div class="back_card_container down_part button_select">
-                                            <input type="checkbox" class="input_back_card" id="back_card_{{@index}}">
+                                            <input type="checkbox" class="input_select" id="back_card_{{@index}}">
                                             <label class="button_select general_button" for="back_card_{{@index}}">Select</label>
                                         </div>
                                     </div>

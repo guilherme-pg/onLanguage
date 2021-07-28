@@ -5,6 +5,7 @@ const buttonNext = document.getElementById('next_button');
 const feedback = document.getElementsByClassName('feedback')[0];
 const buttonSelected = document.getElementById('button_selected');
 const counter = document.getElementById('cards_counter');
+const selected = document.getElementsByClassName('input_select');
 let questNumber = 0;
 
 // Initial display
@@ -17,15 +18,10 @@ if (questNumber == 0) {
 
 
 
-// flipback/uncheck the card when click next or previous button
-function flipBackWhenButtonClicked() {
-    
-};
-
 
 // counter the card number and the cards total
 function cardsCounter() {
-    counter.textContent = `${questNumber + 1}/${cardsContainers.length}`
+    counter.textContent = `${questNumber + 1}/${cardsContainers.length}`;
 };
 
 
@@ -65,6 +61,16 @@ buttonNext.onclick = nextButton;
 
 // RESTART: with selected cards
 function restartWithSelectedCards() {
+    for (let i = 0; i < selected.length; i++) {
+        if (selected[i].checked) {
+            document.getElementById(`gender1_${i}`);
+            document.getElementById(`article1_${i}`);
+            document.getElementById(`word1_${i}`);
 
+            document.getElementById(`gender2_${i}`);
+            document.getElementById(`article2_${i}`);
+            document.getElementById(`word2_${i}`);
+        };
+    };
 };
 buttonSelected.onclick = restartWithSelectedCards;
