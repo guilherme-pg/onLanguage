@@ -147,7 +147,7 @@ module.exports = (app) => {
         resp.render('info-about', {
             title: "About",
             layout: 'mainLayouts',
-            style: "about.css"
+            style: "info-about.css"
         });
     });
 
@@ -156,7 +156,7 @@ module.exports = (app) => {
         resp.render('info-contact', {
             title: "Contact",
             layout: 'mainLayouts',
-            style: "contact.css"
+            style: "info-contact.css"
         });
     });
 
@@ -165,7 +165,7 @@ module.exports = (app) => {
         resp.render('info-parameters', {
             title: "Parameters",
             layout: 'mainLayouts',
-            style: "parameters.css"
+            style: "info-parameters.css"
         });
     });
 
