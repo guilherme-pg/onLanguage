@@ -6,13 +6,25 @@ const feedback = document.getElementsByClassName('feedback')[0];
 const buttonSelected = document.getElementById('button_selected');
 const counter = document.getElementById('cards_counter');
 const selected = document.getElementsByClassName('input_select');
+let contentArray = [];
 let questNumber = 0;
+let totalCounter = cardsContainers.length;
+
 
 // Initial display
-if (questNumber == 0) {
+startSettings();
+function startSettings() {
+    questNumber = 0;
+
+    for (let i = 0; i < cardsContainers.length; i++) {
+        cardsContainers[i].classList.remove('showElement');
+        selected[i].check = false;
+    };
     cardsContainers[questNumber].classList.add('showElement');
+
     cardsCounter();
 };
+
 
 
 
@@ -31,10 +43,14 @@ function shuffleArray(arrays) {
 };
 
 
+
+
 // counter the card number and the cards total
 function cardsCounter() {
-    counter.textContent = `${questNumber + 1}/${cardsContainers.length}`;
+    counter.textContent = `${questNumber + 1}/${totalCounter}`;
 };
+
+
 
 
 // SIDE BUTTONS: hide and show: previous and next elements
@@ -49,19 +65,31 @@ function previousButton() {
 };
 buttonPrevious.onclick = previousButton;
 
+
 // SIDE BUTTONS: hide and show: previous and next elements
 function nextButton() {
-    
+
+        // hide the current card and show the NEXT CARD 
     if (questNumber <= cardsContainers.length) {
+        
         cardsContainers[questNumber].classList.remove('showElement');
         document.getElementById(`flip_card_${questNumber}`).checked = false;
-        questNumber++;
 
-        cardsContainers[questNumber].classList.add('showElement');
+        // show feedback with the reload selected out
+        if (questNumber > contentArray.length) {
+            feedback.classList.add('showElement');
 
+            // continue showing elements
+        } else {
+            questNumber++;
+            cardsContainers[questNumber].classList.add('showElement');
+        };
+        
+        // WORKAROUND: show feedback even if there are others options hidden
     } else {
         feedback.classList.add('showElement');
     };
+
     cardsCounter();
 };
 buttonNext.onclick = nextButton;
@@ -73,8 +101,9 @@ buttonNext.onclick = nextButton;
 
 // RESTART: with selected cards
 function restartWithSelectedCards() {
-    let contentArray = [];
+    contentArray = [];
 
+    // check selected options
     for (let i = 0; i < selected.length; i++) {
         if (selected[i].checked) {
             contentArray.push({
@@ -88,42 +117,41 @@ function restartWithSelectedCards() {
         };
     };
     
-    console.log('CCCCCCCC contentArray[0]  ===>>>>   ', contentArray[0])
-    console.log('CCCCCCCC contentArray[0]  ===>>>>   ', contentArray[1])
-    console.log('CCCCCCCC contentArray[0]  ===>>>>   ', contentArray[2])
-    console.log('CCCCCCCC contentArray[0]  ===>>>>   ', contentArray[3])
 
-    // RESET content
-    // reset values
-    // reset class gender
-    // add new values
-    // add correspondent gender class
+    totalCounter = contentArray.length;
     contentArray = shuffleArray(contentArray)
 
     for (let i = 0; i < cardsContainers.length; i++) {
 
-        if (i < selected.length) {
+        if (i < contentArray.length) {
+            // set new words
             document.getElementById(`article1_${i}`).textContent = contentArray[i].article1;
             document.getElementById(`word1_${i}`).textContent = contentArray[i].word1;
             document.getElementById(`gender1_${i}`).textContent = contentArray[i].gender1;
+
             document.getElementById(`article2_${i}`).textContent = contentArray[i].article2;
             document.getElementById(`word2_${i}`).textContent = contentArray[i].word2;
             document.getElementById(`gender2_${i}`).textContent = contentArray[i].gender2;
 
+
+            // remove gender class
             document.getElementById(`article1_${i}`).removeAttribute('class');
             document.getElementById(`word1_${i}`).removeAttribute('class');
             document.getElementById(`article2_${i}`).removeAttribute('class');
             document.getElementById(`word2_${i}`).removeAttribute('class');
 
-            console.log('AAAAA  contentArray[i].gender1  ===>>>  ', contentArray[i].gender1)
-            console.log('BBBBB TYPE  contentArray[i].gender1  ===>>>  ', typeof contentArray[i].gender1)
-            
-            // Uncaught DOMException: An invalid or illegal string was specified
-            // document.getElementById(`article1_${i}`).classList.add(contentArray[i].gender1);
-            // document.getElementById(`word1_${i}`).classList.add(`${contentArray[i].gender1}`);
+
+            // set new gender class
+            document.getElementById(`article1_${i}`).classList.add(contentArray[i].gender1);
+            document.getElementById(`word1_${i}`).classList.add(`${contentArray[i].gender1}`);
             document.getElementById(`article2_${i}`).classList.add(`${contentArray[i].gender2}`);
             document.getElementById(`word2_${i}`).classList.add(`${contentArray[i].gender2}`);
         };
     };
+
+    startSettings();
+
+    
+
 };
 buttonSelected.onclick = restartWithSelectedCards;
