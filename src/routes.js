@@ -16,9 +16,11 @@ module.exports = (app) => {
     // ROUTE: MAIN
     app.get('/', controller.main);
 
-
     // ROUTE: OPTIONS
     app.get('/options', controller.options);
+    
+
+
     
 
     // ROUTE: GET ACTION FROM FORM (DATA SELECTED)
@@ -65,6 +67,8 @@ module.exports = (app) => {
 
     
 
+
+
     // ROUTE: FORM
     app.get('/data-form', function(req, resp) {
         resp.render('data-form', {
@@ -73,7 +77,6 @@ module.exports = (app) => {
             style: "data-form.css"
         });
     });
-
 
     // ROUTE: CATCH THE FORM DATA
     app.post('/words', function(req, res) {
@@ -105,6 +108,7 @@ module.exports = (app) => {
 
 
 
+
     // ROUTE: DATA RECORD (MENU TO ACCESS DATA)
     app.get('/data-record', controller.dataRecord);
     app.get('/data-record', function(req, resp) {
@@ -114,7 +118,6 @@ module.exports = (app) => {
             style: "data-record.css"
         });
     });
-    
     
     // ROUTE: DATA SELECTED (TABLES)
     app.get('/data-tables', async function(req, resp) {
@@ -133,6 +136,37 @@ module.exports = (app) => {
             word: processedData
         });
 
+    });
+
+
+
+
+
+    // ROUTE: about
+    app.get('/info-about', function(req, resp) {
+        resp.render('info-about', {
+            title: "About",
+            layout: 'mainLayouts',
+            style: "about.css"
+        });
+    });
+
+    // ROUTE: contact
+    app.get('/info-contact', function(req, resp) {
+        resp.render('info-contact', {
+            title: "Contact",
+            layout: 'mainLayouts',
+            style: "contact.css"
+        });
+    });
+
+    // ROUTE: parameters
+    app.get('/info-parameters', function(req, resp) {
+        resp.render('info-parameters', {
+            title: "Parameters",
+            layout: 'mainLayouts',
+            style: "parameters.css"
+        });
     });
 
 

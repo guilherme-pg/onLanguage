@@ -1,0 +1,38 @@
+.main_about {
+    display: flex;
+    flex-direction: column;
+}
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+.section2, .section4 {
+    background-color: rgb(160, 117, 209);
+}
+.section3 {
+    background-color: whitesmoke;
+}
+.sub_container {
+    width: 35%;
+    margin: 10px;
+    padding: 10px;
+}
+.sub_container h3 {
+    margin-bottom: 10px;
+}
+.sub_container p {
+    margin-bottom: 10px;
+    text-align: justify;
+    font-size: 1.1em;
+}
+.text_container {
+    background-color: darkorange;
+}
+.image_container {
+    display: flex;
+    justify-content: center;
+    background-color: dodgerblue;
+}
