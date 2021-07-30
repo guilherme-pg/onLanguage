@@ -1,4 +1,3 @@
-// REQUIRE: SEND ALL DATA AT ONCE TO PREVENT RELOAD THE PAGE
 // REQUIRE: IMPLEMENT THE HANGMAN FIGURE
 // REQUIRE: IMPLEMENT NEXT BUTTON
 // REQUIRE:  SET LIMIT OF ANSWERS
@@ -6,9 +5,19 @@
 
 
 // GLOBAL VARIABLES
+const letterCase = document.getElementById('letter_case');
 let arrayOfLetterOfTheHiddenWord = [];
 let replacementLetter = '';
 let letterOfTheHiddenWord = '';
+let questNumber = 0;
+
+
+
+// STARTING CONFIGURATIONS
+startSettings();
+function startSettings() {
+    letterCase[questNumber].classList.add('showElement');
+};
 
 
 
@@ -160,5 +169,15 @@ function checkLetter(event) {
         };
     };
 };
+
+
+
+
+function buttonNext() {
+    letterCase[questNumber].classList.remove('showElement');
+    questNumber++;
+    letterCase[questNumber].classList.add('showElement');
+};
+
 
 // REQUIRE: DIFFICULT MODE: EASY(10 CHANCES); NORMAL(10 CHANCES): LIMIT THE POSSIBILITIES ??

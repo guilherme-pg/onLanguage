@@ -7,84 +7,30 @@ var secondaryLanguage = '';
 
 class Games {
 
-    memory(datareturned, bodyReqData) {
+    flashCard(datareturned, bodyReqData) {
         return new Promise((resolve, reject) => {
-            let arrayOfObjects = [];
-            // let cardsNumber = bodyReqData.option_cards / 2;   //cards number selected
-            
-            primaryLanguage = bodyReqData.option_language;
-            secondaryLanguage = bodyReqData.option2_language;
+            console.log('AAAAA  GAMES  bodyReqData ====>>>   ', bodyReqData)
+            let primaryLanguage = bodyReqData.option_language;
+            let secondaryLanguage = bodyReqData.option2_language;
+            let objArray = [];
 
-            // query for on language
-            if (bodyReqData.option_language_method == 'mono') {
-                let dataMixed = datareturned.sort(() => Math.random() - 0.5);
-                // let dataSliced = dataMixed.slice(0, cardsNumber);
-                let duplicatedArray = JSON.parse(JSON.stringify(dataMixed));
-                let concatArray = dataMixed.concat(duplicatedArray);
-                let shuffledArray = concatArray.sort(() => Math.random() - 0.5);
-
-                arrayOfObjects = [];
-                for (let i = 0; i < shuffledArray.length; i++) {
-                    arrayOfObjects.push({
-                        id: shuffledArray[i]['_id'],
-                        article: shuffledArray[i][primaryLanguage]['article'],
-                        word: shuffledArray[i][primaryLanguage]['word'],
-                        gender: shuffledArray[i][primaryLanguage]['gender']
-                    });
-                };
-
-            // query for dual language
-            } else if (bodyReqData.option_language_method == 'dual') {
-                let dataMixed = datareturned.sort(() => Math.random() - 0.5);
-                // let dataSliced = dataMixed.slice(0, cardsNumber);
-                let duplicatedArray = JSON.parse(JSON.stringify(dataMixed));
-
-                arrayOfObjects = [];
-                for (let i = 0; i < dataMixed.length; i++) {
-                    arrayOfObjects.push({
-                        id: dataMixed[i]['_id'],
-                        article: dataMixed[i][primaryLanguage]['article'],
-                        word: dataMixed[i][primaryLanguage]['word'],
-                        gender: dataMixed[i][primaryLanguage]['gender']
-                    });
-                    arrayOfObjects.push({
-                        id: duplicatedArray[i]['_id'],
-                        article: duplicatedArray[i][secondaryLanguage]['article'],
-                        word: duplicatedArray[i][secondaryLanguage]['word'],
-                        gender: duplicatedArray[i][secondaryLanguage]['gender']
-                    });
-                };
-
-                let shuffledArray = arrayOfObjects.sort(() => Math.random() - 0.5);
-
-            } else {
-                arrayOfObjects = [];
-            };
-
-            return resolve(arrayOfObjects);
-        });
-    };
-
-
-
-    hangman(datareturned, bodyReqData) {
-        return new Promise((resolve, reject) => {
-            let arrayOfLetters = [];
-            let dataMixed = datareturned.sort(() => Math.random() - 0.5);
-            let dataSliced = dataMixed.slice(0, 1);
-            let languageSelected = bodyReqData.option_language;
-            
-            let wordSelected = dataSliced[0][languageSelected]['word'];
-            let lettersArray = wordSelected.split('');
-            for (let i = 0; i < lettersArray.length; i++) {
-                arrayOfLetters.push({
-                    letter: lettersArray[i]
+            datareturned.forEach(element => {
+                objArray.push({
+                    article1: element[primaryLanguage]['article'],
+                    word1: element[primaryLanguage]['word'],
+                    gender1: element[primaryLanguage]['gender'],
+                    article2: element[secondaryLanguage]['article'],
+                    word2: element[secondaryLanguage]['word'],
+                    gender2: element[secondaryLanguage]['gender']
                 });
-            };
+            });
 
-            return resolve(arrayOfLetters);
+            objArray = shuffleArray(objArray);
+            
+            return resolve(objArray);
         })
     };
+
     
 
 
@@ -145,11 +91,109 @@ class Games {
                     arrayOfMixedLetters: arrayOfMixedLetters[i],
                 })
             };
-            
 
             return resolve(finalArray);
         })
     };
+
+
+
+
+    hangman(datareturned, bodyReqData) {
+        return new Promise((resolve, reject) => {
+            let arrayOfLetters = [];
+            let arrayOfArraysOfLetters = [];
+            let languageSelected = bodyReqData.option_language;
+            let language2Selected = bodyReqData.option2_language;
+            let wordSelected = [];
+            let wordSelected2 = [];
+            let dataMixed = shuffleArray(datareturned);
+
+            for (let z = 0; z < dataMixed.length; z++) {
+                wordSelected.push(dataMixed[z][languageSelected]['word'])
+                wordSelected2.push(dataMixed[z][language2Selected]['word'])
+            };
+
+            for (let i = 0; i < wordSelected.length; i++) {
+
+                let lettersArray = wordSelected[i].split('');
+
+                for (let z = 0; z < lettersArray.length; z++) {
+
+                    arrayOfLetters.push({
+                        letter: `${lettersArray[z]}`
+                    });
+                };
+
+                arrayOfArraysOfLetters.push({
+                    referenceWord: wordSelected2[i],
+                    wordLetters: arrayOfLetters[i]
+                });
+            };
+
+            return resolve(arrayOfArraysOfLetters);
+        });
+    };
+
+
+
+
+    memory(datareturned, bodyReqData) {
+        return new Promise((resolve, reject) => {
+            let arrayOfObjects = [];
+            // let cardsNumber = bodyReqData.option_cards / 2;   //cards number selected
+            
+            primaryLanguage = bodyReqData.option_language;
+            secondaryLanguage = bodyReqData.option2_language;
+
+            // query for one language
+            if (bodyReqData.option_language_method == 'mono') {
+                let dataMixed = datareturned.sort(() => Math.random() - 0.5);
+                // let dataSliced = dataMixed.slice(0, cardsNumber);
+                let duplicatedArray = JSON.parse(JSON.stringify(dataMixed));
+                let concatArray = dataMixed.concat(duplicatedArray);
+                let shuffledArray = concatArray.sort(() => Math.random() - 0.5);
+
+                arrayOfObjects = [];
+                for (let i = 0; i < shuffledArray.length; i++) {
+                    arrayOfObjects.push({
+                        id: shuffledArray[i]['_id'],
+                        article: shuffledArray[i][primaryLanguage]['article'],
+                        word: shuffledArray[i][primaryLanguage]['word'],
+                        gender: shuffledArray[i][primaryLanguage]['gender']
+                    });
+                };
+
+            // query for dual language
+            } else if (bodyReqData.option_language_method == 'dual') {
+                let dataMixed = datareturned.sort(() => Math.random() - 0.5);
+                // let dataSliced = dataMixed.slice(0, cardsNumber);
+                let duplicatedArray = JSON.parse(JSON.stringify(dataMixed));
+
+                arrayOfObjects = [];
+                for (let i = 0; i < dataMixed.length; i++) {
+                    arrayOfObjects.push({
+                        id: dataMixed[i]['_id'],
+                        article: dataMixed[i][primaryLanguage]['article'],
+                        word: dataMixed[i][primaryLanguage]['word'],
+                        gender: dataMixed[i][primaryLanguage]['gender']
+                    });
+                    arrayOfObjects.push({
+                        id: duplicatedArray[i]['_id'],
+                        article: duplicatedArray[i][secondaryLanguage]['article'],
+                        word: duplicatedArray[i][secondaryLanguage]['word'],
+                        gender: duplicatedArray[i][secondaryLanguage]['gender']
+                    });
+                };
+
+            } else {
+                arrayOfObjects = [];
+            };
+
+            return resolve(arrayOfObjects);
+        });
+    };
+
 
 
 
@@ -225,39 +269,9 @@ class Games {
 
 
 
-    flashCard(datareturned, bodyReqData) {
-        return new Promise((resolve, reject) => {
-            console.log('AAAAA  GAMES  bodyReqData ====>>>   ', bodyReqData)
-            let primaryLanguage = bodyReqData.option_language;
-            let secondaryLanguage = bodyReqData.option2_language;
-            let objArray = [];
-
-
-
-            datareturned.forEach(element => {
-                objArray.push({
-                    article1: element[primaryLanguage]['article'],
-                    word1: element[primaryLanguage]['word'],
-                    gender1: element[primaryLanguage]['gender'],
-                    article2: element[secondaryLanguage]['article'],
-                    word2: element[secondaryLanguage]['word'],
-                    gender2: element[secondaryLanguage]['gender']
-                });
-            });
-
-            objArray = shuffleArray(objArray);
-            
-            return resolve(objArray);
-        })
-    };
-
-
-
-
     tablesVisualization(datareturned, bodyReqData) {
         return new Promise((resolve, reject) => {
             let dataset = [];
-
 
             // REQUIRE: UPPER CASE IN TITLE
             for (let i = 0; i < datareturned.length; i++) {
@@ -274,8 +288,6 @@ class Games {
             return resolve(dataset);
         });
     };
-
-
 };
 
 

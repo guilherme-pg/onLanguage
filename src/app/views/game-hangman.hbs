@@ -23,8 +23,11 @@
                         <div class="letters_display" id="display_letters">
                             
                             {{#each words}}
-                                <div class="letter_case">
-                                    <p class="letter_space" id="letter_{{@index}}">{{letter}}</p>
+                                <div class="letter_case" id="letter_case_{{@index}}">
+
+                                    {{#each wordLetters}}
+                                        <p class="letter_space" id="letter_{{@index}}">{{letter}}</p>
+                                    {{/each}}
                                 </div>
                             {{/each}}
 

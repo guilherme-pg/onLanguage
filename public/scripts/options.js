@@ -168,7 +168,7 @@ function showAndHideOptions(event) {
         secondLanguageContainer.classList.add('showElement');
         titleSecondLanguage.innerText = "Second Language";
 
-    } else if (optionHangman.checked || optionFormWords.checked) {
+    } else if (optionFormWords.checked) {
         methodLanguageContainer.classList.remove('showElement');
         secondLanguageContainer.classList.remove('showElement');
         
@@ -177,14 +177,19 @@ function showAndHideOptions(event) {
         for (let i = 0; i < methodLanguage.length; i++) {methodLanguage[i].checked = false};
         for (let i = 0; i < optionSecondLanguage.length; i++) {optionSecondLanguage[i].checked = false;};
 
-    } else if (optionMultipleChoice.checked || optionWriteTranslation.checked || optionFlashCards.checked) {
+    } else if (optionHangman.checked || optionMultipleChoice.checked || optionWriteTranslation.checked || optionFlashCards.checked) {
+        
         methodLanguageContainer.classList.remove('showElement');
         secondLanguageContainer.classList.add('showElement');
 
         for (let i = 0; i < optionMemoryCards.length; i++) {optionMemoryCards[i].checked = false};
         for (let i = 0; i < methodLanguage.length; i++) {methodLanguage[i].checked = false};
-        if (optionMultipleChoice.checked || optionWriteTranslation.checked) {
+
+        if (optionMultipleChoice.checked || optionWriteTranslation.checked || optionFlashCards.checked) {
             titleSecondLanguage.innerText = "Answers Language";
+
+        } else if (optionHangman.checked) {
+            titleSecondLanguage.innerText = "Support Language";
         };
     };
 };
