@@ -6,7 +6,9 @@ const feedback = document.getElementsByClassName('feedback')[0];
 const buttonSelected = document.getElementById('button_selected');
 const counter = document.getElementById('cards_counter');
 const selected = document.getElementsByClassName('input_select');
+const inputCard = document.getElementsByClassName('checks')
 let contentArray = [];
+let restarted = false;
 let questNumber = 0;
 let totalCounter = cardsContainers.length;
 
@@ -14,11 +16,13 @@ let totalCounter = cardsContainers.length;
 // Initial display
 startSettings();
 function startSettings() {
+    contentArray = [];
     questNumber = 0;
 
     for (let i = 0; i < cardsContainers.length; i++) {
         cardsContainers[i].classList.remove('showElement');
-        selected[i].check = false;
+        selected[i].checked = false;
+        inputCard[i].checked = false;
     };
     cardsContainers[questNumber].classList.add('showElement');
 
@@ -71,12 +75,12 @@ function nextButton() {
 
         // hide the current card and show the NEXT CARD 
     if (questNumber <= cardsContainers.length) {
-        
+
         cardsContainers[questNumber].classList.remove('showElement');
         document.getElementById(`flip_card_${questNumber}`).checked = false;
 
         // show feedback with the reload selected out
-        if (questNumber > contentArray.length) {
+        if (restarted == true && contentArray.length != 0 && questNumber > contentArray.length) {
             feedback.classList.add('showElement');
 
             // continue showing elements
@@ -101,6 +105,7 @@ buttonNext.onclick = nextButton;
 
 // RESTART: with selected cards
 function restartWithSelectedCards() {
+    restarted = true;
     contentArray = [];
 
     // check selected options
@@ -150,8 +155,5 @@ function restartWithSelectedCards() {
     };
 
     startSettings();
-
-    
-
 };
 buttonSelected.onclick = restartWithSelectedCards;
