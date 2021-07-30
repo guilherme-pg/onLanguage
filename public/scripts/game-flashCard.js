@@ -13,7 +13,7 @@ let questNumber = 0;
 let totalCounter = cardsContainers.length;
 
 
-// Initial display
+// Initial configurations
 startSettings();
 function startSettings() {
     contentArray = [];
