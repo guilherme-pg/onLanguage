@@ -5,7 +5,9 @@
 
 
 // GLOBAL VARIABLES
-const letterCase = document.getElementById('letter_case');
+const letterContainer = document.getElementsByClassName('letters_discover');
+const letterCase = document.getElementsByClassName('letter_case');
+const buttonNext = document.getElementById('button_next');
 let arrayOfLetterOfTheHiddenWord = [];
 let replacementLetter = '';
 let letterOfTheHiddenWord = '';
@@ -16,7 +18,7 @@ let questNumber = 0;
 // STARTING CONFIGURATIONS
 startSettings();
 function startSettings() {
-    letterCase[questNumber].classList.add('showElement');
+    letterContainer[questNumber].classList.add('showElement');
 };
 
 
@@ -114,7 +116,7 @@ function checkLetter(event) {
             if (arrayOfLetterOfTheHiddenWord.includes(buttonsAlphabet[i].value)) {
 
                 buttonsAlphabet[i].disabled = true;
-                alphabetLabelButton[i].style.backgroundColor = "rgb(45, 185, 45)";
+                alphabetLabelButton[i].classList.add('correct_answer');
                 arrayOfLettersChecked.push(buttonsAlphabet[i].value);
                 letterChecked = buttonsAlphabet[i].value;
 
@@ -128,13 +130,13 @@ function checkLetter(event) {
 
                     // SET THE CORRECT LETTER
                     if (letterOfTheHiddenWord == letterChecked) {
-                        hiddenWord[i].style.display = "flex";
-                        hiddenWord[i].style.backgroundColor = "rgb(128, 223, 136)";  //color from the answer
+                        hiddenWord[i].classList.add('showElement');
+                        hiddenWord[i].classList.add('provisionally_correct');  //color from the answer
                         correctCount++
                     };
                     if (hiddenWord.length == correctCount) {
                         for (let i = 0; i < hiddenWord.length; i++) {
-                            hiddenWord[i].style.backgroundColor = "rgb(61, 216, 69)";  //color from the answer
+                            hiddenWord[i].classList.add('correct_answer');  //color from the answer
                         };
                         for (let i = 0; i < buttonsAlphabet.length; i++) {
                             buttonsAlphabet[i].disabled = true;
@@ -147,7 +149,7 @@ function checkLetter(event) {
             } else if (arrayOfLetterOfTheHiddenWord.includes(buttonsAlphabet[i].value) == false) {
 
                 buttonsAlphabet[i].disabled = true;
-                alphabetLabelButton[i].style.backgroundColor = "rgb(230, 63, 63)";
+                alphabetLabelButton[i].classList.add('wrong_answer');
                 arrayOfLettersChecked.push(buttonsAlphabet[i].value);
                 errorCount++
 
@@ -158,10 +160,11 @@ function checkLetter(event) {
                     };
                     for (let i = 0; i < hiddenWord.length; i++) {
                         if (hiddenWord[i].style.display == "none") {
-                            letterCase[i].style.backgroundColor = "rgb(230, 63, 63)";
-                            hiddenWord[i].style.display = "flex";
+                            letterCase[i].classList.add('wrong_answer');
+                            hiddenWord[i].classList.add('showElement');
+
                         } else {
-                            letterSpace[i].style.backgroundColor = "rgb(250, 96, 96)";
+                            letterSpace[i].classList.add('wrong_answer');
                         };
                     };
                 };
@@ -173,11 +176,10 @@ function checkLetter(event) {
 
 
 
-function buttonNext() {
-    letterCase[questNumber].classList.remove('showElement');
+function nextButton() {
+    console.log('AAAAAA  QUESTNUMBER ==>> ', questNumber)
+    letterContainer[questNumber].classList.remove('showElement');
     questNumber++;
-    letterCase[questNumber].classList.add('showElement');
+    letterContainer[questNumber].classList.add('showElement');
 };
-
-
-// REQUIRE: DIFFICULT MODE: EASY(10 CHANCES); NORMAL(10 CHANCES): LIMIT THE POSSIBILITIES ??
+buttonNext.onclick = nextButton;

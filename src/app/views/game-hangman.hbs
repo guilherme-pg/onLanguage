@@ -17,22 +17,28 @@
 
                 <div class="letters_resource">
 
-                    {{!-- word to discover --}}
-                    <div class="partsofmain_hangman letters_discover" id="hangman_and_word">
+                    
 
-                        <div class="letters_display" id="display_letters">
-                            
-                            {{#each words}}
-                                <div class="letter_case" id="letter_case_{{@index}}">
+                    {{#each words}}
+                        {{!-- word to discover --}}
+                        <div class="partsofmain_hangman letters_discover" id="hangman_and_word_{{@index}}">
 
-                                    {{#each wordLetters}}
+                            {{#each wordLetters}}
+
+                                <div class="letters_display" id="display_letters_{{@index}}">
+                                    <div class="letter_case" id="letter_case_{{@index}}">
+
                                         <p class="letter_space" id="letter_{{@index}}">{{letter}}</p>
-                                    {{/each}}
+                                    </div>
                                 </div>
-                            {{/each}}
 
+                            {{/each}}
+ 
                         </div>
-                    </div>
+                    {{/each}}
+
+                        
+                    
 
                     {{!-- letters KEYBOARD --}}
                     <div class="partsofmain_hangman letters_keyboard" id="buttons_space">
@@ -42,7 +48,7 @@
 
                     {{!-- resource BUTTONS --}}
                     <div class="buttons_container">
-                        <input class="general_button button_resource" name="button_resolve" id="button_resolve" value="Resolve">
+                        <input class="general_button button_resource" name="button_clue" id="button_clue" value="Clue">
                         <input class="general_button button_resource" name="button_next" id="button_next" value="Next">
                     </div>
 

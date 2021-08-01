@@ -42,7 +42,7 @@ class Games {
             let arrayOfArrayOfLetters = [[], [], [], [], [], [], [], [], [], []];
             let arrayOfMixedLetters = [[], [], [], [], [], [], [], [], [], []];
             let objectWithWordAndLetters = [];
-            let dataMixed = datareturned.sort(() => Math.random() - 0.5);
+            let dataMixed = shuffleArray(datareturned);
             let dataSliced = dataMixed.slice(0, 10);
             let languageSelected = bodyReqData.option_language;
 
@@ -65,14 +65,14 @@ class Games {
 
                 // populate and mix the arrays of letters
                 arrayOfMixedLetters[i] = [...arrayOfArrayOfLetters[i]];
-                arrayOfMixedLetters[i] = arrayOfMixedLetters[i].sort(() => Math.random() - 0.5);
+                arrayOfMixedLetters[i] = shuffleArray(arrayOfMixedLetters[i]);
             };
 
 
             for (let i = 0; i < arrayOfLetters.length; i++) {
                 if (arrayOfArrayOfLetters[i] == arrayOfMixedLetters[i]) {
                     while (arrayOfArrayOfLetters[i] == arrayOfMixedLetters[i]) {
-                        arrayOfMixedLetters[i] = arrayOfMixedLetters[i].sort(() => Math.random() - 0.5);
+                        arrayOfMixedLetters[i] = shuffleArray(arrayOfMixedLetters[i]);
                     };
                 };
             };
@@ -101,7 +101,6 @@ class Games {
 
     hangman(datareturned, bodyReqData) {
         return new Promise((resolve, reject) => {
-            let arrayOfLetters = [];
             let arrayOfArraysOfLetters = [];
             let languageSelected = bodyReqData.option_language;
             let language2Selected = bodyReqData.option2_language;
@@ -115,19 +114,17 @@ class Games {
             };
 
             for (let i = 0; i < wordSelected.length; i++) {
-
+                let arrayOfLetters = [];
                 let lettersArray = wordSelected[i].split('');
 
                 for (let z = 0; z < lettersArray.length; z++) {
 
-                    arrayOfLetters.push({
-                        letter: `${lettersArray[z]}`
-                    });
+                    arrayOfLetters.push(`${lettersArray[z]}`);
                 };
 
                 arrayOfArraysOfLetters.push({
                     referenceWord: wordSelected2[i],
-                    wordLetters: arrayOfLetters[i]
+                    wordLetters: arrayOfLetters
                 });
             };
 
@@ -141,18 +138,16 @@ class Games {
     memory(datareturned, bodyReqData) {
         return new Promise((resolve, reject) => {
             let arrayOfObjects = [];
-            // let cardsNumber = bodyReqData.option_cards / 2;   //cards number selected
             
             primaryLanguage = bodyReqData.option_language;
             secondaryLanguage = bodyReqData.option2_language;
 
             // query for one language
             if (bodyReqData.option_language_method == 'mono') {
-                let dataMixed = datareturned.sort(() => Math.random() - 0.5);
-                // let dataSliced = dataMixed.slice(0, cardsNumber);
+                let dataMixed = shuffleArray(datareturned);
                 let duplicatedArray = JSON.parse(JSON.stringify(dataMixed));
                 let concatArray = dataMixed.concat(duplicatedArray);
-                let shuffledArray = concatArray.sort(() => Math.random() - 0.5);
+                let shuffledArray = shuffleArray(concatArray);
 
                 arrayOfObjects = [];
                 for (let i = 0; i < shuffledArray.length; i++) {
@@ -166,8 +161,7 @@ class Games {
 
             // query for dual language
             } else if (bodyReqData.option_language_method == 'dual') {
-                let dataMixed = datareturned.sort(() => Math.random() - 0.5);
-                // let dataSliced = dataMixed.slice(0, cardsNumber);
+                let dataMixed = shuffleArray(datareturned);
                 let duplicatedArray = JSON.parse(JSON.stringify(dataMixed));
 
                 arrayOfObjects = [];
@@ -218,7 +212,7 @@ class Games {
                         wrongWordsArray.push(secondLanguageAnswersArray[k]);
                     };
                 };
-                let wrongWordsArrayMixed = wrongWordsArray.sort(() => Math.random() - 0.5);
+                let wrongWordsArrayMixed = shuffleArray(wrongWordsArray);
 
                 // push in the array 3 wrong answers and the correct
                 let fourAnswersArray = [];
@@ -226,7 +220,8 @@ class Games {
                 
                 // shuffle all 4 answers
                 // let fourAnswersArrayMixed = [];
-                let fourAnswersArrayMixed = fourAnswersArray.sort(() => Math.random() - 0.5);
+                
+                let fourAnswersArrayMixed = shuffleArray(fourAnswersArray);
 
                 multipleChoiceArray.push({
                     referenceWord: referenceWordArray[i],
