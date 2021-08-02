@@ -119,9 +119,11 @@ class Games {
 
                 for (let z = 0; z < lettersArray.length; z++) {
 
-                    arrayOfLetters.push(`${lettersArray[z]}`);
+                    arrayOfLetters.push({
+                        letter: `${lettersArray[z]}`
+                    });
                 };
-
+                console.log('aaaaaa wordSelected2 ===>>  ', wordSelected2)
                 arrayOfArraysOfLetters.push({
                     referenceWord: wordSelected2[i],
                     wordLetters: arrayOfLetters

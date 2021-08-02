@@ -1,17 +1,22 @@
 // REQUIRE: IMPLEMENT THE HANGMAN FIGURE
-// REQUIRE: IMPLEMENT NEXT BUTTON
 // REQUIRE:  SET LIMIT OF ANSWERS
+// REQUIRE: SET SPACES WHEN THE WORDS DEMANDS
 
 
 
 // GLOBAL VARIABLES
 const letterContainer = document.getElementsByClassName('letters_discover');
 const letterCase = document.getElementsByClassName('letter_case');
+const referenceWordContainer = document.getElementsByClassName('reference_word_container');
+const referenceWord = document.getElementsByClassName('reference_word');
+const buttonClue = document.getElementById('button_clue');
 const buttonNext = document.getElementById('button_next');
+const alphabetLabelButton = document.getElementsByClassName('labels_alphabet');
 let arrayOfLetterOfTheHiddenWord = [];
 let replacementLetter = '';
 let letterOfTheHiddenWord = '';
 let questNumber = 0;
+let hiddenWord = document.getElementsByClassName(`letter_group_${questNumber}`);
 
 
 
@@ -23,18 +28,12 @@ function startSettings() {
 
 
 
-// HIDE THE WORD
-const hiddenWord = document.getElementsByClassName('letter_space');
-for (let i = 0; i < hiddenWord.length; i++) {
-    hiddenWord[i].style.display = "none";
-};
-
-
 
 // CREATE ALPHABET BUTTONS
 let alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'x', 'w', 'y', 'z', 'ß', 'ç', 'œ'];
 let buttonsSpace = document.getElementById('buttons_space');
 
+// create dynamically the keyboard
 for (let i = 0; i < alphabet.length; i++) {
     let createDiv = document.createElement('div');
     let createInput = document.createElement("input");
@@ -57,13 +56,17 @@ for (let i = 0; i < alphabet.length; i++) {
     divForInputsLabels[i].appendChild(createInput);
     divForInputsLabels[i].appendChild(createLabel);
 
-    buttonsAlphabet = document.getElementsByClassName('inputs_alphabet');
+    
+};
+
+const buttonsAlphabet = document.getElementsByClassName('inputs_alphabet');
+for (let i = 0; i < buttonsAlphabet.length; i++) {
     buttonsAlphabet[i].onclick = checkLetter;
 };
 
 
-
 for (let i = 0; i < hiddenWord.length; i++) {
+
     replacementLetter = hiddenWord[i].textContent;
     letterOfTheHiddenWord = hiddenWord[i].textContent;
     checkAccents(letterOfTheHiddenWord);
@@ -101,7 +104,6 @@ function checkAccents() {
 function checkLetter(event) {
     const letterSpace = document.getElementsByClassName('letter_space');
     const letterCase = document.getElementsByClassName('letter_case');
-    let alphabetLabelButton = document.getElementsByClassName('labels_alphabet');
     let arrayOfLettersChecked = [];
     let letterChecked = '';
     let errorCount = 0;
@@ -130,11 +132,13 @@ function checkLetter(event) {
 
                     // SET THE CORRECT LETTER
                     if (letterOfTheHiddenWord == letterChecked) {
+
                         hiddenWord[i].classList.add('showElement');
                         hiddenWord[i].classList.add('provisionally_correct');  //color from the answer
                         correctCount++
                     };
                     if (hiddenWord.length == correctCount) {
+
                         for (let i = 0; i < hiddenWord.length; i++) {
                             hiddenWord[i].classList.add('correct_answer');  //color from the answer
                         };
@@ -155,11 +159,15 @@ function checkLetter(event) {
 
                 // LIMIT THE POSSIBILITIES
                 if (errorCount == 6) {
+
                     for (let i = 0; i < buttonsAlphabet.length; i++) {
                         buttonsAlphabet[i].disabled = true;
                     };
+
+
                     for (let i = 0; i < hiddenWord.length; i++) {
                         if (hiddenWord[i].style.display == "none") {
+                            
                             letterCase[i].classList.add('wrong_answer');
                             hiddenWord[i].classList.add('showElement');
 
@@ -175,11 +183,30 @@ function checkLetter(event) {
 
 
 
+// clue mouse event: down and up
+function buttonClueDown() {
+    referenceWordContainer[questNumber].classList.add('showElement');
+};
+function buttonClueUp() {
+    referenceWordContainer[questNumber].classList.remove('showElement');
+};
+buttonClue.onmousedown = buttonClueDown;
+buttonClue.onmouseup = buttonClueUp;
+
+
 
 function nextButton() {
-    console.log('AAAAAA  QUESTNUMBER ==>> ', questNumber)
     letterContainer[questNumber].classList.remove('showElement');
     questNumber++;
     letterContainer[questNumber].classList.add('showElement');
+
+    hiddenWord = document.getElementsByClassName(`letter_group_${questNumber}`);
+
+    for (let i = 0; i < buttonsAlphabet.length; i++) {
+        buttonsAlphabet[i].disabled = false;
+        buttonsAlphabet[i].checked = false;
+        alphabetLabelButton[i].classList.remove('correct_answer');
+        alphabetLabelButton[i].classList.remove('wrong_answer');
+    };
 };
 buttonNext.onclick = nextButton;

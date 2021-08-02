@@ -17,23 +17,25 @@
 
                 <div class="letters_resource">
 
-                    
-
                     {{#each words}}
+
+                        <div class="reference_word_container">
+                            <P class="reference_word" id="reference_word_{{@index}}">{{referenceWord}}</P>
+                        </div>
+
                         {{!-- word to discover --}}
                         <div class="partsofmain_hangman letters_discover" id="hangman_and_word_{{@index}}">
+                            <div class="hidden_letters_container">
+                                {{#each wordLetters}}
 
-                            {{#each wordLetters}}
+                                    <div class="letter_container" id="display_letters_{{@index}}">
 
-                                <div class="letters_display" id="display_letters_{{@index}}">
-                                    <div class="letter_case" id="letter_case_{{@index}}">
-
-                                        <p class="letter_space" id="letter_{{@index}}">{{letter}}</p>
+                                        <p class="letter_space letter_group_{{@../index}}">{{letter}}</p>
                                     </div>
-                                </div>
 
-                            {{/each}}
- 
+                                {{/each}}
+                            </div>
+
                         </div>
                     {{/each}}
 

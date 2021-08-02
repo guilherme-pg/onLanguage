@@ -30,6 +30,19 @@
     flex-direction: column;
     height: 100%;
 }
+.reference_word_container {
+    display: none;
+    margin: 10px;
+    height: 15%;
+    width: 100%;
+}
+.reference_word {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(41, 41, 41);
+    min-width: 25%;
+}
 .partsofmain_hangman {
     background-color: rgb(41, 41, 41);
     margin: 10px;
@@ -44,6 +57,11 @@
     display: none;
     height: 20%;
 }
+.hidden_letters_container {
+    display: flex;
+    margin: 10;
+   
+}
 .letters_keyboard {
     height: 25%;
 }
@@ -51,27 +69,21 @@
     display: flex;
     justify-content: space-around;
 }
-.letters_display {
-    display: flex;
-    flex-direction: row;
-}
+
 
 /* letters to discover */
-.letter_case {
-    background-color: chartreuse;
-    display: none;
+.letter_container {
+    display: flex;
     align-items: center;
     justify-content: center;
     width: 30px;
     height: 30px;
     background-color: whitesmoke;
-    border-radius: 2px;
-    display: block;
+    color: slateblue;
     margin: 3px;
 }
 .letter_space {
-    border-radius: 2px;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -82,11 +94,12 @@
     width: 100%;
     height: 100%;
 }
+
+
+/* keyboard options */
 .inputs_alphabet {
     display: none;
 }
-
-/* keyboard options */
 .labels_alphabet {
     float: left;
     background-color: white;
@@ -111,7 +124,6 @@
     background-color: rgb(78, 78, 78);
 }
 .div_alphabet_buttons input:checked + label {
-    background-color:  rgb(26, 26, 26);
     color: whitesmoke;
 }
 
@@ -145,7 +157,7 @@
     .letters_keyboard {
         height: 35%;
     }
-    .letter_case {
+    .letter_container {
         width: 30px;
         height: 30px;
     }
@@ -166,7 +178,7 @@
         height: 100vh;
         width: 100%;
     }
-    .letter_case {
+    .letter_container {
         width: 20px;
         height: 20px;
     }
