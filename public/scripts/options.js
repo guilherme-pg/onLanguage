@@ -1,6 +1,7 @@
 // GLOBAL VARIABLES FROM DOM
 const optionGame = document.getElementsByName('option_game');
 const optionLanguage = document.getElementsByName('option_language');
+const optionLanguage2 = document.getElementsByName('option2_language');
 const optionGrammar = document.getElementsByName('option_grammar');
 const optionLevel = document.getElementsByName('option_level');
 const optionTheme = document.getElementsByName('option_theme');
@@ -18,6 +19,7 @@ const titleSecondLanguage = document.getElementById('title_second_language');
 const optionDual = document.getElementById('option_dual');
 const optionMemoryCards = document.getElementsByName('option_cards');
 const secondLanguageToHide = document.getElementsByClassName('label_option2_language');
+const firstLanguageToHide = document.getElementsByClassName('label_option_language');
 
 const methodLanguageContainer = document.getElementsByClassName('method_language')[0];
 const secondLanguageContainer = document.getElementsByClassName('second_language')[0];
@@ -142,15 +144,6 @@ function secondLanguageDisplay(event) {
 
 
 
-
-// PREVENT MEMORY CARDS NUMBERS FOR EACH DIFICULT AND/OR THEME SELECTED
-
-// REQUIRE: prevent to show only when memory is selected
-// REQUIRE: prevent to to show number of options only if each theme/dificult is selected
-// REQUIRE: uptade routes and DAO for number of memory cards selected
-// REQUIRE:  ADD CONDITIONS TO OPTIONS
-
-
 // DISPLAY CONFIGURATIONS
 for (let i = 0; i < optionGame.length; i++) {
     optionGame[i].onclick = showAndHideOptions;
@@ -218,18 +211,29 @@ function showAndHideGrammarOptions() {
 };
 
 
-
-// hide same second language when primary language selected
 for (let z = 0; z < optionLanguage.length; z++) {
-    
-    optionLanguage[z].onclick = function () {
+    optionLanguage[z].onclick = languageDisplay;
+    optionLanguage2[z].onclick = languageDisplay;
+};
+
+function languageDisplay() {
+    // hide same second language when primary language selected
+    for (let z = 0; z < optionLanguage.length; z++) {
 
         // show all others secondLanguage selected and hide the same as primary selected
         if (optionLanguage[z].checked) {
             for (let w = 0; w < secondLanguageToHide.length; w++) {
-                secondLanguageToHide[w].style.display = "flex";
+                secondLanguageToHide[w].classList.remove('hiddenElement');
             };
-            secondLanguageToHide[z].style.display = "none";
+            secondLanguageToHide[z].classList.add('hiddenElement');
+        };
+
+        if (optionLanguage2[z].checked) {
+            for (let w = 0; w < firstLanguageToHide.length; w++) {
+                firstLanguageToHide[w].classList.remove('hiddenElement');
+            };
+            firstLanguageToHide[z].classList.add('hiddenElement');
         };
     };
 };
+
