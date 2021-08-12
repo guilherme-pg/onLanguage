@@ -1,11 +1,10 @@
 
 const buttonNext = document.getElementById('button_next');
-const buttonResolve = document.getElementById('button_resolve');
+const buttonClue = document.getElementById('button_clue');
 const draggables = document.querySelectorAll('.draggable');
 const containers = document.querySelectorAll('.container');
-const containersResults = document.querySelectorAll('.container_results');
+const containersClue = document.querySelectorAll('.container_clue');
 let questNumber = 0;
-let cont = 0;
 
 let correctWord = document.getElementById(`letter_checkable_${questNumber}`).textContent;
 
@@ -119,17 +118,16 @@ function checkAnswers(concatenatedWord, answer) {
 
 
 
-// resolution
-function resolveProblem() {
-    if (cont == 0) {
-        containersResults[questNumber].classList.add('showElement');
-        cont = 1;
-    } else {
-        containersResults[questNumber].classList.remove('showElement');
-        cont = 0;
-    };
+// clue mouse event: down and up
+function buttonClueDown() {
+    containersClue[questNumber].classList.add('showElement');
 };
-buttonResolve.onclick = resolveProblem;
+function buttonClueUp() {
+    containersClue[questNumber].classList.remove('showElement');
+};
+buttonClue.onmousedown = buttonClueDown;
+buttonClue.onmouseup = buttonClueUp;
+
 
 
 // quest counter

@@ -20,12 +20,14 @@
     justify-content: space-between;
     width: 65%;
 }
-.container_results {
+.container_clue {
     display: none;
     align-items: center;
     justify-content: center;
 }
 .result_letter {
+    height: 25px;
+    width: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -79,10 +81,10 @@
     flex-wrap: wrap;
     min-height: 75px;
     flex-direction: row;
-
-    /* transition: 0.3s cubic-bezier(0.2, 1, 0.1, 1); */
 }
 .draggable {
+    height: 30px;
+    width: 15px;
     transition: transform 0ms ease 0s;
     cursor: pointer;
     display: flex;
