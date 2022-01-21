@@ -1,0 +1,33 @@
+<main id="main_and_footer">
+    <div id="header_and_main">
+        {{> header}}
+
+        <div id="main_feedback">
+            <div>
+                <h1>GRAPHIC</h1>
+                {{!-- graphic: corrects, wrongs and unanswered --}}
+            </div>
+
+
+            <div class="general_answers_feedback">
+                <H1>CORRECT AND USER ANSWERS</H1>
+                {{!-- correct answers --}}
+                {{!-- your answers --}}
+            </div>
+
+
+            <div class="container_marked_questions">
+
+                <input class="general_button button_resource button_marked_questions" name="button_new_game" id="button_new_game" value="New challenge with marked questions">
+            </div>
+        </div>
+            
+
+        
+    </div>
+    {{> footer}}
+</main>
+
+{{!-- REQUIRE: dynamic script reference --}}
+<script src="/scripts/game-formWords.js"></script>
+{{> scripts}}

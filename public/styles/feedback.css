@@ -1,0 +1,21 @@
+#main_feedback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding: 15px;
+}
+
+.container_marked_questions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55%;
+}
+
+.button_marked_questions {
+    text-align: center;
+    width: 100%;
+}

@@ -66,7 +66,14 @@ module.exports = (app) => {
     });
 
     
-
+    // ROUTE: feedback
+    app.get('/feedback', function(req, resp) {
+        resp.render('feedback', {
+            title: "Feedback",
+            layout: "mainLayouts",
+            style: "feedback.css"
+        })
+    });
 
 
     // ROUTE: FORM
@@ -168,9 +175,5 @@ module.exports = (app) => {
             style: "info-parameters.css"
         });
     });
-
-
-
-
 
 };

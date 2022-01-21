@@ -65,7 +65,6 @@ class WordsDao {
 				if (err) throw err;
 				let dbo = db.db("wordsdata");
 				let obj = bodyReqData;
-				console.log('DATA VISUALIZATION obj ====>>>>   ', obj);
 
 				dbo.collection(`${obj.name_grammar}s`).insertOne(obj, function(err, res) {
 					if (err) throw err;

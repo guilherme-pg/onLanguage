@@ -1,0 +1,19 @@
+
+/* PROGRESS */
+
+/* GAME BUTTONS RESOURCES */
+.general-options-buttons-container {
+    width: 55%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.container_resources {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}

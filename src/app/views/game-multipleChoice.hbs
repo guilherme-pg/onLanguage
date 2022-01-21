@@ -1,11 +1,11 @@
 
 <main id="main_and_footer">
-
     <div id="header_and_main">
-
         {{> header}}    
 
         <div id="main_multiple_choice">
+
+            {{> progress}}
 
             {{!-- <div class="container_game_sidebuttons"> --}}
 
@@ -79,13 +79,14 @@
                 <div id="container_feedback_not_marked"></div>
             </div>
 
-            {{!-- </div> --}}
+            
+            {{> game-resources}}
 
 
             {{!-- BUTTONS: NEXT --}}
-            <div class="buttons_container">
+            {{!-- <div class="buttons_container">
                 <button class="button_resource general_button" id="button_next">NEXT</button>
-            </div>
+            </div> --}}
 
 
             {{!-- RESTART BUTTON --}}

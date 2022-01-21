@@ -1,7 +1,6 @@
 
 var primaryLanguage = '';
 var secondaryLanguage = '';
-// var shuffledArray = [];
 
 
 
@@ -9,7 +8,6 @@ class Games {
 
     flashCard(datareturned, bodyReqData) {
         return new Promise((resolve, reject) => {
-            console.log('AAAAA  GAMES  bodyReqData ====>>>   ', bodyReqData)
             let primaryLanguage = bodyReqData.option_language;
             let secondaryLanguage = bodyReqData.option2_language;
             let objArray = [];
@@ -123,7 +121,6 @@ class Games {
                         letter: `${lettersArray[z]}`
                     });
                 };
-                console.log('aaaaaa wordSelected2 ===>>  ', wordSelected2)
                 arrayOfArraysOfLetters.push({
                     referenceWord: wordSelected2[i],
                     wordLetters: arrayOfLetters
@@ -219,9 +216,6 @@ class Games {
                 // push in the array 3 wrong answers and the correct
                 let fourAnswersArray = [];
                 fourAnswersArray.push(secondLanguageAnswersArray[i], wrongWordsArrayMixed[0], wrongWordsArrayMixed[1], wrongWordsArrayMixed[2]);
-                
-                // shuffle all 4 answers
-                // let fourAnswersArrayMixed = [];
                 
                 let fourAnswersArrayMixed = shuffleArray(fourAnswersArray);
 

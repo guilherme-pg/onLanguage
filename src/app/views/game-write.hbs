@@ -1,11 +1,11 @@
 
 <main id="main_and_footer">
-
     <div id="header_and_main">
-
         {{> header}}    
 
         <div id="main_write">
+
+            {{> progress}}
 
             <div class="main_container activitie_container">
                 {{#each words}}
@@ -37,10 +37,12 @@
 
             </div>
 
-            <div class="main_container buttons_container">
+            {{> game-resources}}
+
+            {{!-- <div class="main_container buttons_container">
                 <input class="general_button button_resource" name="button_resolve" id="button_resolve" value="Resolve">
                 <input class="general_button button_resource" name="button_next" id="button_next" value="Next">
-            </div>
+            </div> --}}
 
 
             <div class="main_container">
@@ -49,7 +51,6 @@
             </div>
         </div>
     </div>
-
     {{> footer}}
 </main>
 
