@@ -12,7 +12,7 @@ let counter = 0;
 
 
 // START CONTAINER NOT HIDDEN
-document.getElementById('containerHidden_0').style.display = "flex";
+document.getElementById('containerHidden_0').classList.remove('hiddenElement');
 
 
 // QUEST COUNTER
@@ -133,27 +133,57 @@ for (let i = 0; i < containerHiddenArray.length; i++) {
 };
 
 
+
+
+
 // BUTTON: NEXT: SHOW NEXT, HIDDE PREVIOUS
 function nextQuest() {
+
     if (nextNumber > containerHiddenArray.length) {
-        console.log('nextNumber  >   containerHiddenArray.length');
+        {};
     } else {
+        if (previousNumber >= 0) {
+            // to prevent the starting game configuration
+            document.getElementById(`containerHidden_${previousNumber}`).classList.add('hiddenElement');
+        };
         previousNumber++;
         nextNumber++;
+        document.getElementById(`containerHidden_${previousNumber}`).classList.add('hiddenElement');
+        document.getElementById(`containerHidden_${nextNumber}`).classList.remove('hiddenElement');
     };
 
-    document.getElementById(`containerHidden_${previousNumber}`).style.display = "none";
-    try {
-        document.getElementById(`containerHidden_${nextNumber}`).style.display = "flex";
-    } catch {
-        console.log("O ERRO DO NEXT NUMBER")
-    };
-    counter++
+    counter++;
 
     endingFeedback();
 };
 buttonNext.onclick = nextQuest;
 
 
+
+// BUTTON: PREVIOUS: SHOW previous, HIDDE next
+function previousQuest() {
+
+    // prevent regression without regression possibility
+    if (previousNumber <= -1) {
+        {};
+    } else {
+        document.getElementById(`containerHidden_${previousNumber}`).classList.remove('hiddenElement');
+    };
+    
+    // prevent the nextnumber -1
+    if (nextNumber <= 0) {
+        {};
+    } else {
+        document.getElementById(`containerHidden_${nextNumber}`).classList.add('hiddenElement');
+        previousNumber--;
+        nextNumber--;
+    };
+    
+    counter--
+};
+buttonPrevious.onclick = previousQuest;
+
+
 // POSSIBILITY: SHOW RESULTS (TABLE WITH WORDS WRONG AND RIGHT WITH NUMBER OF CORRECTS AND INCORRECTS)
 // POSSIBILITY: SHOW PERCENTAGES INSTEAD OF THE NUMBER OF CORRECT ANSWERS
+// REQUIRE: set only one button (next - previous) function

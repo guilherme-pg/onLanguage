@@ -1,5 +1,37 @@
 
-/* PROGRESS */
+/* PERFORMANCE PROGRESS BAR */
+.performance-progress {
+    display: flex;
+    flex-direction: row;
+    margin-top: 3%;
+    width: 55%;
+    background-color: whitesmoke;
+}
+#blank-bar, #correct-bar, #wrong-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80%;
+}
+#blank-bar {
+    color: black;
+    width: 80%;
+    height: 20px;
+    background-color: whitesmoke;
+}
+#correct-bar {
+    width: 10%;
+    height: 20px;
+    background-color: rgb(61, 216, 69);
+}
+#wrong-bar {
+    width: 10%;
+    height: 20px;
+    background-color: red;
+}
+
+
+
 
 /* GAME BUTTONS RESOURCES */
 .general-options-buttons-container {
