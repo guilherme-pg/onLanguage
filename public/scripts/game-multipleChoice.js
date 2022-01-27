@@ -136,6 +136,48 @@ for (let i = 0; i < containerHiddenArray.length; i++) {
 
 
 
+// BUTTON: MARKED AND UNMARKED
+let listMarked = [];
+buttonMarkedUnmarked = document.getElementById('button_mark');
+function markedUnmarked() {
+
+    if (listMarked.includes(counter)) {
+        let indexArray = listMarked.indexOf(counter);
+        if (indexArray > -1 ) {
+            listMarked.splice(indexArray, 1);
+        };
+        // listMarked.remove(counter);
+        document.getElementById(`button_mark`).classList.remove('button_marked');
+        document.getElementById(`button_mark`).setAttribute("value", "Unmarked");
+
+    } else {
+        listMarked.push(counter);
+        document.getElementById(`button_mark`).classList.add('button_marked');
+        document.getElementById(`button_mark`).setAttribute("value", "Marked");
+    };
+    
+
+    // associate counter number to button activision (marked)
+};
+buttonMarkedUnmarked.onclick = markedUnmarked;
+
+
+// change button marked/unmarked
+function changeMarkedUnmarked() {
+
+    if (listMarked.includes(counter)) {
+        document.getElementById(`button_mark`).classList.add('button_marked');
+        document.getElementById(`button_mark`).setAttribute("value", "Marked");
+
+    } else {
+        document.getElementById(`button_mark`).classList.remove('button_marked');
+        document.getElementById(`button_mark`).setAttribute("value", "Unmarked");
+    };
+};
+
+
+
+
 // BUTTON: NEXT: SHOW NEXT, HIDDE PREVIOUS
 function nextQuest() {
 
@@ -153,6 +195,7 @@ function nextQuest() {
     };
 
     counter++;
+    changeMarkedUnmarked()
 
     endingFeedback();
 };
@@ -180,6 +223,7 @@ function previousQuest() {
     };
     
     counter--
+    changeMarkedUnmarked()
 };
 buttonPrevious.onclick = previousQuest;
 
