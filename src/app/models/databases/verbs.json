@@ -1,0 +1,2036 @@
+[{
+  "_id": {
+    "$oid": "60ec3abe2827e66008082e55"
+  },
+  "name_theme": "empty",
+  "name_level": "intermediate",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to burn",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "brûler",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "brennen",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "bruciare",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "queimar",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "quemar",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec32192827e66008082e39"
+  },
+  "name_theme": "empty",
+  "name_level": "basic",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to see",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "voir",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "sehen",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "vedere",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "ver",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "ver",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec3a922827e66008082e53"
+  },
+  "name_theme": "empty",
+  "name_level": "intermediate",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to prepare",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "préparer",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "vorbereiten",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "preparare",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "preparar",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "preparar",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec327a2827e66008082e3d"
+  },
+  "name_theme": "empty",
+  "name_level": "basic",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to call",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "appeler",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "rufen",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "chiamare",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "chamar",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "llamar",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec35f72827e66008082e4b"
+  },
+  "name_theme": "empty",
+  "name_level": "basic",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to buy",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "acheter",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "kaufen",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "comprare",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "comprar",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "comprar",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec325e2827e66008082e3c"
+  },
+  "name_theme": "empty",
+  "name_level": "basic",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to work",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "travailler",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "arbeiten",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "lavorare",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "trabalhar",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "trabajar",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec39382827e66008082e51"
+  },
+  "name_theme": "empty",
+  "name_level": "intermediate",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to thank",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "remercier",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "danken",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "ringraziare",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "agradecer",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "agradecer",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec3aa72827e66008082e54"
+  },
+  "name_theme": "empty",
+  "name_level": "intermediate",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to hate",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "haïr",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "hassen",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "odiare",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "odiar",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "odiar",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec3afc2827e66008082e57"
+  },
+  "name_theme": "empty",
+  "name_level": "intermediate",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to recognise",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "reconnaître",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "erkennen",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "riconoscere",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "reconhecer",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "reconocer",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec3c622827e66008082e5d"
+  },
+  "name_theme": "empty",
+  "name_level": "advanced",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to improve",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "améliorer",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "verbessern",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "migliorare",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "melhorar",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "mejorar",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec32c42827e66008082e3e"
+  },
+  "name_theme": "empty",
+  "name_level": "basic",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to ask",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "demander",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "fragen",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "chiedere",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "perguntar",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "preguntar",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec31f92827e66008082e37"
+  },
+  "name_theme": "empty",
+  "name_level": "basic",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to know",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "savoir",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "wissen",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "sapere",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "saber",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "saber",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec3cc52827e66008082e61"
+  },
+  "name_theme": "empty",
+  "name_level": "advanced",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to deliver",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "livrer",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "liefern",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "consegnare",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "entregar",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "entregar",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec46c18d5c5c6470039402"
+  },
+  "name_theme": "empty",
+  "name_level": "advanced",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to escape",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "échapper ",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "entkommen",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "scappare",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "escapar",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "escapar",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60eb3ea54392a66744f14fb6"
+  },
+  "name_theme": "empty",
+  "name_level": "intermediate",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to explore",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "explorer",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "erforschen",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "esplorare",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "explorar",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "explorar",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec33462827e66008082e43"
+  },
+  "name_theme": "empty",
+  "name_level": "basic",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to eat",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "manger",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "essen",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "mangiare",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "comer",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "comer",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec33bf2827e66008082e48"
+  },
+  "name_theme": "empty",
+  "name_level": "basic",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to speak",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "parler",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "sprechen",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "parlare",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "falar",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "hablar",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec46e68d5c5c6470039404"
+  },
+  "name_theme": "empty",
+  "name_level": "advanced",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to influence",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "influencer",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "beeinflussen",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "influenzare",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "influenciar",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "influenciar",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec33272827e66008082e42"
+  },
+  "name_theme": "empty",
+  "name_level": "basic",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to learn",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "apprendre",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "lernen",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "imparare",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "aprender",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "aprender",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec38ab2827e66008082e4f"
+  },
+  "name_theme": "empty",
+  "name_level": "intermediate",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to wash",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "laver",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "waschen",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "lavare",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "lavar",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "lavar",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec3ae32827e66008082e56"
+  },
+  "name_theme": "empty",
+  "name_level": "intermediate",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to answer",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "répondre",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "beantworten",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "rispondere",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "responder",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "responder",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec36572827e66008082e4d"
+  },
+  "name_theme": "empty",
+  "name_level": "basic",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to fly",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "voler",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "fliegen",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "volare",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "voar",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "volar",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec31b22827e66008082e35"
+  },
+  "name_theme": "empty",
+  "name_level": "basic",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to go",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "aller",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "gehen",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "andare",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "ir",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "ir",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec31942827e66008082e34"
+  },
+  "name_theme": "empty",
+  "name_level": "basic",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to say",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "dire",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "erzählen",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "dire",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "dizer",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "decir",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec32032827e66008082e38"
+  },
+  "name_theme": "empty",
+  "name_level": "basic",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to think",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "penser",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "denken",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "pensare",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "pensar",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "pensar",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec3be02827e66008082e5a"
+  },
+  "name_theme": "empty",
+  "name_level": "advanced",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to test",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "tester",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "testen",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "testare",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "testar",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "probar",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec33a82827e66008082e47"
+  },
+  "name_theme": "empty",
+  "name_level": "basic",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to write",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "écrire",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "schreiben",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "scrivere",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "escrever",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "escribir",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec3c7b2827e66008082e5e"
+  },
+  "name_theme": "empty",
+  "name_level": "advanced",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to demonstrate",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "démontrer",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "demonstrieren",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "dimostrare",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "demonstrar",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "demostrar",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec335f2827e66008082e44"
+  },
+  "name_theme": "empty",
+  "name_level": "basic",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to play",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "jouer",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "spielen",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "giocare",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "jogar",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "jugar",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec32dd2827e66008082e3f"
+  },
+  "name_theme": "empty",
+  "name_level": "basic",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to feel",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "sentir",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "fühlen",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "sentire",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "sentir",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "sentir",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec32312827e66008082e3a"
+  },
+  "name_theme": "empty",
+  "name_level": "basic",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to want",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "vouloir",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "wollen",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "volere",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "querer",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "querer",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec36392827e66008082e4c"
+  },
+  "name_theme": "empty",
+  "name_level": "basic",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to close",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "fermer",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "schließen",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "chiudere",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "fechar",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "cerrar",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec3a7c2827e66008082e52"
+  },
+  "name_theme": "empty",
+  "name_level": "intermediate",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to force",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "forcer",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "zwingen",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "forzare",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "forçar",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "forzar",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60eb3e664392a66744f14fb5"
+  },
+  "name_theme": "empty",
+  "name_level": "intermediate",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to identify",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "identifier",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "identifizieren",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "identificare",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "identificar",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "identificar",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec38c62827e66008082e50"
+  },
+  "name_theme": "empty",
+  "name_level": "intermediate",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to break",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "casser",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "brechen",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "rompere",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "quebrar",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "romper",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec3c262827e66008082e5c"
+  },
+  "name_theme": "empty",
+  "name_level": "advanced",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to belong",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "appartenir",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "gehören",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "appartenere",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "pertencer",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "pertenecer",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec35eb2827e66008082e4a"
+  },
+  "name_theme": "empty",
+  "name_level": "basic",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to sell",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "vendre",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "verkaufen",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "vendere",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "vender",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "vender",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec3c012827e66008082e5b"
+  },
+  "name_theme": "empty",
+  "name_level": "advanced",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to preferer",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "préférer",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "bevorzugen",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "preferire",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "preferir",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "preferir",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec38482827e66008082e4e"
+  },
+  "name_theme": "empty",
+  "name_level": "intermediate",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to fight",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "combattre",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "kämpfen",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "combattere",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "lutar",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "luchar",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60eb3d1a4392a66744f14fb4"
+  },
+  "name_theme": "empty",
+  "name_level": "intermediate",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to exclude",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "exclure",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "ausschließen",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "escludere",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "excluir",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "excluir",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec32472827e66008082e3b"
+  },
+  "name_theme": "empty",
+  "name_level": "basic",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to use",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "utiliser",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "benutzen",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "usare",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "usar",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "usar",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec3ca42827e66008082e60"
+  },
+  "name_theme": "empty",
+  "name_level": "advanced",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to repeat",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "répéter",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "wiederholen",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "ripetere",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "repetir",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "repetir",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec32fd2827e66008082e40"
+  },
+  "name_theme": "empty",
+  "name_level": "basic",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to read",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "lire",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "lesen",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "leggere",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "ler",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "leer",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec33772827e66008082e45"
+  },
+  "name_theme": "empty",
+  "name_level": "basic",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to run",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "courir",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "laufen",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "correre",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "correr",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "correr",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec3bc92827e66008082e59"
+  },
+  "name_theme": "empty",
+  "name_level": "advanced",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to survive",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "survivre",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "Überleben",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "sopravvivere",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "sobreviver",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "sobrevivir",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec46d18d5c5c6470039403"
+  },
+  "name_theme": "empty",
+  "name_level": "advanced",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to elect",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "élire",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "küren",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "eleggere",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "eleger",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "elegir",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec330e2827e66008082e41"
+  },
+  "name_theme": "empty",
+  "name_level": "basic",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to talk",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "parler",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "sprechen",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "parlare",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "falar",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "hablar",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec3b252827e66008082e58"
+  },
+  "name_theme": "empty",
+  "name_level": "intermediate",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to associate",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "associer",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "assoziieren",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "associare",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "associar",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "asociar",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec46fb8d5c5c6470039405"
+  },
+  "name_theme": "empty",
+  "name_level": "advanced",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to fear",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "craindre",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "fürchten",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "temere",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "temer",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "temer",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec35ca2827e66008082e49"
+  },
+  "name_theme": "empty",
+  "name_level": "basic",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to study",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "étudier",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "studieren",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "studiare",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "estudar",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "estudiar",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec31d02827e66008082e36"
+  },
+  "name_theme": "empty",
+  "name_level": "basic",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to get",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "obtenir",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "bekommen",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "ottenere",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "obter",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "obtener",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec3c8f2827e66008082e5f"
+  },
+  "name_theme": "empty",
+  "name_level": "advanced",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to touch",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "toucher",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "berühren",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "toccare",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "tocar",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "tocar",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec33952827e66008082e46"
+  },
+  "name_theme": "empty",
+  "name_level": "basic",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to hear",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "entendre",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "hören",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "ascoltare",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "ouvir",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "escuchar",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec46a28d5c5c6470039401"
+  },
+  "name_theme": "empty",
+  "name_level": "advanced",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to sing",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "chanter",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "singen",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "cantare",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "cantar",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "cantar",
+    "gender": ""
+  }
+},{
+  "_id": {
+    "$oid": "60ec47908d5c5c6470039406"
+  },
+  "name_theme": "empty",
+  "name_level": "advanced",
+  "name_grammar": "verb",
+  "english": {
+    "article": "",
+    "word": "to solve",
+    "gender": ""
+  },
+  "french": {
+    "article": "",
+    "word": "résoudre",
+    "gender": ""
+  },
+  "german": {
+    "article": "",
+    "word": "lösen",
+    "gender": ""
+  },
+  "italian": {
+    "article": "",
+    "word": "risolvere",
+    "gender": ""
+  },
+  "portuguese": {
+    "article": "",
+    "word": "resolver",
+    "gender": ""
+  },
+  "spanish": {
+    "article": "",
+    "word": "resolver",
+    "gender": ""
+  }
+}]
