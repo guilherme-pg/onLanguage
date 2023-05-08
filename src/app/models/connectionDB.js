@@ -1,9 +1,9 @@
 var MongoClient  = require('mongodb').MongoClient;
-var urlAtlas = `${process.env.ATLAS_URL}`;
+const ATLAS_URL = "mongodb+srv://random_user:random_user_p@cluster00.puef2.mongodb.net/";
 
 
-// Connect to the db
-MongoClient.connect(urlAtlas, {
+// Connect to the MONGODB ATLAS
+MongoClient.connect(ATLAS_URL, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true
 	
@@ -17,7 +17,7 @@ MongoClient.connect(urlAtlas, {
 // REQUIRE: OPTIMIZE DB FOR ONE COLLECTION ONLY OR OPTIMIZE COLLECTION CREATION
 
 // CREATE COLLECTION
-// MongoClient.connect(urlAtlas, {
+// MongoClient.connect(ATLAS_URL, {
 //   useNewUrlParser: true,
 //   useUnifiedTopology: true
 //   }, function(err, db) {
