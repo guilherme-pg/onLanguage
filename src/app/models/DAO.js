@@ -1,6 +1,7 @@
 // const connection = require('./connectionDB');
 var MongoClient  = require('mongodb').MongoClient;
-var urlAtlas = `${process.env.ATLAS_URL}`;
+// const ATLAS_URL = `${process.env.ATLAS_URL}`; used for admin
+const ATLAS_URL = "mongodb+srv://random_user:random_user_p@cluster00.puef2.mongodb.net/";
 
 
 class WordsDao {
@@ -8,7 +9,7 @@ class WordsDao {
 	// READ
 	read(bodyReqData) {
 		return new Promise((resolve, reject) => {
-			MongoClient.connect(urlAtlas, {useNewUrlParser: true, useUnifiedTopology: true}, function(err, db) {
+			MongoClient.connect(ATLAS_URL, {useNewUrlParser: true, useUnifiedTopology: true}, function(err, db) {
 				if (err) throw err;
 				let dbo = db.db("wordsdata");
 
@@ -61,7 +62,7 @@ class WordsDao {
   	// INSERT/CREATE
   	adding(bodyReqData) {
 		return new Promise((resolve, reject) => {
-			MongoClient.connect(urlAtlas, {useNewUrlParser: true,  useUnifiedTopology: true}, function(err, db) {
+			MongoClient.connect(ATLAS_URL, {useNewUrlParser: true,  useUnifiedTopology: true}, function(err, db) {
 				if (err) throw err;
 				let dbo = db.db("wordsdata");
 				let obj = bodyReqData;
@@ -81,7 +82,7 @@ class WordsDao {
 	// UPDATE
 	// update() {
 	// 	return new Promise((resolve, reject) => {
-	// 		MongoClient.connect(urlAtlas, {useNewUrlParser: true, useUnifiedTopology: true}, function(err, db) {
+	// 		MongoClient.connect(ATLAS_URL, {useNewUrlParser: true, useUnifiedTopology: true}, function(err, db) {
 	// 			if (err) throw err;
 	// 			let dbo = db.db("wordsdata");
 	// 			console.log('AAAAA DAO bodyReqData ===>>>  ', bodyReqData);

@@ -1,7 +1,7 @@
 
 /* PERFORMANCE PROGRESS BAR */
 .performance-progress {
-    display: flex;
+    display: none; /* under development */
     flex-direction: row;
     margin-top: 3%;
     width: 55%;
