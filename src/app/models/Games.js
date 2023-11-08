@@ -8,11 +8,11 @@ class Games {
 
     flashCard(datareturned, bodyReqData) {
         return new Promise((resolve, reject) => {
-            let primaryLanguage = bodyReqData.option_language;
-            let secondaryLanguage = bodyReqData.option2_language;
+            const primaryLanguage = bodyReqData.option_language;
+            const secondaryLanguage = bodyReqData.option2_language;
             let objArray = [];
 
-            datareturned.forEach(element => {
+            datareturned.map(element => {
                 objArray.push({
                     article1: element[primaryLanguage]['article'],
                     word1: element[primaryLanguage]['word'],
@@ -23,9 +23,9 @@ class Games {
                 });
             });
 
-            objArray = shuffleArray(objArray);
+            const shuffledArray = shuffleArray(objArray);
             
-            return resolve(objArray);
+            resolve(shuffledArray);
         })
     };
 
@@ -33,6 +33,7 @@ class Games {
 
 
     formWords(datareturned, bodyReqData) {
+        // TO IMPROVE
         // require: prevent after mixed the correct name
         return new Promise((resolve, reject) => {
             let wordsSelected = [];

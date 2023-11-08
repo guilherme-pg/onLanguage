@@ -1,5 +1,5 @@
 var MongoClient  = require('mongodb').MongoClient;
-// const ATLAS_URL = `${process.env.ATLAS_URL}`; used for admin
+//const ATLAS_URL = `${process.env.ATLAS_URL}`; //used for admin
 const ATLAS_URL = "mongodb+srv://random_user:random_user_p@cluster00.puef2.mongodb.net/";
 
 
@@ -15,8 +15,7 @@ MongoClient.connect(ATLAS_URL, {
 });
 
 
-// REQUIRE: OPTIMIZE DB FOR ONE COLLECTION ONLY OR OPTIMIZE COLLECTION CREATION
-
+// TO IMPROVE: create a collection with does not exist
 // CREATE COLLECTION
 // MongoClient.connect(ATLAS_URL, {
 //   useNewUrlParser: true,

@@ -1,4 +1,4 @@
-const dbConnection = require('./app/models/ConnectionDB');
+const dbConnection = require('./app/models/connectionDB');
 const WordsDao = require('./app/models/DAO');
 const Games = require('./app/models/Games');
 const games = new Games();
@@ -20,9 +20,6 @@ module.exports = (app) => {
     app.get('/options', controller.options);
     
 
-
-    
-
     // ROUTE: GET ACTION FROM FORM (DATA SELECTED)
     app.get('/gameoptions', async function(req, resp) {
         bodyReqData = req.query;
@@ -32,30 +29,33 @@ module.exports = (app) => {
         let viewReference = "";
         let processedData = [];
 
-        if (bodyReqData.option_game == 'Memory') {
-            processedData = await games.memory(datareturned, bodyReqData);
-            viewReference = "game-memory";
+        switch(bodyReqData.option_game) {
+            case 'Memory':
+                processedData = await games.memory(datareturned, bodyReqData);
+                viewReference = "game-memory";
+                break;
+            case 'Hangman':
+                processedData = await games.hangman(datareturned, bodyReqData);
+                viewReference = "game-hangman";
+                break;
+            case 'Multiple Choice':
+                processedData = await games.multipleChoice(datareturned, bodyReqData);
+                viewReference = "game-multipleChoice";
+                break;
+            case 'Form Words':
+                processedData = await games.formWords(datareturned, bodyReqData);
+                viewReference = "game-formWords";
+                break;
+            case 'Flash Cards':
+                processedData = await games.flashCard(datareturned, bodyReqData);
+                viewReference = "game-flashCards";
+                break;
+            case 'Write the Translation':
+                processedData = await games.write(datareturned, bodyReqData);
+                viewReference = "game-write";
+                break;
+        }
 
-        } else if (bodyReqData.option_game == 'Hangman') {
-            processedData = await games.hangman(datareturned, bodyReqData);
-            viewReference = "game-hangman";
-
-        } else if (bodyReqData.option_game == 'Multiple Choice') { 
-            processedData = await games.multipleChoice(datareturned, bodyReqData);
-            viewReference = "game-multipleChoice";
-
-        } else if (bodyReqData.option_game == 'Form Words') {
-            processedData = await games.formWords(datareturned, bodyReqData);
-            viewReference = "game-formWords";
-
-        } else if (bodyReqData.option_game == 'Flash Cards') {
-            processedData = await games.flashCard(datareturned, bodyReqData);
-            viewReference = "game-flashCards";
-
-        } else if (bodyReqData.option_game == 'Write the Translation') {
-            processedData = await games.write(datareturned, bodyReqData);
-            viewReference = "game-write";
-        };
 
         resp.render(`${viewReference}`, {
             title: `${bodyReqData.option_game}`,
